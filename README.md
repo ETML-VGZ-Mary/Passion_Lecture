@@ -24,7 +24,6 @@ L’utilisation de git et github est obligatoire.
 
 Votre application comprendra au moins un point d'écoconception Web. Il devra 
 être argumenté lors de l'auto-évaluation finale.
-
 Aide : Livre Eco-conception web : les 115 bonnes pratiques.
 
 7.5 Fonctionnalités requises (du point de vue du client)
@@ -122,15 +121,12 @@ citées.
 2 Le nombre de page en () est le minimum à effectuer.
 
 ETML P_WEB2
-
 E-P_Web2-AMG001-CdC.docx Version 1.3 du 21.11.2023 Auteur : AMG
 Mise à jour : GCR Page 4 sur 5 Imprimé le 21.11.2023
 Contiendra une analyse quant à la réalisation et à la mise en page 
 du HTML (1 page)
-
 Contiendra une analyse de de la base de données à réaliser (MCD, 
 MLD, MPD) (1 page)
-
 Contiendra une analyse de la structure du code qui sera effectuée 
 (Schéma UML, organisation du code …) (2 pages)
 
@@ -138,12 +134,10 @@ Contiendra une analyse de la structure du code qui sera effectuée
 
 Comprend une explication de la mise en place de l’authentification
 (1 page)
-
 Comprend une explication des mesures prises pour les aspects de 
 sécurité.
 Comprend une explication sur l’appréciation moyenne d’un ouvrage
 (1/2 page)
-
 Comprend un manuel d’utilisation du site du point de vue admin ou 
 utilisateur (comment ajouter, modifier, supprimer un ouvrage, 
 comment ajouter une appréciation) (2 pages)
@@ -155,9 +149,7 @@ Comprend une explication des tests réalisés (Unit Test) (1 page)
 • Conclusion
 
 Comprend une conclusion générale sur le projet (½ page)
-
 Comprend une conclusion personnelle sur le projet (½ page)
-
 Comprend une critique constructive sur la planification du projet (½ 
 page)
 
