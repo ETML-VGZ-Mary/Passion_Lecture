@@ -1,7 +1,7 @@
 # Passion_Lecture
 Site web qui permet de partager sa passion pour la lecture et évaluer des ouvrages lus.
 
-7 CAHIER DES CHARGES
+# 7 CAHIER DES CHARGES
 
 7.1 Objectif et portée du projet (objectifs SMART)
 
