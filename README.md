@@ -1,23 +1,36 @@
 # Passion_Lecture
-Site web qui permet de partager sa passion pour la lecture et évaluer des ouvrages lus. /n
+Site web qui permet de partager sa passion pour la lecture et évaluer des ouvrages lus.
+
 7 CAHIER DES CHARGES
+
 7.1 Objectif et portée du projet (objectifs SMART)
+
 Ce projet vise à mettre en œuvre les connaissances apprises dans les modules 133 
 et 151, qui se déroulent en parallèle au projet.
 Au final, l’application réalisée devra être exploitable et livrable. Dès lors, on attend 
 un rendu professionnel et un soin particulier dans la documentation du projet.
+
 7.2 Maquette graphique
+
 Le graphisme doit respecter les concepts appris durant votre formation. De plus, le 
 Framework Bootstrap ou Tailwind peut être utilisé.
+
 7.3 Bonnes pratiques de développement
+
 Pour ce projet, vous devez travailler à plusieurs sur la même base de code.
 L’utilisation de git et github est obligatoire.
+
 7.4 Ecoconception Web 
+
 Votre application comprendra au moins un point d'écoconception Web. Il devra 
 être argumenté lors de l'auto-évaluation finale.
+
 Aide : Livre Eco-conception web : les 115 bonnes pratiques.
+
 7.5 Fonctionnalités requises (du point de vue du client)
+
 Le site web / application aura les pages suivantes :
+
 • Une page d’accueil comprenant une explication de l’utilité du site ainsi que 
 les cinq derniers ouvrages ajoutés (accès tout public).
 • Une page comprenant la liste des ouvrages par catégorie (accès tout 
