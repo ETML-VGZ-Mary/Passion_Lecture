@@ -4,7 +4,7 @@
 * Modification : --
 * Description : File containt the script MySql for creating the data base of the application 
 */
-DROP DATABASE db_passion IF EXISTS;
+DROP DATABASE IF EXISTS db_passion;
 CREATE DATABASE db_passion;
 USE db_passion; 
 
