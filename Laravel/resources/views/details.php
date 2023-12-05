@@ -57,27 +57,15 @@
         </nav>
     </header>
 
-    <div class="container-index">
-        <div class="bloc01">
-            <h3>Nouveautés</h3>
-            <a href="#"><img src="../images/books/livre01.jpg" alt="image01"></a>
-            <a href="#"><img src="../images/books/livre02.jpg" alt="image02"></a>
-            <a href="#"><img src="../images/books/livre03.jpg" alt="image03"></a>
-            <a href="#"><img src="../images/books/livre04.jpg" alt="image04"></a>
-            <a href="#"><img src="../images/books/livre05.jpg" alt="image05"></a>
-        </div>
-        <div class="bloc02">
-            <h3>À propos</h3>
-            <p>
-                Bienvenu à "Passion Lecture" !
-            </p>
-            <p>
-                -------------------------------------------------------------
-            </p>
-            <p>
-                coucou
-            </p>
-        </div>
+    <div class="container">
+        <h4>Titre du livre</h4>
+        <a href="#"><img src="../images/icons/modify.png" alt="modify"></a>
+        <a href="#"><img src="../images/icons/delete.png" alt="delete"></a>
+        <h4>auteur</h4>
+        <h4>Titre du livre</h4>
+        <h4>Titre du livre</h4>
+        <p>hello</p>
+        
         <!-- <script src="./js/script.js"></script> -->
     </div>
 
