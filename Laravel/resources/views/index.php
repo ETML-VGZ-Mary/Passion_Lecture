@@ -47,7 +47,7 @@
         </div>
         <nav>
             <div class="nav-links">
-                <a href="#">Accueil</a>
+                <a href="../views/index.php">Accueil</a>
                 <a href="#">Liste</a>
                 <a href="#">Ajout</a>
                 <a href="#">Profil</a>
@@ -63,9 +63,20 @@
             <a href="#"><img src="../images/books/livre01.jpg" alt="image01"></a>
             <a href="#"><img src="../images/books/livre02.jpg" alt="image02"></a>
             <a href="#"><img src="../images/books/livre03.jpg" alt="image03"></a>
+            <a href="#"><img src="../images/books/livre04.jpg" alt="image04"></a>
+            <a href="#"><img src="../images/books/livre05.jpg" alt="image05"></a>
         </div>
         <div class="bloc02">
-            <p>texte</p>
+            <h3>À propos</h3>
+            <p>
+                Bienvenu à "Passion Lecture" !
+            </p>
+            <p>
+                -------------------------------------------------------------
+            </p>
+            <p>
+                coucou
+            </p>
         </div>
         <!-- <script src="./js/script.js"></script> -->
     </div>
