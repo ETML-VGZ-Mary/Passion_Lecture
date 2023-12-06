@@ -13,7 +13,7 @@
 include("../../../Model/DATABASE.php");
 
 $db = new Database();
-$books = $db->getAllBooks();
+$authors = $db->getAllAuthors();
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +50,7 @@ $books = $db->getAllBooks();
                 <tbody>
                     <?php
                     
-                    foreach($books as $book) {
+                    foreach($authors as $author) {
 
                         // Affichage dynamique des enseignants
                         echo "<tr>";

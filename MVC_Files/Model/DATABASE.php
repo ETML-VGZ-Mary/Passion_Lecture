@@ -85,8 +85,44 @@
     }
 
 
+    /**
+     * Récupère la liste de tous les auteurs de la BD
+     */
+    public function getAllAuthors(){
+
+        // Avoir la requête sql
+        $query = "SELECT * FROM t_author";
+
+        // Appeler la méthode pour executer la requête
+        $req = $this->querySimpleExecute($query);
+
+
+        // Appeler la méthode pour avoir le résultat sous forme de tableau
+        $teachers = $this->formatData($req);
+
+        // retour tous les enseignants
+        return $teachers;
+    }
+
     
-    
+    /**
+     * Récupère la liste de tous les livres de la BD
+     */
+    public function getAllBooks(){
+
+        // Avoir la requête sql
+        $query = "SELECT * FROM t_book";
+
+        // Appeler la méthode pour executer la requête
+        $req = $this->querySimpleExecute($query);
+
+
+        // Appeler la méthode pour avoir le résultat sous forme de tableau
+        $teachers = $this->formatData($req);
+
+        // retour tous les enseignants
+        return $teachers;
+    }
 
 
 
