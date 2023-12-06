@@ -5,7 +5,7 @@
  * Description    :	CSS
  */
 
-body {
+ body {
     margin-top: -20px;
     margin-left: 0;
     margin-right: 0;
@@ -93,4 +93,15 @@ footer{
 
 .bloc01 img{
     height: 200px;
+}
+
+/*page liste--------------------------------------------*/
+.container-details{
+    margin: 50px;
+}
+.container-details img{
+    height: 25px;
+}
+.book-name{
+    display: flex;
 }

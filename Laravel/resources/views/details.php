@@ -2,7 +2,7 @@
     ETML
     Auteur        :	Déglise Camille - Vougaz Maryline - Wu Guo Yu
     Date          :	28.11.2023
-    Description   :	Accueil du site "Passion Lecture"
+    Description   :	Accueil du site "Passion Lecture" 
 -->
 
 <?php
@@ -48,7 +48,7 @@
         <nav>
             <div class="nav-links">
                 <a href="../views/index.php">Accueil</a>
-                <a href="#">Liste</a>
+                <a href="../views/liste.php">Liste</a>
                 <a href="#">Ajout</a>
                 <a href="#">Profil</a>
                 <a href="#">Contacts</a>
@@ -57,10 +57,15 @@
         </nav>
     </header>
 
-    <div class="container">
-        <h4>Titre du livre</h4>
-        <a href="#"><img src="../images/icons/modify.png" alt="modify"></a>
-        <a href="#"><img src="../images/icons/delete.png" alt="delete"></a>
+    <div class="container-details">
+        <div class="book-name">
+            <h4>Titre du livre</h4>
+            <a href="#"><img src="../images/icons/modify.png" alt="modify"></a>
+            <a href="#"><img src="../images/icons/delete.png" alt="delete"></a>
+        </div>
+        <div></div>
+        <div></div>
+        
         <h4>auteur</h4>
         <h4>Titre du livre</h4>
         <h4>Titre du livre</h4>
