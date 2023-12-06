@@ -6,13 +6,7 @@
 -->
 
 <?php
-// connexion à la BD
-//include("./DATABASE.php");
-
-//$db = new Database();
-//$teachers = $db->getAllTeachers();
-
-//session_start();
+$books
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +16,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../css/app.css" rel="stylesheet" media="screen"/>
+    <link href="../CSS/app.css" rel="stylesheet" media="screen"/>
     <title>Passion Lecture</title>
 </head>
 
