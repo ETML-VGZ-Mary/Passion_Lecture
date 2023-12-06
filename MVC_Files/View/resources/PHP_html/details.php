@@ -29,12 +29,16 @@
 <body>
 
     <header>
-        <div class="container-header">
+
+        <?php
+            include("header.inc.php");
+        ?>
+        <!--<div class="container-header">
             <div class="titre-header">
                 <h1>Passion Lecture</h1>
             </div>
             
-            <!-- connexion -->
+        connexion 
             <div class="box-login">
                 <label for="user"></label>
                 <input type="text" name="user" id="user" placeholder="Username">
@@ -54,28 +58,29 @@
                 <a href="#">Contacts</a>
             </div>
             
-        </nav>
+        </nav>-->
     </header>
 
     <div class="container-details">
         <div class="book-name">
-            <h4>Titre du livre</h4>
+            <h2>Titre du livre</h2>
             <a href="#"><img src="../images/icons/modify.png" alt="modify"></a>
             <a href="#"><img src="../images/icons/delete.png" alt="delete"></a>
         </div>
         <div></div>
         <div></div>
         
-        <h4>auteur</h4>
-        <h4>Titre du livre</h4>
-        <h4>Titre du livre</h4>
-        <p>hello</p>
+        <h3 class="profil">Auteur/s - Éditeur/s - aaaa </h3>
+        <h3 class="profil">Résumé</h3>
         
         <!-- <script src="./js/script.js"></script> -->
     </div>
 
     <footer>
-        <p>© Camille Déglise - Guo Yu Wu - Maryline Vougaz - 2024</p>
+        <?php
+            include("footer.inc.php");
+        ?>
+        <!--<p>© Camille Déglise - Guo Yu Wu - Maryline Vougaz - 2024</p>-->
     </footer>
 
 </body>

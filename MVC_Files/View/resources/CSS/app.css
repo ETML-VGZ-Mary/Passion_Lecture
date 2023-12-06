@@ -62,11 +62,24 @@ nav .nav-links a{
 h1{
     color: rgb(0, 48, 73);
 }
+
+h2{
+    font-size: 24px;
+    color:rgb(0, 48, 73);
+    font-family : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 h3{
     font-size: 15px;
     color:rgb(253, 240, 213);
     font-family : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+h3.profil{
+    font-size: 20px;
+    color:rgb(0, 48, 73);
+    font-family : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .box-login{
     display: flex;
     justify-content: end;
