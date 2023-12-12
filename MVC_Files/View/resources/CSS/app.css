@@ -103,3 +103,29 @@ footer{
 .book-name{
     display: flex;
 }
+
+h4{
+    color: rgb(0, 48, 73);
+}
+
+.box-same-category-books{
+    display: flex;
+}
+.box-book{
+    width: 75px;
+    margin: 25px;
+}
+.box-book img{
+    height: 100px;
+}
+.box-book p{
+    font-size: 12px;
+}
+.research-bar{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 100px;
+}
+.research-bar img{
+    height: 100%;
+}

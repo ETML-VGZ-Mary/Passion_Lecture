@@ -15,6 +15,7 @@ include("../../../Model/DATABASE.php");
 $db = new Database();
 $authors = $db->getAllAuthors();
 $books = $db->getAllBooks();
+$categories = $db->getAllCategories();
 ?>
 
 <!DOCTYPE html>
@@ -37,37 +38,37 @@ $books = $db->getAllBooks();
     </header>
 
     <div class="container">
-        <h3>Liste des auteurs</h3>
+        <h4>Liste des livres</h4>
+
+        <!--barre de recherche-->
+        <div class="research-bar">
+            <input type="text" placeholder="Recherche...">
+            <button type="submit"><img src="../Img/icons/research.png" alt="research-icon"></button>
+        </div>
         
         <form action="#" method="post">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Prénom</th>
-                        <th>Nom</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
+            <?php
+                foreach($categories as $categorie) {
                     
-                    foreach($authors as $author) {
+                    echo "<h4>" . $categorie["label"] . "</h4>";
 
-                        // Affichage dynamique des enseignants
-                        echo "<tr>";
-                        echo "<td>" . $author["idAuthor"] . "</td>";
-                        echo "<td>" . $author["firstName"] . "</td>";
-                        echo "<td>" . $author["lastName"] . "</td>";
-                        
-                        
+                    echo "<div class=\"box-same-category-books\">";
 
-                        echo "</tr>";
-                    }
-                    ?>
-                    
-                </tbody>
-            </table>
-            </form>
+                        foreach($books as $book) {
+                        
+                            if($book["idCategory"] == $categorie["idCategory"]){
+                                
+                                echo "<div class=\"box-book\">";
+                                    echo "<a href=\"../views/details.php\"><img src=\"../Img/books/livre01.jpg\" alt=\"image01\"></a>";
+                                    echo "<p>" . $book["title"] . "</p>";
+                                echo "</div>";
+                            }
+                        } 
+
+                    echo "</div>";
+                }    
+            ?>
+        </form>
     </div>
 
     <footer>

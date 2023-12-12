@@ -98,10 +98,10 @@
 
 
         // Appeler la méthode pour avoir le résultat sous forme de tableau
-        $teachers = $this->formatData($req);
+        $authors = $this->formatData($req);
 
         // retour tous les enseignants
-        return $teachers;
+        return $authors;
     }
 
     
@@ -118,12 +118,30 @@
 
 
         // Appeler la méthode pour avoir le résultat sous forme de tableau
-        $teachers = $this->formatData($req);
+        $books = $this->formatData($req);
 
         // retour tous les enseignants
-        return $teachers;
+        return $books;
     }
 
+    /**
+     * Récupère la liste de tous les livres de la BD
+     */
+    public function getAllCategories(){
+
+        // Avoir la requête sql
+        $query = "SELECT * FROM t_category";
+
+        // Appeler la méthode pour executer la requête
+        $req = $this->querySimpleExecute($query);
+
+
+        // Appeler la méthode pour avoir le résultat sous forme de tableau
+        $categories = $this->formatData($req);
+
+        // retour tous les enseignants
+        return $categories;
+    }
 
 
 
