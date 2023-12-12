@@ -14,7 +14,6 @@ include("../../../Model/DATABASE.php");
 
 $db = new Database();
 $authors = $db->getAllAuthors();
-$books = $db->getAllBooks();
 ?>
 
 <!DOCTYPE html>
