@@ -59,19 +59,39 @@
 
     <div class="container-details">
         <div class="book-name">
-            <h4>Titre du livre</h4>
-            <a href="#"><img src="../images/icons/modify.png" alt="modify"></a>
-            <a href="#"><img src="../images/icons/delete.png" alt="delete"></a>
+            <h2>
+                * Titre du livre *
+                <a href="#"><img src="../Img/icons/modify.png" alt="modify"></a>
+                <a href="#"><img src="../Img/icons/delete.png" alt="delete"></a>
+            </h2>
         </div>
-        <div></div>
-        <div></div>
-        
-        <h4>auteur</h4>
-        <h4>Titre du livre</h4>
-        <h4>Titre du livre</h4>
-        <p>hello</p>
-        
+
+        <div class="infoBook">
+            <!-- insert tag && nb pages -->
+            <h3>auteur - éditeur - aaaa</h3>
+            <h4>Résumé</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <a class="extractBook">Extrait du livre</a>
+        </div>
+
         <!-- <script src="./js/script.js"></script> -->
+        
     </div>
 
     <footer>
