@@ -15,11 +15,16 @@
                 
                 <p>
                     <label for="title" >Titre :</label>
-                    <input class="inputBook" type="text" name="title" id="title" value="">
+                    <input type="text" name="title" id="title" value="">
                 </p>
                 <p>
-                    <label for="author" >Auteur/s :</label>
-                    <input class="inputBook" type="text" name="author" id="author" value="">
+                    <label for="nameAuthor" >Nom auteur :</label>
+                    <input type="text" name="nameAuthor" id="nameAuthor" value="">
+                <p>
+                    <label for="firstNameAuthor"> Prénom auteur :</label>
+                    <input type="text" name="firstNameAuthor" id="firstNameAuthor" value="">
+                </p>
+                    
                 </p>
                 <p> <!-- UTILISER LA METHODE APPROPRIÉE POUR LA LISTE DES CATEGORIES-->
                     <label  for="category">Catégories :</label>
