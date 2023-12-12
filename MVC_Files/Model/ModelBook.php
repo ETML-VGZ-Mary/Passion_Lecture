@@ -1,0 +1,264 @@
+<?php
+Class ModelBook{
+
+    // Variable de classe
+    private $connector;
+
+    /**
+     * Fonction pour se connecter via PDO et utiliser la variable de classe $connector
+     * Utilise un trycatch pour renvoyer une erreur dans la variable $e
+     */
+    public function __construct(){
+        try{
+            $this->connector = new PDO('mysql:host=localhost:6033;dbname=db_nickname;charset=utf8', 'root', 'root');
+            //echo "DB connectée";
+        }
+        catch (PDOException $e)
+        {
+            die('Erreur :' . $e->getMessage());
+        }
+    }
+
+    /**
+     * Fonction pour exécuter une requête simple en utilisant la méthode query 
+     * Utiliser uniquement sans paramètres
+     */
+    private function querySimpleExecute($query){
+
+        $req = $this->connector->query($query);
+        return $req;
+    }
+
+        /**
+     * Fonction pour exéctuer une requête avec des concaténations
+     * Importance d'utiliser le prépare car protections contre injections SQL
+     */
+    private function queryPrepareExecute($query, $binds){
+        
+        $req = $this->connector->prepare($query);
+        foreach($binds as $bind) {
+            $req->bindValue($bind[0], $bind[1], $bind[2]);
+        }
+        $req->execute();
+        return $req;
+    }
+
+        /**
+     * Méthode pour traiter les données pour les retourner 
+     * en tableau associatif (avec PDO::FETCH_ASSOC)
+     */
+    private function formatData($req){
+        return $req->fetchALL(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * Méthode qui récupère la liste de toutes les catégories de la BD
+     * Utilisée dans les pages "Ajouter un livre", "Modifier un livre"
+     */
+    public function getAllCategories()
+    {
+        // Récupère les données sur la table catégories avec une requête sql
+        $query = "SELECT * FROM t_category;";
+
+        //appeler la méthode pour executer la requête
+        $req = $this->querySimpleExecute($query);
+
+        //Retourne dans un tableau les données des catégories
+        $categories = $this->formatData($req);
+        
+        return $categories;
+
+    }
+
+    /**
+     * Méthode pour récupérer la liste de tous les auteurs de la DB
+     */
+    public function getAllAuthors()
+    {
+        // Récupère les données sur la table auteur avec une requête sql
+        $query = "SELECT * FROM t_author;";
+
+        //appeler la méthode pour executer la requête
+        $req = $this->querySimpleExecute($query);
+
+        //Retourne dans un tableau les données des auteurs
+        $authors = $this->formatData($req);
+        
+        return $authors;
+
+    }
+
+     /**
+     * Méthode pour récupérer la liste de tous les livres de la DB
+     * Utilisée dans la page "Listes des ouvrages", dans la page "Accueil"
+     */
+    public function getAllBooks()
+    {
+        // Récupère les données sur la table livre avec une requête sql
+        $query = "SELECT * FROM t_book;";
+
+        //appeler la méthode pour executer la requête
+        $req = $this->querySimpleExecute($query);
+
+        //Retourne dans un tableau les données des livres
+        $books = $this->formatData($req);
+        
+        return $books;
+
+    }
+
+    /**
+     * Méthode qui récupère la liste des informations pour 1 livre
+     * Prend en argument l'ID du livre
+     * Doit être associée à un $_GET dans la page concernée
+     * Utilisée dans la page "Détail d'un livre"
+     */
+    public function getOneBook($id){
+        // Récupère les données sur la table livre avec une requête sql
+        // en utilisant son ID
+        $query = "SELECT * FROM t_book WHERE idbook = :id"; 
+        $binds = [
+            ['id', $id, PDO::PARAM_INT]
+        ];
+
+        //appeler la méthode pour executer la requête
+        $req = $this->queryPrepareExecute($query,$binds);
+
+        //Retourne dans un tableau associatif à une seule 
+        //entrée les données d'un livre
+        $book =$this->formatData($req);
+        
+        //Retourne la première (et unique) entrée du tableau
+        return $book[0];
+    }
+
+
+
+    /**
+     * Méthode pour insérer les données d'un nouveau livre
+     * Prend en argument les données du $_POST de la page qui l'appelle
+     * Utilisée dans la page "Ajouter un livre"
+     */
+    public function addBook($data)
+    {
+        //Ajout des données de $_POST ($data) dans de nouvelles variables
+        //pour des questions de lisibilité. 
+        $title = $data["title"];
+        $nbPage = $data["page"];
+        $editor = $data["editor"];
+        $yearEdit = $data["yearEdit"];
+        $pictureCover = $data["pictureCover"];
+        $bookExtract = $data["bookExtract"];
+        $resume = $data["resume"];
+        $fkAuthor = $data["author"];
+        $fkCategory = $data["category"];
+
+        //Requête sur la db pour insérer les nouvelles données avec prepare
+        //:xxx == étiquette 
+        $query = "INSERT INTO t_book(title, nbPage , editor, 
+        yearEdit, pictureCover, bookExtract, `resume` fkCategory, fkAuthor)
+        VALUES(:title, :nbPage$, :editor, :yearEdit, :pictureCover, :bookExtract, :`resume` :category, :author)";
+
+        //Liasion des variables avec le marqueur 
+        $binds = [
+            ['title', $title, PDO::PARAM_STR],
+            ['nbPage', $nbPage::PARpageTR],
+            ['editor', $editor, PDO::PARAM_STR],
+            ['yearEdit', $yearEdit, PDO::PARAM_INT],
+            ['pictureCover', $pictureCover, PDO::PARAM_STR],
+            ['bookExtract', $bookExtract, PDO::PARAM_STR],
+            ['resume', $resume, PDO::PARAM_STR],
+            ['category', $fkCategory, PDO::PARAM_INT],
+            ['author', $fkAuthor, PDO::PARAM_INT]
+        ];
+        $this->queryPrepareExecute($query, $binds);
+
+    }
+
+
+
+    /**
+     * Méthode pour modifier les données d'un livre déjà existant
+     * Prend en arguement les données du $_POST de la page qui l'appelle
+     * Fonctionne avec un prepare-query
+     * Utilisée dans la page "Modifier un livre"
+     */
+
+    public function updateBook($data)
+    {
+         //Ajout des données de $_POST ($data) dans de nouvelles variables
+        //pour des questions de lisibilité. 
+        $title = $data["title"];
+        $nbPage = $data["page"];
+        $editor = $data["editor"];
+        $yearEdit = $data["yearEdit"];
+        $pictureCover = $data["pictureCover"];
+        $bookExtract = $data["bookExtract"];
+        $resume = $data["resume"];
+        $fkAuthor = $data["author"];
+        $fkCategory = $data["category"];
+
+         //Requête sur la db pour modifier les nouvelles données avec prepare
+        //:xxx == étiquette 
+        $query = "UPDATE t_book
+                  SET title = :title, 
+                      nbPage = :nbPage,          
+                      editor = :editor,
+                      yearEdit = :yearEdit, 
+                      pictureCover = :pictureCover, 
+                      bookExtract = :bookExtract,
+                      `resume` = :`resume`,
+                      fkAuthor = :fkAuthor,
+                      fkCategory = :fkCategory
+                  WHERE idBook = ". $data['idBook'] . ";";
+        
+        //Liasion des variables avec le marqueur 
+        $binds = [
+            ['title', $title, PDO::PARAM_STR],
+            ['nbPage', $nbPage::PARpageTR],
+            ['editor', $editor, PDO::PARAM_STR],
+            ['yearEdit', $yearEdit, PDO::PARAM_INT],
+            ['pictureCover', $pictureCover, PDO::PARAM_STR],
+            ['bookExtract', $bookExtract, PDO::PARAM_STR],
+            ['resume', $resume, PDO::PARAM_STR],
+            ['author', $fkAuthor, PDO::PARAM_INT],
+            ['category', $fkCategory, PDO::PARAM_INT]
+        ];
+        $this->queryPrepareExecute($query, $binds);
+    }
+
+
+
+    /**
+     * Fonction pour supprimer dans la base de donnée un livre 
+     * Prend en paramètre l'ID du livre sélectionné 
+     */
+    public function deleteBook($id)
+    {
+        $query = "DELETE FROM t_teacher WHERE idTeacher = :id";
+        $binds = [
+            ['id', $id, PDO::PARAM_INT]
+        ];
+        $this->queryPrepareExecute($query, $binds);
+        
+    }
+
+
+
+     
+
+
+
+
+
+
+
+
+
+}
+   
+
+
+?>
+
+
