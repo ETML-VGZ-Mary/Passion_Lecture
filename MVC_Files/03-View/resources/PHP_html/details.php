@@ -7,12 +7,12 @@
 
 <?php
 // connexion à la BD
-//include("./DATABASE.php");
+include("../../../01-Model/DATABASE.php");
 
-//$db = new Database();
-//$teachers = $db->getAllTeachers();
+$db = new Database();
+$book = $db->getOneBook($_GET["idBook"]);
 
-//session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -59,39 +59,37 @@
 
     <div class="container-details">
         <div class="book-name">
-            <h2>
-                * Titre du livre *
-                <a href="#"><img src="../Img/icons/modify.png" alt="modify"></a>
-                <a href="#"><img src="../Img/icons/delete.png" alt="delete"></a>
-            </h2>
-        </div>
+            <?php
+                $html += "<h2> * Titre du livre * <a href=\"#\"><img src=\"../Img/icons/modify.png\" alt=\"modify\"></a>
+                <a href=\"\"><img src=\"../Img/icons/delete.png\" alt=\"delete\"></a>\"</h2>";
+                $html+= "</div>";
 
-        <div class="infoBook">
-            <!-- insert tag && nb pages -->
-            <h3>auteur - éditeur - aaaa</h3>
-            <h4>Résumé</h4>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
-                in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-                cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-            <a class="extractBook">Extrait du livre</a>
-        </div>
-
-        <!-- <script src="./js/script.js"></script> -->
-        
+                $html+= "<div class=\"infoBook\">";
+                //insert tag && nb pages
+                $html+= "<h3>auteur - éditeur - aaaa</h3>
+                <h4>Résumé</h4>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                    laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit 
+                    in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+                    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <a class=\"extractBook\" href=\"#\">Extrait du livre</a>";
+                $html+= "</div>";
+                echo $html;
+                //<script src="./js/script.js"></script>
+            ?>
     </div>
 
     <footer>

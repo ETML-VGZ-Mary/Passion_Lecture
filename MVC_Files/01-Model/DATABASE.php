@@ -84,8 +84,49 @@
         $req->closeCursor();
     }
 
-
+    /**
+     * Récupère la liste de tous les livres de la BD
+     */
+    public function getAllBooks(){
+ 
+        // Avoir la requête sql
+        $query = "SELECT * FROM t_book";
+ 
+        // Appeler la méthode pour executer la requête
+        $req = $this->querySimpleExecute($query);
+ 
+ 
+        // Appeler la méthode pour avoir le résultat sous forme de tableau
+        $books = $this->formatData($req);
+ 
+        // retour tous les enseignants
+        return $books;
+    }
     
+    /**
+     * Méthode qui récupère la liste des informations pour 1 livre
+     * Prend en argument l'ID du livre
+     * Doit être associée à un $_GET dans la page concernée
+     * Utilisée dans la page "Détail d'un livre"
+     */
+    public function getOneBook($id){
+        // Récupère les données sur la table livre avec une requête sql
+        // en utilisant son ID
+        $query = "SELECT * FROM t_book WHERE idbook = :id";
+        $binds = [
+            ['id', $id, PDO::PARAM_INT]
+        ];
+ 
+        //appeler la méthode pour executer la requête
+        $req = $this->queryPrepareExecute($query,$binds);
+ 
+        //Retourne dans un tableau associatif à une seule
+        //entrée les données d'un livre
+        $book =$this->formatData($req);
+       
+        //Retourne la première (et unique) entrée du tableau
+        return $book[0];
+    }
     
 
 
