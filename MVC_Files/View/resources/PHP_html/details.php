@@ -12,7 +12,7 @@ include("../../../Model/ModelAuthor.php");
 
 $book = new ModelBook();
 $auteur = new ModelAuthor();
-$book = $book->getOneBook($book["idBook"]);
+$bookPage = $book->getOneBook($bookPage["idBook"]);
 $cat = $cat->getOneCat($book["idCategory"]);
 //$auteur = $auteur->getOneAuthor($book["idBook"]);
 
