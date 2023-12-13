@@ -10,11 +10,12 @@
 
 <?php
 // connexion à la BD
-include("../../../Model/DATABASE.php");
-
-$db = new Database();
+include("../../../Model/ModelAuthor.php");
+include("../../../Model/ModelBook.php");
+$db = new ModelAuthor();
+$db2 = new ModelBook();
 $authors = $db->getAllAuthors();
-$books = $db->getAllBooks();
+$books = $db2->getAllBooks();
 ?>
 
 <!DOCTYPE html>
