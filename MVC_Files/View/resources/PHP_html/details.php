@@ -7,12 +7,13 @@
 
 <?php
 // connexion à la BD
-//include("./DATABASE.php");
+include("../../../01-Model/ModelBook.php");
 
-//$db = new Database();
-//$teachers = $db->getAllTeachers();
+$db = new Database();
+$book = $db->getOneBook($book["idBook"]);
+$cat = $db->getOneCat($book["idCategory"]);
 
-//session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -29,16 +30,12 @@
 <body>
 
     <header>
-
-        <?php
-            include("header.inc.php");
-        ?>
-        <!--<div class="container-header">
+        <div class="container-header">
             <div class="titre-header">
                 <h1>Passion Lecture</h1>
             </div>
             
-        connexion 
+            <!-- connexion -->
             <div class="box-login">
                 <label for="user"></label>
                 <input type="text" name="user" id="user" placeholder="Username">
@@ -58,29 +55,41 @@
                 <a href="#">Contacts</a>
             </div>
             
-        </nav>-->
+        </nav>
     </header>
 
     <div class="container-details">
         <div class="book-name">
-            <h2>Titre du livre</h2>
-            <a href="#"><img src="../images/icons/modify.png" alt="modify"></a>
-            <a href="#"><img src="../images/icons/delete.png" alt="delete"></a>
-        </div>
-        <div></div>
-        <div></div>
-        
-        <h3 class="profil">Auteur/s - Éditeur/s - aaaa </h3>
-        <h3 class="profil">Résumé</h3>
-        
-        <!-- <script src="./js/script.js"></script> -->
+            <?php
+                $html += "<h2>"; 
+                $html+= $book["title"];
+                $html+= "<a href=\"#\"><img src=\"../Img/icons/modify.png\" alt=\"modify\"></a>
+                <a href=\"\"><img src=\"../Img/icons/delete.png\" alt=\"delete\"></a>\"</h2>";
+                $html+= "</div>";
+
+                $html+= "<div class=\"infoBook\">";
+                $html+= "<h3>";
+                $html+= $book["idCategory"];
+                $html+= $book["nbPage"];
+                $html+= "</h3>";
+                $html+= "<h3>";
+                $html+= $book["author"];
+                $html+= $book["editor"];
+                $html+= $book["yearEdit"];
+                $html+="</h3>";
+                $html+= "<h4>Résumé</h4>";
+                $html+= "<p>";
+                $html+= $book["resume"];
+                $html+= "</p>";
+                $html+= "<a class=\"extractBook\" href=" . $book["bookExtract"]. ">Extrait du livre</a>";
+                $html+= "</div>";
+                echo $html;
+                //<script src="./js/script.js"></script>
+            ?>
     </div>
 
     <footer>
-        <?php
-            include("footer.inc.php");
-        ?>
-        <!--<p>© Camille Déglise - Guo Yu Wu - Maryline Vougaz - 2024</p>-->
+        <p>© Camille Déglise - Guo Yu Wu - Maryline Vougaz - 2024</p>
     </footer>
 
 </body>
