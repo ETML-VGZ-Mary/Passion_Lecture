@@ -13,7 +13,7 @@ include("../../../Model/ModelAuthor.php");
 $book = new ModelBook();
 $auteur = new ModelAuthor();
 $book = $book->getOneBook($book["idBook"]);
-$cat = $cat->getOneCat($bookPage["idCategory"]);
+$cat = $cat->getOneCat($book["idCategory"]);
 
 session_start();
 ?>
@@ -25,7 +25,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../css/app.css" rel="stylesheet" media="screen"/>
+    <link href="../CSS/appMary.css" rel="stylesheet" media="screen"/>
     <title>Passion Lecture</title>
 </head>
 
