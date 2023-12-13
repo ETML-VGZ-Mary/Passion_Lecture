@@ -25,11 +25,10 @@
     </div>
     <nav>
         <div class="nav-links">
-            <a href="../views/index.php">Accueil</a>
-            <a href="../views/liste.php">Liste</a>
-            <a href="#">Ajout</a>
+            <a href="../PHP_html/index.php">Accueil</a>
+            <a href="../PHP_html/liste.php">Liste</a>
+            <a href="../PHP_html/addBook.inc.php">Ajout</a>
             <a href="#">Profil</a>
-            <a href="#">Contacts</a>
         </div>
         
     </nav>
