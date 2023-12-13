@@ -61,7 +61,7 @@ $categories = $db2->getAllCategories();
                             if($book["idCategory"] == $categorie["idCategory"]){
                                 
                                 echo "<div class=\"box-book\">";
-                                    echo "<a href=\"../views/details.php\"><img src=\"../Img/books/livre01.jpg\" alt=\"image01\"></a>";
+                                    echo "<a href=\"details.php\"><img src=\"../Img/books/livre01.jpg\" alt=\"image01\"></a>";
                                     echo "<p>" . $book["title"] . "</p>";
                                 echo "</div>";
                             }

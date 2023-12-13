@@ -94,6 +94,24 @@ Class ModelBook extends ModelMain{
         return $book[0];
     }
 
+    /*
+    Guo Yu tente un getOneBook
+    */
+    public function getOneBookGW($id){
+        // TODO: avoir la requête sql pour 1 book (utilisation de l'id)
+        $query = "SELECT * FROM t_book WHERE idBook = $id";
+
+        // TODO: appeler la méthode pour executer la requête
+        $req = $this->querySimpleExecute($query);
+        // utilisation de [queryPrepareExecute($query, $binds)] ?
+
+        // TODO: appeler la méthode pour avoir le résultat sous forme de tableau
+        $oneBook = $this->formatData($req);
+
+        // TODO: retour l'enseignant
+        return $oneBook[0];
+    }
+
 
 
     /**
