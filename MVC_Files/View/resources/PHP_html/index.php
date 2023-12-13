@@ -6,27 +6,53 @@
 -->
 
 <?php
+// connexion à la BD
+//include("./DATABASE.php");
 
-// Appel getBooks du controller book
-//include()
-//$controllerBook = new ControllerBook();
-//$books = $controllerBook->getBook();
+//$db = new Database();
+//$teachers = $db->getAllTeachers();
 
-//include('View/resources/PHP_html/homePage.inc.php');
-
-
+//session_start();
 ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/app.css" rel="stylesheet" media="screen"/>
+    <title>Passion Lecture</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="container-header">
+            <div class="titre-header">
+                <h1>Passion Lecture</h1>
+            </div>
+            
+            <!-- connexion -->
+            <div class="box-login">
+                <label for="user"></label>
+                <input type="text" name="user" id="user" placeholder="Username">
+                <label for="password"></label>
+                <input type="password" name="password" id="password" placeholder="Password">
+                <button type="submit" class="btn btn-login">Login</button>
+            </div>
+            
 
         </div>
         <nav>
             <div class="nav-links">
                 <a href="../PHP_html/index.php">Accueil</a>
                 <a href="../PHP_html/liste.php">Liste</a>
-                <a href="#">Ajout</a>
+                <a href="../PHP_html/addBook.inc.php">Ajout</a>
                 <a href="#">Profil</a>
                 <a href="#">Contacts</a>
             </div>
-            
         </nav>
     </header>
 
@@ -60,3 +86,4 @@
 
 </body>
 
+</html>
