@@ -1,0 +1,417 @@
+.ouvrage {
+    background-color: #fdf0d5;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .ouvrage .div {
+    background-color: #fdf0d5;
+    width: 1440px;
+    height: 1274px;
+    position: relative;
+  }
+  
+  .ouvrage .overlap {
+    position: absolute;
+    width: 1440px;
+    height: 127px;
+    top: 311px;
+    left: 0;
+    background-color: #003049;
+  }
+  
+  .ouvrage .text-wrapper {
+    position: absolute;
+    width: 172px;
+    height: 39px;
+    top: 43px;
+    left: 1148px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #fdf0d5;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .ouvrage .text-wrapper-2 {
+    position: absolute;
+    width: 356px;
+    height: 57px;
+    top: 34px;
+    left: 110px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #fdf0d5;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .ouvrage .overlap-group {
+    position: absolute;
+    width: 1440px;
+    height: 169px;
+    top: 1105px;
+    left: 0;
+    background-color: #003049;
+  }
+  
+  .ouvrage .p {
+    position: absolute;
+    width: 780px;
+    height: 39px;
+    top: 64px;
+    left: 110px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #fdf0d5;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .ouvrage .overlap-2 {
+    position: absolute;
+    width: 1440px;
+    height: 311px;
+    top: 0;
+    left: 0;
+    background-color: #669bbc;
+  }
+  
+  .ouvrage .overlap-3 {
+    position: absolute;
+    width: 190px;
+    height: 57px;
+    top: 221px;
+    left: 1234px;
+  }
+  
+  .ouvrage .rectangle {
+    width: 190px;
+    height: 56px;
+    top: 1px;
+    left: 0;
+    background-color: #003049;
+    position: absolute;
+    border-radius: 15px;
+  }
+  
+  .ouvrage .text-wrapper-3 {
+    position: absolute;
+    width: 159px;
+    height: 56px;
+    top: 0;
+    left: 15px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #fdf0d5;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .ouvrage .overlap-4 {
+    position: absolute;
+    width: 195px;
+    height: 57px;
+    top: 221px;
+    left: 1015px;
+  }
+  
+  .ouvrage .rectangle-2 {
+    width: 190px;
+    height: 56px;
+    top: 1px;
+    left: 5px;
+    background-color: #00304980;
+    position: absolute;
+    border-radius: 15px;
+  }
+  
+  .ouvrage .text-wrapper-4 {
+    position: absolute;
+    width: 195px;
+    height: 56px;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #fdf0d5;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .ouvrage .overlap-5 {
+    position: absolute;
+    width: 195px;
+    height: 57px;
+    top: 221px;
+    left: 801px;
+  }
+  
+  .ouvrage .text-wrapper-5 {
+    position: absolute;
+    width: 699px;
+    height: 96px;
+    top: 106px;
+    left: 37px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #003049;
+    font-size: 75px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .ouvrage .div-wrapper {
+    position: absolute;
+    width: 140px;
+    height: 36px;
+    top: 552px;
+    left: 135px;
+    background-color: #c1121f80;
+    border-radius: 15px;
+  }
+  
+  .ouvrage .text-wrapper-6 {
+    position: absolute;
+    width: 93px;
+    height: 24px;
+    top: 5px;
+    left: 23px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #780000;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .ouvrage .rectangle-3 {
+    width: 313px;
+    height: 396px;
+    top: 499px;
+    left: 1036px;
+    background-color: #669bbc80;
+    position: absolute;
+    border-radius: 15px;
+  }
+  
+  .ouvrage .text-wrapper-7 {
+    position: absolute;
+    width: 359px;
+    height: 70px;
+    top: 473px;
+    left: 96px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #003049;
+    font-size: 48px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .ouvrage .overlap-6 {
+    position: absolute;
+    width: 875px;
+    height: 358px;
+    top: 667px;
+    left: 110px;
+  }
+  
+  .ouvrage .text-wrapper-8 {
+    position: absolute;
+    width: 154px;
+    height: 48px;
+    top: 0;
+    left: 0;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #003049;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .ouvrage .text-wrapper-9 {
+    position: absolute;
+    width: 171px;
+    height: 48px;
+    top: 310px;
+    left: 704px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #c1121f;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    text-decoration: underline;
+  }
+  
+  .ouvrage .text-wrapper-10 {
+    position: absolute;
+    width: 866px;
+    height: 287px;
+    top: 33px;
+    left: 9px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #003049;
+    font-size: 20px;
+    text-align: justify;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .ouvrage .text-wrapper-11 {
+    position: absolute;
+    width: 279px;
+    height: 46px;
+    top: 546px;
+    left: 302px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #003049;
+    font-size: 22px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .ouvrage .text-wrapper-12 {
+    position: absolute;
+    width: 140px;
+    height: 36px;
+    top: 609px;
+    left: 318px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #003049;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .ouvrage .text-wrapper-13 {
+    position: absolute;
+    width: 139px;
+    height: 36px;
+    top: 609px;
+    left: 477px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #003049;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .ouvrage .text-wrapper-14 {
+    position: absolute;
+    width: 79px;
+    height: 34px;
+    top: 905px;
+    left: 1045px;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #780000;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .ouvrage .text-wrapper-15 {
+    position: absolute;
+    width: 189px;
+    height: 44px;
+    top: 605px;
+    left: 110px;
+    font-family: "Inter-Bold", Helvetica;
+    font-weight: 700;
+    color: #003049;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .ouvrage .star {
+    width: 41px;
+    left: 1124px;
+    position: absolute;
+    height: 40px;
+    top: 903px;
+    object-fit: cover;
+  }
+  
+  .ouvrage .img {
+    width: 41px;
+    left: 1165px;
+    position: absolute;
+    height: 40px;
+    top: 903px;
+    object-fit: cover;
+  }
+  
+  .ouvrage .star-2 {
+    width: 42px;
+    left: 1206px;
+    position: absolute;
+    height: 40px;
+    top: 903px;
+    object-fit: cover;
+  }
+  
+  .ouvrage .star-3 {
+    width: 41px;
+    left: 1248px;
+    position: absolute;
+    height: 40px;
+    top: 903px;
+    object-fit: cover;
+  }
+  
+  .ouvrage .star-4 {
+    width: 41px;
+    left: 1289px;
+    position: absolute;
+    height: 40px;
+    top: 903px;
+    object-fit: cover;
+  }
+  
+  .ouvrage .edit {
+    position: absolute;
+    width: 40px;
+    height: 39px;
+    top: 487px;
+    left: 460px;
+    object-fit: cover;
+  }
+  
+  .ouvrage .delete {
+    position: absolute;
+    width: 40px;
+    height: 39px;
+    top: 487px;
+    left: 513px;
+    object-fit: cover;
+  }
+  
