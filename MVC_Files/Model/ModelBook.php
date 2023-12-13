@@ -1,55 +1,17 @@
 <?php
-Class ModelBook{
+ include_once("ModelMain.php");
 
-    // Variable de classe
-    private $connector;
+Class ModelBook extends ModelMain{
+   
 
     /**
      * Fonction pour se connecter via PDO et utiliser la variable de classe $connector
      * Utilise un trycatch pour renvoyer une erreur dans la variable $e
      */
     public function __construct(){
-        try{
-            $this->connector = new PDO('mysql:host=localhost:6033;dbname=db_nickname;charset=utf8', 'root', 'root');
-            //echo "DB connectée";
-        }
-        catch (PDOException $e)
-        {
-            die('Erreur :' . $e->getMessage());
-        }
+        parent::__construct();
     }
 
-    /**
-     * Fonction pour exécuter une requête simple en utilisant la méthode query 
-     * Utiliser uniquement sans paramètres
-     */
-    private function querySimpleExecute($query){
-
-        $req = $this->connector->query($query);
-        return $req;
-    }
-
-        /**
-     * Fonction pour exéctuer une requête avec des concaténations
-     * Importance d'utiliser le prépare car protections contre injections SQL
-     */
-    private function queryPrepareExecute($query, $binds){
-        
-        $req = $this->connector->prepare($query);
-        foreach($binds as $bind) {
-            $req->bindValue($bind[0], $bind[1], $bind[2]);
-        }
-        $req->execute();
-        return $req;
-    }
-
-        /**
-     * Méthode pour traiter les données pour les retourner 
-     * en tableau associatif (avec PDO::FETCH_ASSOC)
-     */
-    private function formatData($req){
-        return $req->fetchALL(PDO::FETCH_ASSOC);
-    }
 
     /**
      * Méthode qui récupère la liste de toutes les catégories de la BD
