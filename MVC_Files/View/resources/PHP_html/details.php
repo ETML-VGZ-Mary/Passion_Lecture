@@ -12,9 +12,8 @@ include("../../../Model/ModelAuthor.php");
 
 $book = new ModelBook();
 $auteur = new ModelAuthor();
-$bookPage = $book->getOneBook($bookPage["idBook"]);
-$cat = $cat->getOneCat($book["idCategory"]);
-//$auteur = $auteur->getOneAuthor($book["idBook"]);
+$book = $book->getOneBook($book["idBook"]);
+$cat = $cat->getOneCat($bookPage["idCategory"]);
 
 session_start();
 ?>

@@ -78,7 +78,7 @@ Class ModelBook extends ModelMain{
     public function getOneBook($id){
         // Récupère les données sur la table livre avec une requête sql
         // en utilisant son ID
-        $query = "SELECT * FROM t_book WHERE idbook = :id"; 
+        $query = "SELECT * FROM t_book WHERE idbook = :id LEFT JOIN t_author ON t_book.authorfirstName = t_author.firstName AND t_book.authorlastName = t_author.lastName"; 
         $binds = [
             ['id', $id, PDO::PARAM_INT]
         ];
@@ -93,8 +93,6 @@ Class ModelBook extends ModelMain{
         //Retourne la première (et unique) entrée du tableau
         return $book[0];
     }
-
-
 
     /**
      * Méthode pour insérer les données d'un nouveau livre
