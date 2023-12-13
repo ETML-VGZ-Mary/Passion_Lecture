@@ -7,11 +7,14 @@
 
 <?php
 // connexion à la BD
-include("../../../01-Model/ModelBook.php");
+include("../../../Model/ModelBook.php");
+include("../../../Model/ModelAuthor.php");
 
-$db = new Database();
-$book = $db->getOneBook($book["idBook"]);
-$cat = $db->getOneCat($book["idCategory"]);
+$book = new ModelBook();
+$auteur = new ModelAuthor();
+$book = $book->getOneBook($book["idBook"]);
+$cat = $cat->getOneCat($book["idCategory"]);
+//$auteur = $auteur->getOneAuthor($book["idBook"]);
 
 session_start();
 ?>
