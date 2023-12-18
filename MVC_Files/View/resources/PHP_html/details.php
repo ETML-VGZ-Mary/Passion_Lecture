@@ -17,7 +17,7 @@ $cat = $cat->getOneCat($book["idCategory"]);
 //$auteur = $auteur->getOneAuthor($book["idBook"]);
 */
 $db3 = new ModelBook();
-$oneBook = $db3->getOneBookGW(1);
+$oneBook = $db3->getOneBookGW(1); // id entrée en "dure"
 /*
 $db4 = new ModelAuthor();
 //$cat = $cat->getOneCat($book["idCategory"]);
@@ -46,41 +46,35 @@ $db4 = new ModelAuthor();
     </header>
 
     <div class="container-details">
-        <di class="book-info">
+        <div class="page-part">
             <div class="book-name">
                 <?php
                     echo"<h2>" . $oneBook["title"] . "</h2>";
                 ?>
-                <a href="#"><img src="../Img/icons/modify.png" alt="modify"></a>
-                <a href=""><img src="../Img/icons/delete.png" alt="delete"></a>
-            </div>
-            <div class="book-name">
-                <h2>catégorie</h2>
-                <h2>nb page</h2>
+                <a href="#"><img class="icon" src="../Img/icons/modify.png" alt="modify"></a>
+                <a href="#"><img class="icon" src="../Img/icons/delete.png" alt="delete"></a>
             </div>
             <div class="book-details">
-                <h2>auteur</h2>
-                <h2>editeur</h2>
-                <h2>années</h2>
+                <h2><?=$oneBook["idCategory"]?></h2>
+                <h2><?=$oneBook["nbPage"]?></h2>
+            </div>
+            <div class="book-info">
+                <h2><?="AUTEUR"?></h2>
+                <h2><?=$oneBook["editor"]?></h2>
+                <h2><?=$oneBook["yearEdit"]?></h2>
             </div>
             <div class="book-resume">
                 <h2>résumé</h2>
                 <p>
-                blablablablablablablablablablablablablablablablablablablablablabla
-                blablablablablablablablablablablablablablablablablablablablablabla
-                blablablablablablablablablablablablablablablablablablablablablabla
-                blablablablablablablablablablablablablablablablablablablablablabla
-                blablablablablablablablablablablablablablablablablablablablablabla
+                    <?=$oneBook["resume"]?>
                 </p>
                 <p>Extrait</p>
             </div>
         </div>
-        <div class="book-img">
-            <img src="../Img/books/livre01.jpg" alt="livre01">
+        <div class="page-part">
+            <img class="book-image" src="../Img/books/livre01.jpg" alt="livre01">
         </div>
-        
 
-            
     </div>
 
     <footer>

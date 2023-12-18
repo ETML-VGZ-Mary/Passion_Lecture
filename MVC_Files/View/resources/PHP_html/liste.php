@@ -10,7 +10,7 @@
 
 <?php
 // connexion à la BD
-include("../../../Model/ModelAuthor.php");
+//include("../../../Model/ModelAuthor.php");
 //$db = new ModelAuthor();
 //$authors = $db->getAllAuthors();
 
