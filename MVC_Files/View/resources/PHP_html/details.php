@@ -73,6 +73,15 @@ $db4 = new ModelAuthor();
         </div>
         <div class="page-part">
             <img class="book-image" src="../Img/books/livre01.jpg" alt="livre01">
+            <div class="grade-display">
+                <p>Note</p>
+                <?php
+                    for($i=0 ; $i < 5; $i++){
+                        echo "<img class=\"icon\" src=\"../Img/icons/star-empty.png\" alt=\"modify\">";
+                    }
+                ?>
+            </div>
+            
         </div>
 
     </div>
