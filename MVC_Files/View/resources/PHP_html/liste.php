@@ -10,7 +10,7 @@
 
 <?php
 // connexion à la BD
-include("../../../Model/ModelAuthor.php");
+//include("../../../Model/ModelAuthor.php");
 //$db = new ModelAuthor();
 //$authors = $db->getAllAuthors();
 
@@ -61,7 +61,7 @@ $categories = $db2->getAllCategories();
                             if($book["idCategory"] == $categorie["idCategory"]){
                                 
                                 echo "<div class=\"box-book\">";
-                                    echo "<a href=\"../views/details.php\"><img src=\"../Img/books/livre01.jpg\" alt=\"image01\"></a>";
+                                    echo "<a href=\"details.php\"><img src=\"../Img/books/livre01.jpg\" alt=\"image01\"></a>";
                                     echo "<p>" . $book["title"] . "</p>";
                                 echo "</div>";
                             }

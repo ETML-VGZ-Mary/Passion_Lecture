@@ -106,14 +106,10 @@ footer{
 }
 
 /*page liste--------------------------------------------*/
-.container-details{
-    margin: 50px;
-}
-.container-details img{
-    height: 25px;
-}
+
 .book-name{
     display: flex;
+    align-items: center;
 }
 
 h4{
@@ -140,4 +136,28 @@ h4{
 }
 .research-bar img{
     height: 100%;
+}
+
+/*page détails livre*/
+.container-details{
+    display: flex;
+    margin: 100px;
+}
+
+.book-image{
+    height: 400px;
+}
+.icon{                                        
+    height: 25px;
+}
+.page-part1{
+    margin-right: 50px;
+}
+.page-part2{
+    margin-left: 50px;
+}
+
+/*page ajout livre*/
+p label{
+    width: 5000px;
 }
