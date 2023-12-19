@@ -39,7 +39,7 @@ include("../../../Model/ModelBook.php");
             <h3>Nouveautés</h3>
             <?php
                 for($i=0; $i<5; $i++){
-                    echo "<a href=\"../PHP_html/details.php?idBook=" . $i+1 . "\"><img src=\"../Img/books/livre0" . $i+1 .".jpg\" alt=\"image01\"></a>";
+                    echo "<a href=\"../PHP_html/details.php?idBook=" . $i+1 . "\"><img src=\"../Img/books/book" . $i+1 .".jpg\" alt=\"image01\"></a>";
                 }
             ?>
         </div>

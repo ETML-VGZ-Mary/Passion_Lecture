@@ -78,7 +78,10 @@ $db4 = new ModelAuthor();
             </div>
         </div>
         <div class="page-part2">
-            <img class="book-image" src="../Img/books/livre01.jpg" alt="livre01">
+            <?php
+                echo "<img class=\"book-image\" src=\"../Img/books/book" . $oneBook["idBook"] . ".jpg\" alt=\"img book " . $oneBook["idBook"] ."\">";
+            ?>
+            
             <div class="grade-display">
                 <p>Note</p>
                 <?php
