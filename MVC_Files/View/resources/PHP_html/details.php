@@ -25,8 +25,8 @@ $db4 = new ModelAuthor();
 //$auteur = $auteur->getOneAuthor($book["idBook"]);
 */
 
-$book = $book->getOneBook($book["idBook"]);
-$cat = $cat->getOneCat($bookPage["idCategory"]);
+//$book = $book->getOneBook($book["idBook"]);
+//$cat = $cat->getOneCat($bookPage["idCategory"]);
 
 
 ?>
