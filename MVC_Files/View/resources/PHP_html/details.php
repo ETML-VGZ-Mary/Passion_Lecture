@@ -18,15 +18,16 @@ $cat = $cat->getOneCat($book["idCategory"]);
 //$auteur = $auteur->getOneAuthor($book["idBook"]);
 */
 $db3 = new ModelBook();
-$oneBook = $db3->getOneBookGW(1); // id entrée en "dure"
+$oneBook = $db3->getOneBookGW($_GET["idBook"]); // id entrée en "dure"
 /*
 $db4 = new ModelAuthor();
 //$cat = $cat->getOneCat($book["idCategory"]);
 //$auteur = $auteur->getOneAuthor($book["idBook"]);
 */
 
-$book = $book->getOneBook($book["idBook"]);
-$cat = $cat->getOneCat($bookPage["idCategory"]);
+//$book = $book->getOneBook($book["idBook"]);
+//$cat = $cat->getOneCat($bookPage["idCategory"]);
+
 
 
 ?>

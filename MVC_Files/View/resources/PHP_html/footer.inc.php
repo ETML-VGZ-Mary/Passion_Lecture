@@ -6,5 +6,5 @@
 -->
 
 <footer>
-        <p>© <a href="camille.deglise@eduvaud.ch">Camille Déglise</a> - <a href="guoyu.wu@eduvaud.ch">Guo Yu Wu</a>- <a href="maryline.vougaz@eduvaud.ch">Maryline Vougaz</a>- 2024</p>
+        <p>© <a href="camille.deglise@eduvaud.ch">Camille Déglise</a> - <a href="guoyu.wu@eduvaud.ch">Guo Yu Wu</a> - <a href="maryline.vougaz@eduvaud.ch">Maryline Vougaz</a> - 2024</p>
 </footer>
