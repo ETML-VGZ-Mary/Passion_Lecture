@@ -147,8 +147,14 @@ h4{
 .book-image{
     height: 400px;
 }
-.icon{
+.icon{                                        
     height: 25px;
+}
+.page-part1{
+    margin-right: 50px;
+}
+.page-part2{
+    margin-left: 50px;
 }
 
 /*page ajout livre*/

@@ -46,7 +46,7 @@ $db4 = new ModelAuthor();
     </header>
 
     <div class="container-details">
-        <div class="page-part">
+        <div class="page-part1">
             <div class="book-name">
                 <?php
                     echo"<h2>" . $oneBook["title"] . "</h2>";
@@ -71,7 +71,7 @@ $db4 = new ModelAuthor();
                 <p>Extrait</p>
             </div>
         </div>
-        <div class="page-part">
+        <div class="page-part2">
             <img class="book-image" src="../Img/books/livre01.jpg" alt="livre01">
             <div class="grade-display">
                 <p>Note</p>
