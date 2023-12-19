@@ -25,8 +25,8 @@ $db4 = new ModelAuthor();
 //$auteur = $auteur->getOneAuthor($book["idBook"]);
 */
 
-$book = $book->getOneBook($book["idBook"]);
-$cat = $cat->getOneCat($bookPage["idCategory"]);
+//$book = $book->getOneBook($book["idBook"]);
+//$cat = $cat->getOneCat($bookPage["idCategory"]);
 
 
 ?>
@@ -60,20 +60,19 @@ $cat = $cat->getOneCat($bookPage["idCategory"]);
                 <a href="#"><img class="icon" src="../Img/icons/delete.png" alt="delete"></a>
             </div>
             <div class="book-details">
-                <h2><?=$oneBook["idCategory"]?></h2>
-                <h2><?=$oneBook["nbPage"]?></h2>
+                <h2><?=$oneBook["idCategory"]?> - Nombres de pages: <?=$oneBook["nbPage"]?></h2>
             </div>
             <div class="book-info">
-                <h2><?="AUTEUR"?></h2>
-                <h2><?=$oneBook["editor"]?></h2>
-                <h2><?=$oneBook["yearEdit"]?></h2>
+                <h2><?=""?> John Doe - </h2>
+                <h2> <?=$oneBook["editor"]?> - </h2>
+                <h2> <?=$oneBook["yearEdit"]?></h2>
             </div>
             <div class="book-resume">
-                <h2>résumé</h2>
-                <p>
+                <h2>Résumé</h2>
+                <p class="resume">
                     <?=$oneBook["resume"]?>
                 </p>
-                <p>Extrait</p>
+                <p class="extrait">Extrait</p>
             </div>
         </div>
         <div class="page-part2">
@@ -82,7 +81,7 @@ $cat = $cat->getOneCat($bookPage["idCategory"]);
                 <p>Note</p>
                 <?php
                     for($i=0 ; $i < 5; $i++){
-                        echo "<img class=\"icon\" src=\"../Img/icons/star-empty.png\" alt=\"modify\">";
+                        echo "<img class=\"star\" src=\"../Img/icons/star-empty.png\" alt=\"modify\">";
                     }
                 ?>
             </div>
