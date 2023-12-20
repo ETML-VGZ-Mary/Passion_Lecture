@@ -6,8 +6,13 @@
 -->
 
 <?php
+//démarre la session pour se souvenir de celui qui se connecte
+session_start();
 
+// détruit la session en cours
+//session_destroy();
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -21,6 +26,7 @@
     <title>Header</title>
 </head>
 
+
 <header>
     <div class="container-header">
         <div class="titre-header">
@@ -28,13 +34,35 @@
         </div>
         
         <!-- connexion -->
-        <div class="box-login">
+
+        <?php
+            echo "<form action=\"../../../Controller/ControllerConnexion.php\" method=\"post\" class=\"box-login\">";
+
+            if (isset($_SESSION['isConnected']) && $_SESSION['isConnected']){
+                    echo "<label>" . $_SESSION["user"] . " (" . $_SESSION['typeUser'] . ")</label>";
+                    echo "<button type=\"submit\" class=\"btn btn-login\">Logout</button>";
+            }else{
+                    echo "<label for=\"user\"></label>";
+                    echo "<input type=\"text\" name=\"user\" id=\"user\" placeholder=\"Username\">";
+                    echo "<label for=\"password\"></label>";
+                    echo "<input type=\"password\" name=\"password\" id=\"password\" placeholder=\"Password\">";
+                    echo "<button type=\"submit\" class=\"btn btn-login\">Login</button>";
+            }
+            echo "</form>";
+
+            //var_dump($_SESSION);
+        ?>
+
+        <!--
+        <form action="validationConnexion.php" method="post" class="box-login">
             <label for="user"></label>
             <input type="text" name="user" id="user" placeholder="Username">
             <label for="password"></label>
             <input type="password" name="password" id="password" placeholder="Password">
             <button type="submit" class="btn btn-login">Login</button>
-        </div>
+        </form>
+        -->
+
         
 
     </div>
