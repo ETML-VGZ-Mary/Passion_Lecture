@@ -39,6 +39,7 @@ $db4 = new ModelAuthor();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/app.css" rel="stylesheet" media="screen"/>
+
     <title>Passion Lecture</title>
 </head>
 
@@ -77,17 +78,15 @@ $db4 = new ModelAuthor();
         </div>
         <div class="page-part2">
             <img class="book-image" src="../Img/books/livre01.jpg" alt="livre01">
-            <div class="grade-display">
-                <p>Note</p>
+             <div class="rating gap-1">
+                <label>Note : </label>
                 <?php
-                    for($i=0 ; $i < 5; $i++){
-                        echo "<img class=\"star\" src=\"../Img/icons/star-empty.png\" alt=\"modify\">";
-                    }
+                for($i=0 ; $i < 5; $i++){
+                    echo "<input type=\"radio\" name=\"rating-" . $i . "\" class=\"mask mask-heart text-red-400\" />";
+                }
                 ?>
             </div>
-            
         </div>
-
     </div>
 
     <footer>
