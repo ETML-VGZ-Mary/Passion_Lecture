@@ -5,7 +5,7 @@
  * Description    :	CSS
  */
 
- body {
+body {
     margin-top: -20px;
     margin-left: 0;
     margin-right: 0;
@@ -53,7 +53,7 @@ nav .nav-links a{
 }
 .bloc02{
     width: 25%;
-    height: 50%;
+    height: 70%;
     padding: 25px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -84,6 +84,7 @@ h3.profil{
 .box-login{
     display: flex;
     justify-content: end;
+    align-items: center;
 }
 
 input, button{

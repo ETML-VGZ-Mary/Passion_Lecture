@@ -12,7 +12,7 @@ include("../../../Model/ModelBook.php");
 //$db = new Database();
 //$teachers = $db->getAllTeachers();
 
-//session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -27,6 +27,7 @@ include("../../../Model/ModelBook.php");
 </head>
 
 <body>
+    
 
     <header>
         <?php
@@ -34,9 +35,23 @@ include("../../../Model/ModelBook.php");
         ?>
     </header>
 
+    <div>
+        <?php
+
+            
+        /*
+            if (isset($_SESSION['isConnected']) && $_SESSION['isConnected']){
+                echo "NON-CONNECTED";
+            }else{
+                echo "CONNECTED";
+            }
+            */
+        ?>
+    </div>
+
     <div class="container-index">
         <div class="bloc01">
-            <h3>Nouveautés</h3>
+            <h4>Nouveautés</h4>
             <?php
                 for($i=0; $i<5; $i++){
                     echo "<a href=\"../PHP_html/details.php?idBook=" . $i+1 . "\"><img src=\"../Img/books/book" . $i+1 .".jpg\" alt=\"image01\"></a>";
@@ -49,10 +64,17 @@ include("../../../Model/ModelBook.php");
                 Bienvenu à "Passion Lecture" !
             </p>
             <p>
-                -------------------------------------------------------------
+                ---------------------------------------------
             </p>
             <p>
-                coucou
+                Cette application a été développée par 3 informaticiens de la FIN2 dans le cadre du projet P_WEB02.
+                Vous pouvez consulter les ouvrages de la biblithèque triés selon le genre.
+            </p>
+            <p>
+                En vous connectant, vous avez la possibilité d'ajouter vos propres livres et les modifier.
+            </p>
+            <p>
+                "Bonne visite !"
             </p>
         </div>
     </div>
