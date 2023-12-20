@@ -6,7 +6,7 @@
  */
 
  body {
-    margin-top: -20px;
+    
     margin-left: 0;
     margin-right: 0;
     margin-bottom: 0;
@@ -68,6 +68,8 @@ h2{
     font-size: 24px;
     color:rgb(0, 48, 73);
     font-family : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 0px;
+    margin-bottom: 25px;
 }
 h3{
     font-size: 15px;
@@ -84,6 +86,15 @@ h3.profil{
 .box-login{
     display: flex;
     justify-content: end;
+}
+
+
+
+.link{
+    color: #FDF0D5;
+}
+.link:hover{
+    color: #C1121F;
 }
 
 input, button{
@@ -153,7 +164,7 @@ h4{
 .book-image{
     height: 400px;
 }
-.icon{                                        
+.star{                                        
     height: 25px;
 }
 .page-part1{
@@ -166,4 +177,27 @@ h4{
 /*page ajout livre*/
 p label{
     width: 5000px;
+}
+
+/*
+
+Page details
+
+*/
+
+img.icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 25px;
+}
+
+.book-details + .book-info{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.book-image{
+    justify-content: right;
 }
