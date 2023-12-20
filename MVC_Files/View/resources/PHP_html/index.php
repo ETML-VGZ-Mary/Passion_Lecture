@@ -7,7 +7,7 @@
 
 <?php
 // connexion à la BD
-//include("./DATABASE.php");
+include("../../../Model/ModelBook.php");
 
 //$db = new Database();
 //$teachers = $db->getAllTeachers();
@@ -29,41 +29,19 @@
 <body>
 
     <header>
-        <div class="container-header">
-            <div class="titre-header">
-                <h1>Passion Lecture</h1>
-            </div>
-            
-            <!-- connexion -->
-            <div class="box-login">
-                <label for="user"></label>
-                <input type="text" name="user" id="user" placeholder="Username">
-                <label for="password"></label>
-                <input type="password" name="password" id="password" placeholder="Password">
-                <button type="submit" class="btn btn-login">Login</button>
-            </div>
-            
-
-        </div>
-        <nav>
-            <div class="nav-links">
-                <a href="../PHP_html/index.php">Accueil</a>
-                <a href="../PHP_html/liste.php">Liste</a>
-                <a href="../PHP_html/addBook.inc.php">Ajout</a>
-                <a href="#">Profil</a>
-                <a href="#">Contacts</a>
-            </div>
-        </nav>
+        <?php
+            include("header.inc.php");
+        ?>
     </header>
 
     <div class="container-index">
         <div class="bloc01">
             <h3>Nouveautés</h3>
-            <a href="../PHP_html/details.php"><img src="../Img/books/livre01.jpg" alt="image01"></a>
-            <a href="../PHP_html/details.php"><img src="../Img/books/livre02.jpg" alt="image02"></a>
-            <a href="../PHP_html/details.php"><img src="../Img/books/livre03.jpg" alt="image03"></a>
-            <a href="../PHP_html/details.php"><img src="../Img/books/livre04.jpg" alt="image04"></a>
-            <a href="../PHP_html/details.php"><img src="../Img/books/livre05.jpg" alt="image05"></a>
+            <?php
+                for($i=0; $i<5; $i++){
+                    echo "<a href=\"../PHP_html/details.php?idBook=" . $i+1 . "\"><img src=\"../Img/books/book" . $i+1 .".jpg\" alt=\"image01\"></a>";
+                }
+            ?>
         </div>
         <div class="bloc02">
             <h3>À propos</h3>
@@ -77,11 +55,12 @@
                 coucou
             </p>
         </div>
-        <!-- <script src="./js/script.js"></script> -->
     </div>
 
     <footer>
-        <p>© Camille Déglise - Guo Yu Wu - Maryline Vougaz - 2024</p>
+        <?php
+            include("footer.inc.php");
+        ?>
     </footer>
 
 </body>
