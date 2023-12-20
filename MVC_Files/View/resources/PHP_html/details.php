@@ -29,7 +29,6 @@ $db4 = new ModelAuthor();
 //$cat = $cat->getOneCat($bookPage["idCategory"]);
 
 
-
 ?>
 
 <!DOCTYPE html>
