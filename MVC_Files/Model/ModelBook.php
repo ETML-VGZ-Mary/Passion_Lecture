@@ -32,6 +32,26 @@ Class ModelBook extends ModelMain{
 
     }
 
+    /*
+    * Méthode qui retourne 1 seule catégorie de la db
+    * Utilisé dans "Détails"
+    */
+    public function getOneCategory($id)
+    {
+        // Récupère les données sur la table catégories avec une requête sql
+        $query = "SELECT label FROM t_category WHERE :id = idCategorie";
+
+            //appeler la méthode pour executer la requête
+            $req = $this->querySimpleExecute($query);
+
+            //Retourne dans un tableau les données des auteurs
+            $category = $this->formatData($req);
+            
+            //Retourne la première (et unique) entrée du tableau
+            return $category;
+
+    }
+
     /**
      * Méthode pour récupérer la liste de tous les auteurs de la DB
      */
