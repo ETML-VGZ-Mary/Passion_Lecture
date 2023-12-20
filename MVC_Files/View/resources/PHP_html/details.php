@@ -18,7 +18,7 @@ $cat = $cat->getOneCat($book["idCategory"]);
 //$auteur = $auteur->getOneAuthor($book["idBook"]);
 */
 $db3 = new ModelBook();
-$oneBook = $db3->getOneBookGW(1); // id entrée en "dure"
+$oneBook = $db3->getOneBookGW($_GET["idBook"]); // id entrée en "dure"
 /*
 $db4 = new ModelAuthor();
 //$cat = $cat->getOneCat($book["idCategory"]);
@@ -77,7 +77,10 @@ $db4 = new ModelAuthor();
             </div>
         </div>
         <div class="page-part2">
-            <img class="book-image" src="../Img/books/livre01.jpg" alt="livre01">
+            <?php
+                echo "<img class=\"book-image\" src=\"../Img/books/book" . $oneBook["idBook"] . ".jpg\" alt=\"img book " . $oneBook["idBook"] ."\">";
+            ?>
+            
             <div class="grade-display">
                 <p>Note</p>
                 <?php
