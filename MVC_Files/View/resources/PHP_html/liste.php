@@ -40,7 +40,7 @@ $categories = $db2->getAllCategories();
     </header>
 
     <div class="container">
-        <h4>Bibliothèque</h4>
+        <h1>Bibliothèque</h1>
 
         <!--barre de recherche-->
         <div class="research-bar">
@@ -73,13 +73,10 @@ $categories = $db2->getAllCategories();
             ?>
         </form>
     </div>
-
     <footer>
         <?php
             include("footer.inc.php");
         ?>
     </footer>
-
 </body>
-
 </html>

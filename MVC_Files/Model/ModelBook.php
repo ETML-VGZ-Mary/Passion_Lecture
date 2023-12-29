@@ -223,7 +223,23 @@ Class ModelBook extends ModelMain{
     }
 
 
+    /*
+     * Fonction qui retourne la liste des 5 derniers livres ajoutés
+     */
+    public function getNLastBooks($nbLastBooks){
+        // TODO: avoir la requête sql pour N derniers livres
+        $query = "SELECT * FROM t_book ORDER BY idBook DESC LIMIT $nbLastBooks";
 
+        // TODO: appeler la méthode pour executer la requête
+        $req = $this->querySimpleExecute($query);
+        // utilisation de [queryPrepareExecute($query, $binds)] ?
+
+        // TODO: appeler la méthode pour avoir le résultat sous forme de tableau
+        $lastBooks = $this->formatData($req);
+
+        // TODO: retour l'enseignant
+        return $lastBooks;
+    }
      
 
 

@@ -30,7 +30,7 @@ if($_SESSION['isConnected'] || !isset($_POST['user']) || !isset($_POST['password
         if ($_SESSION["user"] == $user["login"]){
             if($_SESSION["password"] == $user["passWord"]){
                 $_SESSION['isConnected'] = true;
-
+                $_SESSION["account"] = $user;
                 switch($user["isAdmin"]){
                     case 0 :
                         $_SESSION['typeUser'] = "user";

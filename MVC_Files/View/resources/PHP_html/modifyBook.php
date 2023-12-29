@@ -17,16 +17,18 @@ $bookPage = $book->getOneBook($bookPage["idBook"]);
 $cat = $cat->getOneCat($book["idCategory"]);
 //$auteur = $auteur->getOneAuthor($book["idBook"]);
 */
-$dbBook = new ModelBook();
-$oneBook = $dbBook->getOneBookGW(1); // id entrée en "dure"
-$categories = $dbBook->getAllCategories();
+$db3 = new ModelBook();
+$oneBook = $db3->getOneBookGW(1); // id entrée en "dure"
 /*
 $db4 = new ModelAuthor();
+//$cat = $cat->getOneCat($book["idCategory"]);
 //$auteur = $auteur->getOneAuthor($book["idBook"]);
 */
 
 //$book = $book->getOneBook($book["idBook"]);
 //$cat = $cat->getOneCat($bookPage["idCategory"]);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -38,13 +40,13 @@ $db4 = new ModelAuthor();
     <link href="../CSS/app.css" rel="stylesheet" media="screen"/>
     <title>Ajouter un livre</title>
 </head>
-
 <body>
     <header>
         <?php
             include("header.inc.php");
         ?>
     </header>
+
     <div class="container">
         <h1>Ajouter un livre</h1>
 
@@ -64,15 +66,13 @@ $db4 = new ModelAuthor();
             </div>
                 
             
-            <div class="form-data">
+            <div class="form-data"> <!-- UTILISER LA METHODE APPROPRIÉE POUR LA LISTE DES CATEGORIES-->
                 <label class="accountMetaData" for="category">Catégories :</label>
                 <select name="category" id="category">
-                    <option value="" hidden></option>
-                    <?php
-                        foreach($categories as $category){
-                            echo "<option value=\"" . $category["label"] . "\"> ". $category["label"] . "</option>";
-                        }
-                    ?>
+                    <option value=""></option>
+                    <option value="romance">Romance</option>
+                    <option value="horror">Horreur</option>
+                    <option value="fantasy">Fantaisie</option>
                 </select>
             </div>
             <div class="form-data">
@@ -94,7 +94,7 @@ $db4 = new ModelAuthor();
             </div>
             <div class="form-data">
                 <label class="accountMetaData" for="bookExtract">Extrait du livre :</label>
-                <input type="text" name="bookExtract" id="bookExtract" placeholder="Lien URL vers un extrait" value="">
+                <input type="text" name="bookExtract" id="bookExtract" value="Lien URL vers un extrait">
             </div>
             <div class="form-data">
                 <label class="accountMetaData" for="resume">Résumé :</label>
