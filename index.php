@@ -1,24 +1,16 @@
 <?php
 
-/**
- * ETML
- * Auteur :  Cindy Hardegger
- * Date: 22.01.2019
- * Site web en MVC et orienté objet
+/*
+ *  ETML
+ *  Auteur        :	Déglise Camille - Vougaz Maryline - Wu Guo Yu
+ *  Date          :	31.12.2023
+ *  Description   :	Site web "Passion Lecture" en MVC. index.php appelle le bon controller.
  */
 
-$debug = false;
-
-if ($debug) {
-    error_reporting(E_ALL);
-    ini_set('display_errors', '1');
-
-}
-date_default_timezone_set('Europe/Zurich');
-
-include_once 'controller/Controller.php';
-include_once 'controller/HomeController.php';
-include_once 'controller/CustomerController.php';
+include_once "controller/Controller.php";
+include_once "controller/ControllerDisplayPage.php";
+//include_once 'controller/HomeController.php';
+//include_once 'controller/CustomerController.php';
 
 
 class MainController {
@@ -28,9 +20,10 @@ class MainController {
      */
     public function dispatch() {
 
+        // Si aucun controller, attribut celui par défaut (qui renvoie sur la page d'accueil)
         if (!isset($_GET['controller'])) {
             $_GET['controller'] = 'customer';
-            $_GET['action'] = 'list';
+            $_GET['action'] = 'index';
         }
 
 
@@ -47,14 +40,14 @@ class MainController {
     protected function menuSelected ($controller) {
 
         switch($controller){
-            case 'home':
-                $link = new HomeController();
+            case 'verifyInfoBook':
+                $link = new ControllerDisplayPage();
                 break;
-            case 'customer':
-                $link = new CustomerController();
+            case 'displayPage':
+                $link = new ControllerDisplayPage();
                 break;
             default:
-                $link = new HomeController();
+                $link = new ControllerDisplayPage();
                 break;
         }
 
@@ -68,18 +61,18 @@ class MainController {
      */
     protected function viewBuild($currentPage) {
 
-            $content = $currentPage->display();
+        // sélectionne la bonne page à afficher
+        $content = $currentPage->display();
 
-            include(dirname(__FILE__) . '/view/head.html');
-            include(dirname(__FILE__) . '/view/header.html');
-            include(dirname(__FILE__) . '/view/menu.php');
-            echo $content;
-            include(dirname(__FILE__) . '/view/footer.html');
+        // construction de la page html/php/css
+        include("../Passion_Lecture/view/head.inc.php");
+        include("../Passion_Lecture/view/header.inc.php");
+        echo $content;
+        include("../Passion_Lecture/view/footer.inc.php");
     }
 }
 
-/**
- * Affichage du site internet - appel du contrôleur par défaut
- */
+
+// Affichage du site web - appel du contrôleur par défaut
 $controller = new MainController();
 $controller->dispatch();
