@@ -8,13 +8,12 @@
 <header>
     <div class="container-header">
         <div class="titre-header">
-            <a href="#"><img class="mainLogo" src="../resources/image/icons/mainLogo1.png" alt="mainLogo"></a>
-            <!--<h1>Passion Lecture</h1>-->
+            <a href="index.php?controller=page&action=home"><img class="mainLogo" src="../resources/image/icons/mainLogo1.png" alt="mainLogo"></a>
         </div>
         
         <!-- connexion -->
         <?php
-            echo "<form action=\"../../../Controller/ControllerConnexion.php\" method=\"post\" class=\"box-login\">";
+            echo "<form action=\"controller/ControllerConnexion.php\" method=\"post\" class=\"box-login\">";
 
             if (isset($_SESSION['isConnected']) && $_SESSION['isConnected']){
                 /*utilisateur connecté : affiche son nom + LOGOUT*/
@@ -46,10 +45,10 @@
     </div>
     <nav>
         <div class="nav-links">
-            <a href="index.php?controller=home&action=index">Accueil</a>
-            <a href="index.php?controller=home&action=index">Bibliothèque</a>
-            <a href="index.php?controller=home&action=index">Ajout</a>
-            <a href="index.php?controller=home&action=index">Compte</a>
+            <a href="index.php?controller=page&action=home">Accueil</a>
+            <a href="index.php?controller=page&action=listBook">Bibliothèque</a>
+            <a href="index.php?controller=page&action=addBook">Ajout</a>
+            <a href="index.php?controller=page&action=account">Compte</a>
         </div>
     </nav>
 </header>

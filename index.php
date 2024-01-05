@@ -22,8 +22,8 @@ class MainController {
 
         // Si aucun controller, attribut celui par défaut (qui renvoie sur la page d'accueil)
         if (!isset($_GET['controller'])) {
-            $_GET['controller'] = 'customer';
-            $_GET['action'] = 'index';
+            $_GET['controller'] = 'page';
+            $_GET['action'] = 'home';
         }
 
 
@@ -40,10 +40,10 @@ class MainController {
     protected function menuSelected ($controller) {
 
         switch($controller){
-            case 'verifyInfoBook':
+            case 'validation':
                 $link = new ControllerDisplayPage();
                 break;
-            case 'displayPage':
+            case 'page':
                 $link = new ControllerDisplayPage();
                 break;
             default:

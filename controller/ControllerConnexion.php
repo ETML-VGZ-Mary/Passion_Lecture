@@ -46,13 +46,10 @@ if($_SESSION['isConnected'] || !isset($_POST['user']) || !isset($_POST['password
     }
 }
 
-
-
-
+// var_dump( $_SESSION);
 
 // Redirection vers la page d'accueil
-header("Location: ../View/resources/PHP_html/index.php");
+header("Location: ../index.php");
 exit;
-  //echo "HERE";  
 
 ?>

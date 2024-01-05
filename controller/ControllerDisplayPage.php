@@ -15,51 +15,92 @@ class ControllerDisplayPage extends Controller {
      */
     public function display() {
 
-        //$action = $_GET['action'] . "Action";
+        $action = $_GET['action'] . "Action";
 
-        //return call_user_func(array($this, $action));
+        // Appelle une méthode dans cette classe (ici, ce sera le nom + action (ex: listAction, detailAction, ...))
+        return call_user_func(array($this, $action));
 
-
-        $buffet = $this -> indexAction();
-
-        return $buffet;
     }
 
     /**
-     * Display Index Action
+     * Affiche le contenu de la page Home
      *
      * @return string
      */
-    private function indexAction() {
+    private function homeAction() {
 
         $view = file_get_contents('view/page/home.php');
-
-        //return $view;
-        
+ 
         ob_start();
         eval('?>' . $view);
         $content = ob_get_clean();
 
         return $content;
-
     }
-
     /**
-     * Display Contact Action
+     * Affiche le contenu de la page Home
      *
      * @return string
      */
-    private function contactAction() {
+    private function listBookAction() {
 
-        $view = file_get_contents('view/page/home/contact.php');
-
-
+        $view = file_get_contents('view/page/list.php');
+ 
         ob_start();
         eval('?>' . $view);
         $content = ob_get_clean();
 
         return $content;
     }
+
+    /**
+     * Affiche le contenu de la page Home
+     *
+     * @return string
+     */
+    private function addBookAction() {
+
+        $view = file_get_contents('view/page/addBook.php');
+ 
+        ob_start();
+        eval('?>' . $view);
+        $content = ob_get_clean();
+
+        return $content;
+    }
+
+    /**
+     * Affiche le contenu de la page Informations de compte
+     *
+     * @return string
+     */
+    private function accountAction() {
+
+        $view = file_get_contents('view/page/account.php');
+ 
+        ob_start();
+        eval('?>' . $view);
+        $content = ob_get_clean();
+
+        return $content;
+    }
+
+     /**
+     * Affiche le contenu de la page détails d'un livre
+     *
+     * @return string
+     */
+    private function detailsAction() {
+
+        $view = file_get_contents('view/page/details.php');
+ 
+        ob_start();
+        eval('?>' . $view);
+        $content = ob_get_clean();
+
+        return $content;
+    }
+    
 
         /**
      * Check Form action

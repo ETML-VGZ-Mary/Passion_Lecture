@@ -6,11 +6,10 @@
 -->
 
 <?php
-//démarre la session pour se souvenir de celui qui se connecte
-session_start();
 
 // détruit la session en cours
 //session_destroy();
+session_start();
 ?>
 
 <!DOCTYPE html>
