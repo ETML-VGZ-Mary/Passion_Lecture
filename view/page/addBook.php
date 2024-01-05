@@ -6,27 +6,11 @@
 -->
 
 <?php
-// connexion à la BD
-include("../../../Model/ModelBook.php");
-include("../../../Model/ModelAuthor.php");
-/*
-$book = new ModelBook();
-$auteur = new ModelAuthor();
-
-$bookPage = $book->getOneBook($bookPage["idBook"]);
-$cat = $cat->getOneCat($book["idCategory"]);
-//$auteur = $auteur->getOneAuthor($book["idBook"]);
-*/
+// Modeles
+include("model/ModelBook.php");
+include("model/ModelAuthor.php");
 $dbBook = new ModelBook();
-$oneBook = $dbBook->getOneBookGW(1); // id entrée en "dure"
 $categories = $dbBook->getAllCategories();
-/*
-$db4 = new ModelAuthor();
-//$auteur = $auteur->getOneAuthor($book["idBook"]);
-*/
-
-//$book = $book->getOneBook($book["idBook"]);
-//$cat = $cat->getOneCat($bookPage["idCategory"]);
 ?>
 
 <div class="container">
