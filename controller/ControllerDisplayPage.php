@@ -9,7 +9,7 @@
 class ControllerDisplayPage extends Controller {
 
     /**
-     * Dispatch current action
+     * Fonction qui appelle la bonne fonction selon l'[action] dans l'url
      *
      * @return mixed
      */
@@ -38,7 +38,7 @@ class ControllerDisplayPage extends Controller {
         return $content;
     }
     /**
-     * Affiche le contenu de la page Home
+     * Affiche le contenu de la page bibliothèque
      *
      * @return string
      */
@@ -54,7 +54,7 @@ class ControllerDisplayPage extends Controller {
     }
 
     /**
-     * Affiche le contenu de la page Home
+     * Affiche le contenu de la page ajouter un livre
      *
      * @return string
      */

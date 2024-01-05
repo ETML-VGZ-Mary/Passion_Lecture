@@ -22,7 +22,7 @@ $fiveLastBooks = $dbBook->getNLastBooks(5);
         <div class="newBook">
             <?php
                 foreach($fiveLastBooks as $book){
-                    echo "<a href=\"index.php?controller=page&action=details?idBook=" . $book["idBook"] . "\"><img src=\"../resources/image/books/book" . $book["idBook"] .".jpg\" alt=\"imgBook". $book["idBook"] ."\"></a>";
+                    echo "<a href=\"index.php?controller=page&action=details&idBook=" . $book["idBook"] . "\"><img src=\"../resources/image/books/book" . $book["idBook"] .".jpg\" alt=\"imgBook". $book["idBook"] ."\"></a>";
                 }
             ?>
         </div>

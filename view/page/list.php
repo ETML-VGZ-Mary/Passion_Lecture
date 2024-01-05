@@ -37,7 +37,7 @@ $categories = $db2->getAllCategories();
                         if($book["idCategory"] == $categorie["idCategory"]){
                             
                             echo "<div class=\"box-book\">";
-                                echo "<a href=\"index.php?controller=page&action=home?idBook=" . $book["idBook"] . "\"><img src=\"resources/image/books/book" . $book["idBook"] . ".jpg\" alt=\"image" . $book["idBook"] . " \"></a>";
+                                echo "<a href=\"index.php?controller=page&action=details&idBook=" . $book["idBook"] . "\"><img src=\"resources/image/books/book" . $book["idBook"] . ".jpg\" alt=\"image" . $book["idBook"] . " \"></a>";
                                 echo "<p>" . $book["title"] . "</p>";
                             echo "</div>";
                         }

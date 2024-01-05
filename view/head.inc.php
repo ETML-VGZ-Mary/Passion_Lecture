@@ -23,8 +23,8 @@ session_start();
     <!-- Bootstrap CSS 
     <link href="../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
     
-    <!-- Tailwind CSS 
-    <link href="../resources/tailwind/..." rel="stylesheet"> -->
+    <!-- Tailwind CSS
+    <link href="../resources/tailwind/css/output.css" rel="stylesheet">  -->
 
     <!-- Custom CSS -->
     <link href="../resources/css/app.css" rel="stylesheet">

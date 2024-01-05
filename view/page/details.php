@@ -1,4 +1,4 @@
- <!--
+<!--
     ETML
     Auteur        :	Déglise Camille - Vougaz Maryline - Wu Guo Yu
     Date          :	28.11.2023
@@ -7,27 +7,11 @@
 
 <?php
 // connexion à la BD
-include("../../../Model/ModelBook.php");
-include("../../../Model/ModelAuthor.php");
-/*
-$book = new ModelBook();
-$auteur = new ModelAuthor();
+include("model/ModelBook.php");
+include("model/ModelAuthor.php");
 
-$bookPage = $book->getOneBook($bookPage["idBook"]);
-$cat = $cat->getOneCat($book["idCategory"]);
-//$auteur = $auteur->getOneAuthor($book["idBook"]);
-*/
 $db3 = new ModelBook();
-$oneBook = $db3->getOneBookGW($_GET["idBook"]); // id entrée en "dure"
-/*
-$db4 = new ModelAuthor();
-//$cat = $cat->getOneCat($book["idCategory"]);
-//$auteur = $auteur->getOneAuthor($book["idBook"]);
-*/
-
-//$book = $book->getOneBook($book["idBook"]);
-//$cat = $cat->getOneCat($bookPage["idCategory"]);
-
+$oneBook = $db3->getOneBookGW($_GET["idBook"]);
 
 ?>
 
@@ -37,8 +21,8 @@ $db4 = new ModelAuthor();
             <?php
                 echo"<h2>" . $oneBook["title"] . "</h2>";
             ?>
-            <a href="../PHP_html/modifyBook.php"><img class="icon" src="../Img/icons/modify.png" alt="modify"></a>
-            <a href="#"><img class="icon" src="../Img/icons/delete.png" alt="delete"></a>
+            <a href="#"><img class="icon" src="resources/image/icons/modify.png" alt="modify"></a>
+            <a href="#"><img class="icon" src="resources/image/icons/delete.png" alt="delete"></a>
         </div>
         <div class="book-details">
             <h2><?=$oneBook["idCategory"]?> - Nombres de pages: <?=$oneBook["nbPage"]?></h2>
@@ -59,7 +43,7 @@ $db4 = new ModelAuthor();
     <div class="page-part2">
         
         <?php
-            echo "<img class=\"book-image\" src=\"../Img/books/book" . $oneBook["idBook"] . ".jpg\" alt=\"img book " . $oneBook["idBook"] ."\">";
+            echo "<img class=\"book-image\" src=\"resources/image/books/book" . $oneBook["idBook"] . ".jpg\" alt=\"img book " . $oneBook["idBook"] ."\">";
         ?>
 
         <div class="rating gap-1">
