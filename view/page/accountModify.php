@@ -58,7 +58,7 @@ $oneBook = $db3->getOneBookGW(2); // id entrée en "dure"
             <div class="form-data">
                 <label class="accountMetaData" for="btnSubmit"></label>
                 <div class="endForm">
-                    <input type="submit" name="btnSubmit" id="btnSubmit" value="Enregistrer">
+                    <input class="bg-gray-300 hover:bg-gray-400 h-10 w-16" type="submit" name="btnSubmit" id="btnSubmit" value="Enregistrer">
                 </div>
             </div>
         </form>

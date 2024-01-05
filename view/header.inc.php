@@ -28,7 +28,8 @@
                     echo "<label>" . $_SESSION["user"] . " (" . $_SESSION['typeUser'] . ")</label>";
                 echo "</div>";
                 echo "</a>";
-                echo "<button type=\"submit\" class=\"btn btn-login\">Logout</button>";
+                //echo "<button type=\"submit\" class=\"btn btn-login\">Logout</button>";
+                echo "<button type=\"submit\" class=\"bg-red-300 hover:bg-gray-700\">Logout</button>";
             }else{
                 /*utilisateur non-connecté : USERNAME + PASSWORD + LOGOUT*/
                 echo "<label for=\"user\"></label>";
@@ -36,7 +37,8 @@
                 echo "<label for=\"password\"></label>";
                 echo "<input type=\"password\" name=\"password\" id=\"password\" placeholder=\"Password\">";
                 //echo "<div class=\"endForm\">";
-                echo "<button type=\"submit\" class=\"btn btn-login\">Login</button>";
+                //echo "<button type=\"submit\" class=\"btn btn-login\">Login</button>";
+                echo "<button type=\"submit\" class=\"bg-gray-300 hover:bg-gray-400 h-10 w-16\">Login</button>";
                 //echo "</div>";
             }
             echo "</form>";

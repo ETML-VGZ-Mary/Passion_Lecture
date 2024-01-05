@@ -9,7 +9,7 @@
 
 // détruit la session en cours
 //session_destroy();
-session_start();
+//session_start();
 ?>
 
 <!DOCTYPE html>
@@ -20,14 +20,16 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Passion Lecture</title>
 
+    <!-- Custom CSS -->
+    <link href="../resources/css/app.css" rel="stylesheet">
+
     <!-- Bootstrap CSS 
     <link href="../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
     
-    <!-- Tailwind CSS
-    <link href="../resources/tailwind/css/output.css" rel="stylesheet">  -->
+    <!-- Tailwind CSS -->
+    <link href="../resources/tailwind/css/tailwind.css" rel="stylesheet"> 
 
-    <!-- Custom CSS -->
-    <link href="../resources/css/app.css" rel="stylesheet">
+    
 
 </head>
 

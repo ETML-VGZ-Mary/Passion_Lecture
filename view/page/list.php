@@ -21,7 +21,7 @@ $categories = $db2->getAllCategories();
     <!--barre de recherche-->
     <div class="research-bar">
         <input type="text" placeholder="Recherche...">
-        <button type="submit"><img src="resources/image/icons/research.png" alt="research-icon"></button>
+        <button class="bg-gray-300 hover:bg-gray-400" type="submit"><img src="resources/image/icons/research.png" alt="research-icon"></button>
     </div>
     
     <form action="#" method="post">

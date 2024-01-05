@@ -6,6 +6,9 @@
  * Description   : Controller qui gère l'affichage des pages-web demandées
  */
 
+// Session Start
+session_start();
+
 class ControllerDisplayPage extends Controller {
 
     /**

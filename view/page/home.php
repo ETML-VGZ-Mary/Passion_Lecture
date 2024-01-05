@@ -34,7 +34,7 @@ $fiveLastBooks = $dbBook->getNLastBooks(5);
             Bienvenu à "Passion Lecture" !
         </p>
         <p>
-            ---------------------------------------------
+            ------------------------------------------
         </p>
         <p>
             Cette application a été développée par 3 informaticiens de la FIN2 dans le cadre du projet P_WEB02.

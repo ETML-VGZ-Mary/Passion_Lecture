@@ -9,9 +9,9 @@
 // connexion à la BD
 //include("../../../Model/ModelBook.php");
 //include("ModelAuthor.php");
-include("../Passion_Lecture/model/ModelAuthor.php");
+//include("../Passion_Lecture/model/ModelAuthor.php");
 
-session_start();
+//session_start();
 ?>
 
 <div class="container">
@@ -43,7 +43,7 @@ session_start();
         <div class="form-data">
             <label class="accountMetaData" for="btnSubmit"></label>
             <div class="endForm">
-                <input type="submit" name="btnSubmit" id="btnSubmit" value="Modifier">
+                <input class="bg-gray-300 hover:bg-gray-400 h-12 w-20" type="submit" name="btnSubmit" id="btnSubmit" value="Modifier">
             </div>
         </div>
     </form>

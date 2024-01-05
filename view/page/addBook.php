@@ -70,7 +70,7 @@ $categories = $dbBook->getAllCategories();
         </div>
         <div class="form-data">
             <label class="accountMetaData" for="btnSubmit"></label>
-            <input type="submit" name="btnSubmit" id="btnSubmit" value="Ajouter">
+            <input class="bg-gray-300 hover:bg-gray-400 h-10 w-16" type="submit" name="btnSubmit" id="btnSubmit" value="Ajouter">
         </div>
     </form>
 </div>

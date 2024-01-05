@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "npx tailwindcss -i ./src/input.css -o ./build/style.css --watch"
+    "dev": "npx tailwindcss -i ../css/import.css -o ../css/tailwind.css --watch"
   },
   "devDependencies": {
     "daisyui": "^4.5.0",

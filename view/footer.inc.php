@@ -18,7 +18,6 @@
         </div>
     </footer>
 
-
 </div> <!-- /container -->
 
 <!-- script Bootstrap
