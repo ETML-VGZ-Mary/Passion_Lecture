@@ -46,13 +46,16 @@ $oneBook = $db3->getOneBookGW($_GET["idBook"]);
             echo "<img class=\"book-image\" src=\"resources/image/books/book" . $oneBook["idBook"] . ".jpg\" alt=\"img book " . $oneBook["idBook"] ."\">";
         ?>
 
+        
         <div class="rating gap-1">
             <label>Note : </label>
+
             <?php
             for($i=0 ; $i < 5; $i++){
-                echo "<input type=\"radio\" name=\"rating-" . $i . "\" class=\"mask mask-heart text-red-400\" />";
+                echo "<input type=\"radio\" name=\"rating-3\" value=\" . $i . \" class=\"mask mask-heart bg-red-500\" />";
             }
             ?>
         </div>
+
     </div>
 </div>
