@@ -2,42 +2,42 @@
 
 // dispatch.php?controler=book&action=add
 
-echo "<pre>";
-var_dump($_POST);
-echo "</pre>";
+//echo "<pre>";
+//var_dump($_POST);
+//echo "</pre>";
 
-echo "<pre>";
-var_dump($_GET);
-echo "</pre>";
-
-
-$data = $_POST;
+//echo "<pre>";
+//var_dump($_GET);
+//echo "</pre>";
 
 
-$controler = $_GET["controler"];
-$action = $_GET["action"];
+//$data = $_POST;
 
-if ($controler === "book") {
-    $controlerBook = new ControllerBook();
 
-    if ($action === "add") {
-        $controlerBook->addBook($data);
-    }
+//$controler = $_GET["controler"];
+//$action = $_GET["action"];
 
-    if ($action === "update") {
+//if ($controler === "book") {
+    //$controlerBook = new ControllerBook();
+
+    //if ($action === "add") {
+      //  $controlerBook->addBook($data);
+    //}
+
+    //if ($action === "update") {
         //$controlerBook->updateBook($data);
-    }
-}
+  //  }
+//}
 
-if ($controler === "user") {
+//if ($controler === "user") {
 
     // instancier le user
 
-    if ($action === "add") {
+    //if ($action === "add") {
 
         // appeler la bonne méthode du controlleur user
-        $controlerBook->addBook($data);
-    }
-}
+    //    $controlerBook->addBook($data);
+  //  }
+//}
 
 
