@@ -18,12 +18,12 @@ $cat = $cat->getOneCat($book["idCategory"]);
 //$auteur = $auteur->getOneAuthor($book["idBook"]);
 */
 $db3 = new ModelBook();
-$oneBook = $db3->getOneBookGW(1); // id entrée en "dure"
-/*
+$oneBook = $db3->getOneBook($oneBook["id"]); // id entrée en "dure"
+
 $db4 = new ModelAuthor();
-//$cat = $cat->getOneCat($book["idCategory"]);
-//$auteur = $auteur->getOneAuthor($book["idBook"]);
-*/
+$cat = $cat->getOneCat($book["idCategory"]);
+$auteur = $auteur->getOneAuthor($book["idBook"]);
+
 
 //$book = $book->getOneBook($book["idBook"]);
 //$cat = $cat->getOneCat($bookPage["idCategory"]);
@@ -57,14 +57,14 @@ $db4 = new ModelAuthor();
                 <?php
                     echo"<h2>" . $oneBook["title"] . "</h2>";
                 ?>
-                <a href="#"><img class="icon" src="../Img/icons/modify.png" alt="modify"></a>
+                <a href="addBook.php"><img class="icon" src="../Img/icons/modify.png" alt="modify"></a>
                 <a href="#"><img class="icon" src="../Img/icons/delete.png" alt="delete"></a>
             </div>
             <div class="book-details">
-                <h2><?=$oneBook["idCategory"]?> - Nombres de pages: <?=$oneBook["nbPage"]?></h2>
+                <h2><?=$cat?> - Nombres de pages: <?=$oneBook["nbPage"]?></h2>
             </div>
             <div class="book-info">
-                <h2><?=""?> John Doe - </h2>
+                <h2><?=$auteur?> - </h2>
                 <h2> <?=$oneBook["editor"]?> - </h2>
                 <h2> <?=$oneBook["yearEdit"]?></h2>
             </div>

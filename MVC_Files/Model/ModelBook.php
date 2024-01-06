@@ -214,7 +214,7 @@ Class ModelBook extends ModelMain{
      */
     public function deleteBook($id)
     {
-        $query = "DELETE FROM t_teacher WHERE idTeacher = :id";
+        $query = "DELETE FROM t_book WHERE idBook = :id";
         $binds = [
             ['id', $id, PDO::PARAM_INT]
         ];
