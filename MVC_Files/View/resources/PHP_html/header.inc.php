@@ -70,7 +70,7 @@ session_start();
         <div class="nav-links">
             <a href="../PHP_html/index.php">Accueil</a>
             <a href="../PHP_html/liste.php">Liste</a>
-            <a href="../PHP_html/addBook.inc.php">Ajout</a>
+            <a href="../PHP_html/addBook.php">Ajout</a>
             <a href="#">Profil</a>
         </div>
         
