@@ -9,14 +9,7 @@
 // connexion à la BD
 include("../../../Model/ModelBook.php");
 include("../../../Model/ModelAuthor.php");
-/*
-$book = new ModelBook();
-$auteur = new ModelAuthor();
 
-$bookPage = $book->getOneBook($bookPage["idBook"]);
-$cat = $cat->getOneCat($book["idCategory"]);
-//$auteur = $auteur->getOneAuthor($book["idBook"]);
-*/
 $db3 = new ModelBook();
 $oneBook = $db3->getOneBook($oneBook["id"]); // id entrée en "dure"
 
@@ -24,9 +17,6 @@ $db4 = new ModelAuthor();
 $cat = $cat->getOneCat($book["idCategory"]);
 $auteur = $auteur->getOneAuthor($book["idBook"]);
 
-
-//$book = $book->getOneBook($book["idBook"]);
-//$cat = $cat->getOneCat($bookPage["idCategory"]);
 
 
 ?>
@@ -64,7 +54,7 @@ $auteur = $auteur->getOneAuthor($book["idBook"]);
                 <h2><?=$cat?> - Nombres de pages: <?=$oneBook["nbPage"]?></h2>
             </div>
             <div class="book-info">
-                <h2><?=$auteur?> - </h2>
+                <h2><?=$auteur["firstName"] . " " . $auteur["lastName"] ?> - </h2>
                 <h2> <?=$oneBook["editor"]?> - </h2>
                 <h2> <?=$oneBook["yearEdit"]?></h2>
             </div>

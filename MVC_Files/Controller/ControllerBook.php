@@ -81,9 +81,18 @@ Class ControllerBook {
     public function addBook($datas) {
         $this->checkBook($datas);
         
-        // Appel ModelBook pour INSERT
-        
-        }
+        $modelBook = new ModelBook();
+        $modelBook->addBook($modelBook);
+
+    }
+
+    public function modifyBook($datas){
+        $this->checkBook($datas);
+
+        $modelBook = new ModelBook();
+        $modelBook->updateBook($modelBook);
+
+    }
 
     
 }
