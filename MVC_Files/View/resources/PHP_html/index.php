@@ -6,38 +6,57 @@
 -->
 
 <?php
+// connexion à la BD
+include("../../../Model/ModelBook.php");
 
-// Appel getBooks du controller book
-//include()
-//$controllerBook = new ControllerBook();
-//$books = $controllerBook->getBook();
-
-//include('View/resources/PHP_html/homePage.inc.php');
+//$db = new Database();
+//$teachers = $db->getAllTeachers();
 
 
 ?>
 
-        </div>
-        <nav>
-            <div class="nav-links">
-                <a href="../PHP_html/index.php">Accueil</a>
-                <a href="../PHP_html/liste.php">Liste</a>
-                <a href="#">Ajout</a>
-                <a href="#">Profil</a>
-                <a href="#">Contacts</a>
-            </div>
-            
-        </nav>
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../css/app.css" rel="stylesheet" media="screen"/>
+    <title>Passion Lecture</title>
+</head>
+
+<body>
+    
+
+    <header>
+        <?php
+            include("header.inc.php");
+        ?>
     </header>
+
+    <div>
+        <?php
+
+            
+        /*
+            if (isset($_SESSION['isConnected']) && $_SESSION['isConnected']){
+                echo "NON-CONNECTED";
+            }else{
+                echo "CONNECTED";
+            }
+            */
+        ?>
+    </div>
 
     <div class="container-index">
         <div class="bloc01">
-            <h3>Nouveautés</h3>
-            <a href="../views/details.php"><img src="../Img/books/livre01.jpg" alt="image01"></a>
-            <a href="../views/details.php"><img src="../Img/books/livre02.jpg" alt="image02"></a>
-            <a href="../views/details.php"><img src="../Img/books/livre03.jpg" alt="image03"></a>
-            <a href="../views/details.php"><img src="../Img/books/livre04.jpg" alt="image04"></a>
-            <a href="../views/details.php"><img src="../Img/books/livre05.jpg" alt="image05"></a>
+            <h4>Nouveautés</h4>
+            <?php
+                for($i=0; $i<5; $i++){
+                    echo "<a href=\"../PHP_html/details.php?idBook=" . $i+1 . "\"><img src=\"../Img/books/book" . $i+1 .".jpg\" alt=\"image01\"></a>";
+                }
+            ?>
         </div>
         <div class="bloc02">
             <h3>À propos</h3>
@@ -45,18 +64,27 @@
                 Bienvenu à "Passion Lecture" !
             </p>
             <p>
-                -------------------------------------------------------------
+                ---------------------------------------------
             </p>
             <p>
-                coucou
+                Cette application a été développée par 3 informaticiens de la FIN2 dans le cadre du projet P_WEB02.
+                Vous pouvez consulter les ouvrages de la biblithèque triés selon le genre.
+            </p>
+            <p>
+                En vous connectant, vous avez la possibilité d'ajouter vos propres livres et les modifier.
+            </p>
+            <p>
+                "Bonne visite !"
             </p>
         </div>
-        <!-- <script src="./js/script.js"></script> -->
     </div>
 
     <footer>
-        <p>© Camille Déglise - Guo Yu Wu - Maryline Vougaz - 2024</p>
+        <?php
+            include("footer.inc.php");
+        ?>
     </footer>
 
 </body>
 
+</html>

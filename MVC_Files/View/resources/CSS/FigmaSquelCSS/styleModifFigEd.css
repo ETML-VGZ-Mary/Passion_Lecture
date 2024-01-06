@@ -1,0 +1,449 @@
+.modifier-ouvrage {
+  background-color: #fdf0d5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.modifier-ouvrage .div {
+  background-color: #fdf0d5;
+  width: 1440px;
+  height: 1274px;
+  position: relative;
+}
+
+.modifier-ouvrage .overlap {
+  position: absolute;
+  width: 1440px;
+  height: 127px;
+  top: 311px;
+  left: 0;
+  background-color: #003049;
+}
+
+.modifier-ouvrage .text-wrapper {
+  position: absolute;
+  width: 172px;
+  height: 39px;
+  top: 43px;
+  left: 1148px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #fdf0d5;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.modifier-ouvrage .text-wrapper-2 {
+  position: absolute;
+  width: 356px;
+  height: 57px;
+  top: 34px;
+  left: 110px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #fdf0d5;
+  font-size: 36px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.modifier-ouvrage .overlap-group {
+  position: absolute;
+  width: 1440px;
+  height: 169px;
+  top: 1105px;
+  left: 0;
+  background-color: #003049;
+}
+
+.modifier-ouvrage .p {
+  position: absolute;
+  width: 780px;
+  height: 39px;
+  top: 64px;
+  left: 110px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #fdf0d5;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.modifier-ouvrage .overlap-group-2 {
+  position: absolute;
+  width: 1440px;
+  height: 311px;
+  top: 0;
+  left: 0;
+  background-color: #669bbc;
+}
+
+.modifier-ouvrage .overlap-2 {
+  position: absolute;
+  width: 190px;
+  height: 57px;
+  top: 221px;
+  left: 1234px;
+}
+
+.modifier-ouvrage .rectangle {
+  position: absolute;
+  width: 190px;
+  height: 56px;
+  top: 1px;
+  left: 0;
+  background-color: #003049;
+  border-radius: 15px;
+}
+
+.modifier-ouvrage .text-wrapper-3 {
+  position: absolute;
+  width: 190px;
+  height: 56px;
+  top: 0;
+  left: 0;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #fdf0d5;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.modifier-ouvrage .overlap-3 {
+  position: absolute;
+  width: 195px;
+  height: 57px;
+  top: 221px;
+  left: 1015px;
+}
+
+.modifier-ouvrage .rectangle-2 {
+  position: absolute;
+  width: 190px;
+  height: 56px;
+  top: 1px;
+  left: 5px;
+  background-color: #00304980;
+  border-radius: 15px;
+}
+
+.modifier-ouvrage .text-wrapper-4 {
+  position: absolute;
+  width: 195px;
+  height: 56px;
+  top: 0;
+  left: 0;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #fdf0d5;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.modifier-ouvrage .overlap-4 {
+  position: absolute;
+  width: 195px;
+  height: 57px;
+  top: 221px;
+  left: 801px;
+}
+
+.modifier-ouvrage .text-wrapper-5 {
+  position: absolute;
+  width: 699px;
+  height: 96px;
+  top: 106px;
+  left: 37px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #003049;
+  font-size: 75px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.modifier-ouvrage .overlap-5 {
+  position: absolute;
+  width: 195px;
+  height: 57px;
+  top: 995px;
+  left: 1134px;
+}
+
+.modifier-ouvrage .rectangle-3 {
+  position: absolute;
+  width: 190px;
+  height: 56px;
+  top: 1px;
+  left: 3px;
+  background-color: #003049;
+  border-radius: 15px;
+}
+
+.modifier-ouvrage .rectangle-4 {
+  position: absolute;
+  width: 558px;
+  height: 35px;
+  top: 560px;
+  left: 438px;
+  background-color: #669bbc66;
+  border-radius: 15px;
+}
+
+.modifier-ouvrage .rectangle-5 {
+  position: absolute;
+  width: 558px;
+  height: 35px;
+  top: 613px;
+  left: 438px;
+  background-color: #669bbc66;
+  border-radius: 15px;
+}
+
+.modifier-ouvrage .rectangle-6 {
+  position: absolute;
+  width: 558px;
+  height: 35px;
+  top: 666px;
+  left: 438px;
+  background-color: #669bbc66;
+  border-radius: 15px;
+}
+
+.modifier-ouvrage .overlap-6 {
+  position: absolute;
+  width: 558px;
+  height: 36px;
+  top: 718px;
+  left: 438px;
+}
+
+.modifier-ouvrage .rectangle-7 {
+  position: absolute;
+  width: 558px;
+  height: 35px;
+  top: 1px;
+  left: 0;
+  background-color: #669bbc66;
+  border-radius: 15px;
+}
+
+.modifier-ouvrage .rectangle-8 {
+  position: absolute;
+  width: 50px;
+  height: 35px;
+  top: 0;
+  left: 508px;
+  background-color: #669bbc66;
+  border-radius: 0px 15px 15px 0px;
+}
+
+.modifier-ouvrage .down-arrow {
+  width: 30px;
+  height: 30px;
+  top: 3px;
+  left: 518px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.modifier-ouvrage .overlap-7 {
+  position: absolute;
+  width: 288px;
+  height: 35px;
+  top: 769px;
+  left: 438px;
+  background-color: #669bbc66;
+  border-radius: 15px;
+}
+
+.modifier-ouvrage .down-arrow-wrapper {
+  position: absolute;
+  width: 50px;
+  height: 35px;
+  top: 0;
+  left: 238px;
+  background-color: #669bbc66;
+  border-radius: 0px 15px 15px 0px;
+}
+
+.modifier-ouvrage .img {
+  width: 25px;
+  height: 25px;
+  top: 5px;
+  left: 12px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.modifier-ouvrage .text-wrapper-6 {
+  position: absolute;
+  width: 223px;
+  height: 29px;
+  top: 2px;
+  left: 14px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #fdf0d5;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.modifier-ouvrage .rectangle-9 {
+  position: absolute;
+  width: 558px;
+  height: 35px;
+  top: 820px;
+  left: 438px;
+  background-color: #669bbc66;
+  border-radius: 15px;
+}
+
+.modifier-ouvrage .rectangle-10 {
+  position: absolute;
+  width: 558px;
+  height: 170px;
+  top: 879px;
+  left: 438px;
+  background-color: #669bbc66;
+  border-radius: 15px;
+}
+
+.modifier-ouvrage .text-wrapper-7 {
+  position: absolute;
+  width: 342px;
+  height: 70px;
+  top: 473px;
+  left: 96px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #003049;
+  font-size: 48px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.modifier-ouvrage .text-wrapper-8 {
+  position: absolute;
+  width: 151px;
+  height: 35px;
+  top: 878px;
+  left: 261px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #003049;
+  font-size: 32px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.modifier-ouvrage .text-wrapper-9 {
+  position: absolute;
+  width: 147px;
+  height: 33px;
+  top: 610px;
+  left: 265px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #003049;
+  font-size: 32px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.modifier-ouvrage .text-wrapper-10 {
+  position: absolute;
+  width: 206px;
+  height: 34px;
+  top: 714px;
+  left: 206px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #003049;
+  font-size: 32px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.modifier-ouvrage .text-wrapper-11 {
+  position: absolute;
+  width: 206px;
+  height: 34px;
+  top: 665px;
+  left: 206px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #003049;
+  font-size: 32px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.modifier-ouvrage .text-wrapper-12 {
+  position: absolute;
+  width: 147px;
+  height: 33px;
+  top: 561px;
+  left: 265px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #003049;
+  font-size: 32px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.modifier-ouvrage .text-wrapper-13 {
+  position: absolute;
+  width: 249px;
+  height: 44px;
+  top: 814px;
+  left: 163px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #003049;
+  font-size: 32px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.modifier-ouvrage .text-wrapper-14 {
+  position: absolute;
+  width: 249px;
+  height: 36px;
+  top: 763px;
+  left: 163px;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #003049;
+  font-size: 32px;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}

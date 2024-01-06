@@ -7,12 +7,28 @@
 
 <?php
 // connexion à la BD
-//include("./DATABASE.php");
+include("../../../Model/ModelBook.php");
+include("../../../Model/ModelAuthor.php");
+/*
+$book = new ModelBook();
+$auteur = new ModelAuthor();
 
-//$db = new Database();
-//$teachers = $db->getAllTeachers();
+$bookPage = $book->getOneBook($bookPage["idBook"]);
+$cat = $cat->getOneCat($book["idCategory"]);
+//$auteur = $auteur->getOneAuthor($book["idBook"]);
+*/
+$db3 = new ModelBook();
+$oneBook = $db3->getOneBookGW(1); // id entrée en "dure"
+/*
+$db4 = new ModelAuthor();
+//$cat = $cat->getOneCat($book["idCategory"]);
+//$auteur = $auteur->getOneAuthor($book["idBook"]);
+*/
 
-//session_start();
+//$book = $book->getOneBook($book["idBook"]);
+//$cat = $cat->getOneCat($bookPage["idCategory"]);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -23,59 +39,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="../css/app.css" rel="stylesheet" media="screen"/>
+
     <title>Passion Lecture</title>
 </head>
 
 <body>
 
     <header>
-        <div class="container-header">
-            <div class="titre-header">
-                <h1>Passion Lecture</h1>
-            </div>
-            
-            <!-- connexion -->
-            <div class="box-login">
-                <label for="user"></label>
-                <input type="text" name="user" id="user" placeholder="Username">
-                <label for="password"></label>
-                <input type="password" name="password" id="password" placeholder="Password">
-                <button type="submit" class="btn btn-login">Login</button>
-            </div>
-            
-
-        </div>
-        <nav>
-            <div class="nav-links">
-                <a href="../views/index.php">Accueil</a>
-                <a href="../views/liste.php">Liste</a>
-                <a href="#">Ajout</a>
-                <a href="#">Profil</a>
-                <a href="#">Contacts</a>
-            </div>
-            
-        </nav>
+        <?php
+            include("header.inc.php");
+        ?>
     </header>
 
     <div class="container-details">
-        <div class="book-name">
-            <h4>Titre du livre</h4>
-            <a href="#"><img src="../images/icons/modify.png" alt="modify"></a>
-            <a href="#"><img src="../images/icons/delete.png" alt="delete"></a>
+        <div class="page-part1">
+            <div class="book-name">
+                <?php
+                    echo"<h2>" . $oneBook["title"] . "</h2>";
+                ?>
+                <a href="#"><img class="icon" src="../Img/icons/modify.png" alt="modify"></a>
+                <a href="#"><img class="icon" src="../Img/icons/delete.png" alt="delete"></a>
+            </div>
+            <div class="book-details">
+                <h2><?=$oneBook["idCategory"]?> - Nombres de pages: <?=$oneBook["nbPage"]?></h2>
+            </div>
+            <div class="book-info">
+                <h2><?=""?> John Doe - </h2>
+                <h2> <?=$oneBook["editor"]?> - </h2>
+                <h2> <?=$oneBook["yearEdit"]?></h2>
+            </div>
+            <div class="book-resume">
+                <h2>Résumé</h2>
+                <p class="resume">
+                    <?=$oneBook["resume"]?>
+                </p>
+                <p class="extrait">Extrait</p>
+            </div>
         </div>
-        <div></div>
-        <div></div>
-        
-        <h4>auteur</h4>
-        <h4>Titre du livre</h4>
-        <h4>Titre du livre</h4>
-        <p>hello</p>
-        
-        <!-- <script src="./js/script.js"></script> -->
+        <div class="page-part2">
+            <img class="book-image" src="../Img/books/livre01.jpg" alt="livre01">
+             <div class="rating gap-1">
+                <label>Note : </label>
+                <?php
+                for($i=0 ; $i < 5; $i++){
+                    echo "<input type=\"radio\" name=\"rating-" . $i . "\" class=\"mask mask-heart text-red-400\" />";
+                }
+                ?>
+            </div>
+        </div>
     </div>
 
     <footer>
-        <p>© Camille Déglise - Guo Yu Wu - Maryline Vougaz - 2024</p>
+        <?php
+            include("footer.inc.php");
+        ?>
     </footer>
 
 </body>

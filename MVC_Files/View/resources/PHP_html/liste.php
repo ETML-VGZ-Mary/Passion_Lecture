@@ -10,12 +10,14 @@
 
 <?php
 // connexion à la BD
-include("../../../Model/ModelAuthor.php");
+//include("../../../Model/ModelAuthor.php");
+//$db = new ModelAuthor();
+//$authors = $db->getAllAuthors();
+
 include("../../../Model/ModelBook.php");
-$db = new ModelAuthor();
 $db2 = new ModelBook();
-$authors = $db->getAllAuthors();
 $books = $db2->getAllBooks();
+$categories = $db2->getAllCategories();
 ?>
 
 <!DOCTYPE html>
@@ -25,8 +27,8 @@ $books = $db2->getAllBooks();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="../src/css/style.css" rel="stylesheet" media="screen"/>
-    <title>Liste auteurs</title>
+    <link href="../CSS/app.css" rel="stylesheet" media="screen"/>
+    <title>Liste des livres</title>
 </head>
 
 <body>
@@ -38,37 +40,38 @@ $books = $db2->getAllBooks();
     </header>
 
     <div class="container">
-        <h3>Liste des auteurs</h3>
+        <h4>Bibliothèque</h4>
+
+        <!--barre de recherche-->
+        <div class="research-bar">
+            <input type="text" placeholder="Recherche...">
+            <button type="submit"><img src="../Img/icons/research.png" alt="research-icon"></button>
+        </div>
         
         <form action="#" method="post">
-            <table>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Prénom</th>
-                        <th>Nom</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
+            <?php
+                foreach($categories as $categorie) {
                     
-                    foreach($authors as $author) {
+                    echo "<h4>" . $categorie["label"] . "</h4>";
 
-                        // Affichage dynamique des enseignants
-                        echo "<tr>";
-                        echo "<td>" . $author["idAuthor"] . "</td>";
-                        echo "<td>" . $author["firstName"] . "</td>";
-                        echo "<td>" . $author["lastName"] . "</td>";
-                        
-                        
+                    echo "<div class=\"box-same-category-books\">";
 
-                        echo "</tr>";
-                    }
-                    ?>
-                    
-                </tbody>
-            </table>
-            </form>
+                        foreach($books as $book) {
+                        
+                            if($book["idCategory"] == $categorie["idCategory"]){
+                                
+                                echo "<div class=\"box-book\">";
+                                    //echo "<a href=\"details.php?idBook=" . $book["idBook"] . "\"><img src=\"../Img/books/livre01.jpg\" alt=\"image01\"></a>";
+                                    echo "<a href=\"details.php?idBook=" . $book["idBook"] . "\"><img src=\"../Img/books/book" . $book["idBook"] . ".jpg\" alt=\"image01\"></a>";
+                                    echo "<p>" . $book["title"] . "</p>";
+                                echo "</div>";
+                            }
+                        } 
+
+                    echo "</div>";
+                }    
+            ?>
+        </form>
     </div>
 
     <footer>
