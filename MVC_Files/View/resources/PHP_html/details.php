@@ -73,7 +73,7 @@ $db4 = new ModelAuthor();
                 <p>
                     <?=$oneBook["resume"]?>
                 </p>
-                <p>Extrait</p>
+                <a href="<?php $oneBook["link"] ?>">Extrait</a>
             </div>
         </div>
         <div class="page-part2">
@@ -82,7 +82,7 @@ $db4 = new ModelAuthor();
             ?>
             
             <div class="grade-display">
-                <p>Note</p>
+                <p>Note : </p>
                 <?php
                     for($i=0 ; $i < 5; $i++){
                         echo "<img class=\"icon\" src=\"../Img/icons/star-empty.png\" alt=\"modify\">";
