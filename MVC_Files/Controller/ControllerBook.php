@@ -12,20 +12,20 @@ Class ControllerBook {
 
         //Validation des données
         //Vérification du titre 
-        if(!isset($datas["title"]) || ctype_alnum($datas["title"]))
+        if(!isset($datas["title"]) || ctype_alnum($datas["title"]) || ($datas["title"] === ''))
         {
             $errors[] = "Le titre doit être rempli et il doit être en caractère alpha-numérique";
         }
 
         //Vérification du nom de l'auteur
-        if(!isset($datas["nameAuthor"]) || ctype_alpha($datas["nameAuthor"]))
+        if(!isset($datas["nameAuthor"]) || ctype_alpha($datas["nameAuthor"]) || ($datas["title"] === ''))
         {
             $errors[] = "Le nom de l'auteur doit être saisi et il doit êre en caractères alphabétiques exclusivement";
 
         }
 
         //Vérification du prénom de l'auteur
-        if(!isset($datas["firstNameAuthor"]) || ctype_alpha($datas["firstNameAuthor"]))
+        if(!isset($datas["firstNameAuthor"]) || ctype_alpha($datas["firstNameAuthor"]) || ($datas["title"] === ''))
         {
             $errors[] = "Le prénom de l'auteur doit être saisi et il doit êre en caractères alphabétiques exclusivement";
         }
@@ -37,19 +37,19 @@ Class ControllerBook {
         }
 
         //Vérification du nombre de pages
-        if(!isset($datas["nbPage"]) || ($datas["nbPage"] < 0))
+        if(!isset($datas["nbPage"]) || ($datas["nbPage"] < 0) || ($datas["title"] === ''))
         {
             $errors[] = "Le nombre de pages doit être saisi et doit être supérieur à 0";
         }
 
         //Vérification de l'éditeur 
-        if(!isset($datas["editor"]) || ctype_alnum($datas["editor"]))
+        if(!isset($datas["editor"]) || ctype_alnum($datas["editor"]) || ($datas["title"] === ''))
         {
             $errors[] = "Le nom de l'éditeur doit être rempli et doit être en caractère alpha-numérique";
         }
 
         //Vérification de l'année d'édition
-        if(!isset($datas["yearEdit"]) || (!preg_match('/^([0-9]{1,4})$/', $datas["yearEdit"])))
+        if(!isset($datas["yearEdit"]) || (!preg_match('/^([0-9]{1,4})$/', $datas["yearEdit"])) || ($datas["title"] === ''))
         {
             $errors[] = "L'année d'édition doit être remplie et ne doit que comporter 4 chiffres, comme 1990";
         }
