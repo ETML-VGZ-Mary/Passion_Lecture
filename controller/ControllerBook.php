@@ -23,6 +23,9 @@ class ControllerBook extends Controller {
 
         $action = $_GET['action'] . "Action";
 
+        //$datas = $_POST;
+        $this->checkBook($_POST);
+
         // Appelle une méthode dans cette classe (ici, ce sera le nom + action (ex: listAction, detailAction, ...))
         return call_user_func(array($this, $action));
 
