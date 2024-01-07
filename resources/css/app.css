@@ -74,7 +74,10 @@ header{
     margin-right: 20px;
     margin-bottom: 20px;
 }
-
+#userLogin, #passwordLogin{
+    margin-left: 5px;
+    margin-right: 5px;
+}
 .box-login button{
     margin-left: 10px;
 }
@@ -220,7 +223,6 @@ h4{
     display: flex;
     margin: 20px;
 }
-/*.form-data label{*/
 .accountMetaData{
     display: flex;
     justify-content: end;
@@ -228,7 +230,7 @@ h4{
     margin-right: 50px;
     width: 400px;
 }
-.form-data input, .form-data textarea, .form-data select{
+.form-data input, .form-data textarea, .form-data select, .btnContainer{
     width: 500px;
 }
 .form-data textarea{
@@ -239,10 +241,15 @@ h4{
     display: flex;
     justify-content: end;
 }
-#btnSubmit{
-    width: auto;
+.btnContainer{
     display: flex;
     justify-content: end;
+}
+#btnSubmit{
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 /*
 

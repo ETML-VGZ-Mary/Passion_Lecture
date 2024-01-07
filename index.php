@@ -9,8 +9,7 @@
 
 include_once "controller/Controller.php";
 include_once "controller/ControllerDisplayPage.php";
-//include_once 'controller/HomeController.php';
-//include_once 'controller/CustomerController.php';
+include_once "controller/ControllerBook.php";
 
 
 class MainController {
@@ -41,7 +40,7 @@ class MainController {
 
         switch($controller){
             case 'validation':
-                $link = new ControllerDisplayPage();
+                $link = new ControllerBook();
                 break;
             case 'page':
                 $link = new ControllerDisplayPage();

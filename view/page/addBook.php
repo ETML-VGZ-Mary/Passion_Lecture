@@ -14,9 +14,9 @@ $categories = $dbBook->getAllCategories();
 ?>
 
 <div class="container">
-    <h1>Ajouter un livre</h1>
+    <h1 class="">Ajouter un livre</h1>
 
-    <form action="checkAddBook.php" method="post" class="book"  id="formAddBook" enctype="multipart/form-data">
+    <form action="index.php?controller=validation&action=addBook" method="post" class="book"  id="formAddBook" enctype="multipart/form-data">
                 
         <div class="form-data">
             <label class="accountMetaData" for="title" >Titre :</label>
@@ -70,7 +70,9 @@ $categories = $dbBook->getAllCategories();
         </div>
         <div class="form-data">
             <label class="accountMetaData" for="btnSubmit"></label>
-            <input class="bg-gray-300 hover:bg-gray-400 h-10 w-16" type="submit" name="btnSubmit" id="btnSubmit" value="Ajouter">
+            <div class="btnContainer">
+                <button class="bg-gray-300 hover:bg-gray-400 h-12 w-250" type="submit" name="btnSubmit" id="btnSubmit">Ajouter</button>
+            </div>
         </div>
     </form>
 </div>
