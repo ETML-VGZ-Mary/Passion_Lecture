@@ -20,13 +20,13 @@
         try
         {
             // depuis Docker
-            //$this->connector = new PDO('mysql:host=localhost:6033;dbname=db_passion;charset=utf8' , 'root', 'root');
+            $this->connector = new PDO('mysql:host=localhost:6033;dbname=db_passion;charset=utf8' , 'root', 'root');
             
             // depuis UWAMP
             //$this->connector = new PDO('mysql:host=localhost:3306;dbname=db_passion;charset=utf8' , 'root', 'root');
         
             // depuis UWAMP (version Sébeillon)
-            $this->connector = new PDO('mysql:host=localhost;dbname=db_passion;charset=utf8' , 'root', 'root');
+           // $this->connector = new PDO('mysql:host=localhost;dbname=db_passion;charset=utf8' , 'root', 'root');
         
 
         }

@@ -15,7 +15,9 @@
 //$authors = $db->getAllAuthors();
 
 include("../../../Model/ModelBook.php");
+include("../MVC_Files/Model/ModelSearch.php");
 $db2 = new ModelBook();
+$modelSearch = new ModelSearch();
 $books = $db2->getAllBooks();
 $categories = $db2->getAllCategories();
 ?>
@@ -44,9 +46,38 @@ $categories = $db2->getAllCategories();
 
         <!--barre de recherche-->
         <div class="research-bar">
-            <input type="text" placeholder="Recherche...">
-            <button type="submit"><img src="../Img/icons/research.png" alt="research-icon"></button>
+            <form action="" method="get">
+                <input type="search" name="searchUser" placeholder="Recherche...">
+                <input type="submit" value="Valider">
+            </form>
         </div>
+        <?php 
+            if(isset($_GET["searchUser"]) && !empty($_GET["searchUser"]))
+            {
+                $query = $_GET["searchUser"];
+                $results = $modelSearch-> searchBook($query);
+
+                if(!empty($results))
+                {
+                    echo"<h2>Résultats de votre recherche :</h2>";
+                    foreach($result as $book)
+                    {
+                        if($book["idCategory"] == $categorie["idCategory"]){
+                                
+                            echo "<div class=\"box-book\">";
+                                echo "<a href=\"details.php?idBook=" . $book["idBook"] . "\"><img src=\"../Img/books/livre01.jpg\" alt=\"image01\"></a>";
+                                echo "<a href=\"details.php?idBook=" . $book["idBook"] . "\"><img src=\"../Img/books/book" . $book["idBook"] . ".jpg\" alt=\"image01\"></a>";
+                                echo "<p>" . $book["title"] . "</p>";
+                            echo "</div>";
+                        }
+                        else 
+                        {
+                            echo "<p>Aucun résultat trouvé.</p>";
+                        }
+                    }
+                }
+            }
+        ?>
         
         <form action="#" method="post">
             <?php
