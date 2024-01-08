@@ -1,3 +1,4 @@
+
 <?php
 /**
  * ETML
@@ -9,7 +10,7 @@
 
 // include modelBook
 //include ('../Model/ModelBook.php');
-//include_once 'model/ModelBook.php';
+include_once ('model/ModelBook.php');
 
 
 class ControllerBook extends Controller {

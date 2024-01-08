@@ -7,9 +7,11 @@
  *  Description   :	Site web "Passion Lecture" en MVC. index.php appelle le bon controller.
  */
 
+ 
 include_once "controller/Controller.php";
 include_once "controller/ControllerDisplayPage.php";
 include_once "controller/ControllerBook.php";
+include_once "controller/controllerTest.php";
 
 
 class MainController {
@@ -40,7 +42,8 @@ class MainController {
 
         switch($controller){
             case 'validation':
-                $link = new ControllerBook();
+                //$link = new ControllerBook();
+                $link = new CustomerController();
                 break;
             case 'page':
                 $link = new ControllerDisplayPage();
