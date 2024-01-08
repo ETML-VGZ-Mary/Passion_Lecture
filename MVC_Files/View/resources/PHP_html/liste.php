@@ -46,7 +46,7 @@ $categories = $db2->getAllCategories();
 
         <!--barre de recherche-->
         <div class="research-bar">
-            <form action="" method="get">
+            <form action="#" method="get">
                 <input type="search" name="searchUser" placeholder="Recherche...">
                 <input type="submit" value="Valider">
             </form>
@@ -81,8 +81,11 @@ $categories = $db2->getAllCategories();
         
         <form action="#" method="post">
             <?php
+            //ajout by chatgpt
                 foreach($categories as $categorie) {
-                    
+                    //Si la catégorie contient ou non un livre
+                    $bookInCategory = false;
+
                     echo "<h4>" . $categorie["label"] . "</h4>";
 
                     echo "<div class=\"box-same-category-books\">";
@@ -90,7 +93,8 @@ $categories = $db2->getAllCategories();
                         foreach($books as $book) {
                         
                             if($book["idCategory"] == $categorie["idCategory"]){
-                                
+                                //Si la catégorie contient un livre 
+                                $bookInCategory = true;
                                 echo "<div class=\"box-book\">";
                                     //echo "<a href=\"details.php?idBook=" . $book["idBook"] . "\"><img src=\"../Img/books/livre01.jpg\" alt=\"image01\"></a>";
                                     echo "<a href=\"details.php?idBook=" . $book["idBook"] . "\"><img src=\"../Img/books/book" . $book["idBook"] . ".jpg\" alt=\"image01\"></a>";
@@ -98,6 +102,10 @@ $categories = $db2->getAllCategories();
                                 echo "</div>";
                             }
                         } 
+                    // Afficher la catégorie uniquement si elle a des livres
+                    // if ($hasBooksInCategory) {
+                     //echo "<h4>" . $categorie["label"] . "</h4>";
+                    //}
 
                     echo "</div>";
                 }    
