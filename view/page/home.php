@@ -18,11 +18,14 @@ $fiveLastBooks = $dbBook->getNLastBooks(5);
 
 <div class="container" id="containerHomePage">
     <div class="bloc01">
-        <h1>Nouveautés</h1>
+        <h1>Derniers ajouts</h1>
         <div class="newBook">
             <?php
                 foreach($fiveLastBooks as $book){
-                    echo "<a href=\"index.php?controller=page&action=details&idBook=" . $book["idBook"] . "\"><img src=\"../resources/image/books/book" . $book["idBook"] .".jpg\" alt=\"imgBook". $book["idBook"] ."\"></a>";
+                    echo "<div class=\"oneHomeBook\">";
+                        echo "<a href=\"index.php?controller=page&action=details&idBook=" . $book["idBook"] . "\"><img src=\"../resources/image/books/book" . $book["idBook"] .".jpg\" alt=\"imgBook". $book["idBook"] ."\"></a>";
+                    echo "<p>" . $book["title"] . "</p>";
+                    echo "</div>";
                 }
             ?>
         </div>

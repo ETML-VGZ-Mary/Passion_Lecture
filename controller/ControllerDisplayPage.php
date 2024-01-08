@@ -103,6 +103,22 @@ class ControllerDisplayPage extends Controller {
 
         return $content;
     }
+
+    /**
+     * Affiche le contenu de la page nouveau compte
+     *
+     * @return string
+     */
+    private function newAccountAction() {
+
+        $view = file_get_contents('view/page/accountSubscribe.php');
+ 
+        ob_start();
+        eval('?>' . $view);
+        $content = ob_get_clean();
+
+        return $content;
+    }
     
 
         /**

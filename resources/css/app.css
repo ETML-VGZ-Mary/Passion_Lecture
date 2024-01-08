@@ -30,9 +30,11 @@ body {
     padding-top: 100px;
     display: flex;
 }
-h1{
+.bloc01 h1, .container h1{
     color: rgb(0, 48, 73);
-    /*font-size: 50px;*/
+    font-weight: bolder;
+    font-size: 30px;
+    margin-bottom: 20px;
 }
 
 h2{
@@ -77,9 +79,7 @@ header{
 #userLogin, #passwordLogin{
     margin-left: 5px;
     margin-right: 5px;
-}
-.box-login button{
-    margin-left: 10px;
+    height: 30px;
 }
 .box-login img{
     margin: 10px;
@@ -88,6 +88,15 @@ header{
 .link{
     display: flex;
     align-items: center;
+}
+.connexionButtons{
+    display: table-column;
+    margin-left: 20px;
+}
+.connexionButtons button, .connexionButtons a{
+    width: 75px;
+    height: 30px;
+    justify-content: center;
 }
 
 /*navigation*/
@@ -126,6 +135,13 @@ nav .nav-links a{
 }
 .newBook{
     display: flex;
+}
+.oneHomeBook{
+    width: 120px;
+    margin: 5px;
+}
+.oneHomeBook p{
+    font-size: 15px;
 }
 
 
@@ -226,7 +242,7 @@ h4{
 .accountMetaData{
     display: flex;
     justify-content: end;
-    align-items: center;
+    align-items: flex-start;
     margin-right: 50px;
     width: 400px;
 }
