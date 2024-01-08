@@ -76,7 +76,7 @@
                     <textarea name=\"resume\" id=\"resume\" cols=\"30\" rows=\"10\" value= " . $oneBook["resume"] ."></textarea>
                 </p>
                 <p>
-                    <input type=\"submit\" name=\"btnSubmit\" value=\"Ajouter\">
+                    <input type=\"submit\" name=\"btnSubmit\" value=\"Modifier\">
                 </p>
             </form>";
         }

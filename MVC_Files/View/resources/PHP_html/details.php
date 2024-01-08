@@ -13,7 +13,6 @@ include("../../../Model/ModelAuthor.php");
 $db3 = new ModelBook();
 $oneBook = $db3->getOneBook($oneBook["id"]); // id entrée en "dure"
 
-$db4 = new ModelAuthor();
 $cat = $cat->getOneCat($book["idCategory"]);
 $auteur = $auteur->getOneAuthor($book["idBook"]);
 
