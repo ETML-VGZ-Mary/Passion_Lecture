@@ -11,7 +11,7 @@
 <body>
     <h1>Ajouter un livre</h1>
 
-    <form action="dispatch.php?controler=book&action=add" method="post" class="book"  id="formAddBook" enctype="multipart/form-data">
+    <form action="dispatch.php?controler=book&action=add" method="post" enctype="multipart/form-data">
                 
                 <p>
                     <label for="title" >Titre :</label>

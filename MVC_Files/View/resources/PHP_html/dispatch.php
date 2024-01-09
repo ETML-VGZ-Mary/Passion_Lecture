@@ -14,8 +14,6 @@
 include ('../../../Controller/ControllerBook.php');
 
 $data = $_POST;
-
-
 $controler = $_GET["controler"];
 $action = $_GET["action"];
 

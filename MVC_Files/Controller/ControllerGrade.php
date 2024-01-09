@@ -9,14 +9,19 @@
 
 include ("../Model/ModelGrade");
 
-Class ControllerGrade {
+Class ControllerGrade 
+{
+    public function addGrade()
+    {
+
+    }
 
 
 
 
 
 
-    
+
 }
 
 
