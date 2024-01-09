@@ -18,7 +18,7 @@ $cat = $cat->getOneCat($book["idCategory"]);
 //$auteur = $auteur->getOneAuthor($book["idBook"]);
 */
 $db3 = new ModelBook();
-$oneBook = $db3->getOneBookGW(1); // id entrée en "dure"
+$oneBook = $db3->getOneBookGW($_GET["idBook"]); // id entrée en "dure"
 /*
 $db4 = new ModelAuthor();
 //$cat = $cat->getOneCat($book["idCategory"]);
@@ -52,42 +52,49 @@ $db4 = new ModelAuthor();
     </header>
 
     <div class="container-details">
-        <div class="page-part1">
-            <div class="book-name">
-                <?php
-                    echo"<h2>" . $oneBook["title"] . "</h2>";
-                ?>
-                <a href="#"><img class="icon" src="../Img/icons/modify.png" alt="modify"></a>
-                <a href="#"><img class="icon" src="../Img/icons/delete.png" alt="delete"></a>
-            </div>
-            <div class="book-details">
-                <h2><?=$oneBook["idCategory"]?> - Nombres de pages: <?=$oneBook["nbPage"]?></h2>
-            </div>
-            <div class="book-info">
-                <h2><?=""?> John Doe - </h2>
-                <h2> <?=$oneBook["editor"]?> - </h2>
-                <h2> <?=$oneBook["yearEdit"]?></h2>
-            </div>
-            <div class="book-resume">
-                <h2>Résumé</h2>
-                <p class="resume">
-                    <?=$oneBook["resume"]?>
-                </p>
-                <p class="extrait">Extrait</p>
-            </div>
+    <div class="page-part1">
+        <div class="book-name">
+            <?php
+                echo"<h2>" . $oneBook["title"] . "</h2>";
+            ?>
+            <a href="#"><img class="icon" src="resources/image/icons/modify.png" alt="modify"></a>
+            <a href="#"><img class="icon" src="resources/image/icons/delete.png" alt="delete"></a>
         </div>
-        <div class="page-part2">
-            <img class="book-image" src="../Img/books/livre01.jpg" alt="livre01">
-             <div class="rating gap-1">
-                <label>Note : </label>
-                <?php
-                for($i=0 ; $i < 5; $i++){
-                    echo "<input type=\"radio\" name=\"rating-" . $i . "\" class=\"mask mask-heart text-red-400\" />";
-                }
-                ?>
-            </div>
+        <div class="book-details">
+            <h2><?=$oneBook["idCategory"]?> - Nombres de pages: <?=$oneBook["nbPage"]?></h2>
+        </div>
+        <div class="book-info">
+            <h2><?=""?> John Doe - </h2>
+            <h2> <?=$oneBook["editor"]?> - </h2>
+            <h2> <?=$oneBook["yearEdit"]?></h2>
+        </div>
+        <div class="book-resume">
+            <h2>Résumé</h2>
+            <p class="resume">
+                <?=$oneBook["resume"]?>
+            </p>
+            <p class="extrait">Extrait</p>
         </div>
     </div>
+    <div class="page-part2">
+        
+        <?php
+            echo "<img class=\"book-image\" src=\"resources/image/books/book" . $oneBook["idBook"] . ".jpg\" alt=\"img book " . $oneBook["idBook"] ."\">";
+        ?>
+
+        
+        <div class="rating gap-1">
+            <label>Note : </label>
+
+            <?php
+            for($i=0 ; $i < 5; $i++){
+                echo "<input type=\"radio\" name=\"rating-3\" value=\" . $i . \" class=\"mask mask-heart bg-red-500\" />";
+            }
+            ?>
+        </div>
+
+    </div>
+</div>
 
     <footer>
         <?php

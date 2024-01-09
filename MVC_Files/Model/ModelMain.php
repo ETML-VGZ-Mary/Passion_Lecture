@@ -51,7 +51,10 @@
      * Méthode prepare, execution d'une requête de manière sécurisée
      */
     protected function queryPrepareExecute($query, $binds){
-        
+        //echo "<pre>";
+        //var_dump($query);
+        //var_dump($binds);
+        //echo "</pre>";
         // TODO: permet de préparer, de binder et d’exécuter une requête (select avec where ou insert, update et delete)
         /**
          * A COMPLETER PLUS TARD 

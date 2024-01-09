@@ -20,23 +20,27 @@ Class ModelSearch extends ModelMain{
      {
         
         //Requête préparée pour éviter injections SQL
-        $query = "SELECT * from t_book 
-                    WHERE  title LIKE :searchQuery";
-        
-        //% servent pour le LIKE 
-        $searchQuery = '%' . $query . '%';
-        
-        $binds = [
-            [
-                ':searchUser', $searchQuery, PDO::PARAM_STR
-            ]
-        ];  
+        $searchQuery = "SELECT * from t_book 
+                    WHERE  title LIKE '%$query%'";
+       // echo "<pre>";
+        //var_dump($searchQuery);
+        //echo "</pre>";
+        //$binds = [
+            //[
+                //':searchQuery', $searchQuery, PDO::PARAM_STR
+            //]
+        //];  
 
         // Appeler la méthode pour exécuter la requête
-         $req = $this->queryPrepareExecute($query, $binds);
-
+        // $req = $this->queryPrepareExecute($query, $binds);
+        $req = $this->querySimpleExecute($searchQuery);
         // Retourner les résultats sous forme de tableau associatif
-        return $this->formatData($req);
+        $books =  $this->formatData($req);
+        //echo "<pre>";
+        //var_dump($books);
+        //echo "</pre>";
+        return $books;
+        
      }
 
 }

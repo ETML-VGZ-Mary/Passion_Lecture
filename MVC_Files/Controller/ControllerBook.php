@@ -12,20 +12,20 @@ Class ControllerBook {
 
         //Validation des données
         //Vérification du titre 
-        if(!isset($datas["title"]) || ctype_alnum($datas["title"]) || ($datas["title"] === ''))
+        if(!isset($datas["title"]) || !ctype_alnum($datas["title"]) || ($datas["title"] === ''))
         {
             $errors[] = "Le titre doit être rempli et il doit être en caractère alpha-numérique";
         }
 
         //Vérification du nom de l'auteur
-        if(!isset($datas["nameAuthor"]) || ctype_alpha($datas["nameAuthor"]) || ($datas["title"] === ''))
+        if(!isset($datas["nameAuthor"]) || !ctype_alpha($datas["nameAuthor"]) || ($datas["title"] === ''))
         {
             $errors[] = "Le nom de l'auteur doit être saisi et il doit êre en caractères alphabétiques exclusivement";
 
         }
 
         //Vérification du prénom de l'auteur
-        if(!isset($datas["firstNameAuthor"]) || ctype_alpha($datas["firstNameAuthor"]) || ($datas["title"] === ''))
+        if(!isset($datas["firstNameAuthor"]) || !ctype_alpha($datas["firstNameAuthor"]) || ($datas["title"] === ''))
         {
             $errors[] = "Le prénom de l'auteur doit être saisi et il doit êre en caractères alphabétiques exclusivement";
         }
@@ -43,7 +43,7 @@ Class ControllerBook {
         }
 
         //Vérification de l'éditeur 
-        if(!isset($datas["editor"]) || ctype_alnum($datas["editor"]) || ($datas["title"] === ''))
+        if(!isset($datas["editor"]) || !ctype_alnum($datas["editor"]) || ($datas["title"] === ''))
         {
             $errors[] = "Le nom de l'éditeur doit être rempli et doit être en caractère alpha-numérique";
         }

@@ -15,7 +15,7 @@
 //$authors = $db->getAllAuthors();
 
 include("../../../Model/ModelBook.php");
-include("../MVC_Files/Model/ModelSearch.php");
+include("../../../Model/ModelSearch.php");
 $db2 = new ModelBook();
 $modelSearch = new ModelSearch();
 $books = $db2->getAllBooks();
@@ -44,48 +44,39 @@ $categories = $db2->getAllCategories();
     <div class="container">
         <h4>Bibliothèque</h4>
 
-        <!--barre de recherche-->
         <div class="research-bar">
             <form action="#" method="get">
-                <input type="search" name="searchUser" placeholder="Recherche...">
+                <input type="search" name="searchQuery" placeholder="Rechercher un livre">
                 <input type="submit" value="Valider">
             </form>
         </div>
         <?php 
-            if(isset($_GET["searchUser"]) && !empty($_GET["searchUser"]))
+            if(isset($_GET["searchQuery"]) && !empty($_GET["searchQuery"]))
             {
-                $query = $_GET["searchUser"];
+                $query = $_GET["searchQuery"];
                 $results = $modelSearch-> searchBook($query);
 
-                if(!empty($results))
-                {
-                    echo"<h2>Résultats de votre recherche :</h2>";
-                    foreach($result as $book)
-                    {
-                        if($book["idCategory"] == $categorie["idCategory"]){
-                                
+                echo"<h2>Résultats de votre recherche :</h2>";
+                 if(!empty($results)){
+                    foreach($results as $book)
+                    {   
                             echo "<div class=\"box-book\">";
-                                echo "<a href=\"details.php?idBook=" . $book["idBook"] . "\"><img src=\"../Img/books/livre01.jpg\" alt=\"image01\"></a>";
                                 echo "<a href=\"details.php?idBook=" . $book["idBook"] . "\"><img src=\"../Img/books/book" . $book["idBook"] . ".jpg\" alt=\"image01\"></a>";
                                 echo "<p>" . $book["title"] . "</p>";
                             echo "</div>";
                         }
-                        else 
-                        {
-                            echo "<p>Aucun résultat trouvé.</p>";
-                        }
                     }
-                }
+                 else 
+                    {
+                        echo "<p>Aucun résultat trouvé.</p>";
+                    }
             }
         ?>
         
         <form action="#" method="post">
             <?php
-            //ajout by chatgpt
                 foreach($categories as $categorie) {
-                    //Si la catégorie contient ou non un livre
-                    $bookInCategory = false;
-
+                  
                     echo "<h4>" . $categorie["label"] . "</h4>";
 
                     echo "<div class=\"box-same-category-books\">";
@@ -93,19 +84,13 @@ $categories = $db2->getAllCategories();
                         foreach($books as $book) {
                         
                             if($book["idCategory"] == $categorie["idCategory"]){
-                                //Si la catégorie contient un livre 
-                                $bookInCategory = true;
+                                
                                 echo "<div class=\"box-book\">";
-                                    //echo "<a href=\"details.php?idBook=" . $book["idBook"] . "\"><img src=\"../Img/books/livre01.jpg\" alt=\"image01\"></a>";
                                     echo "<a href=\"details.php?idBook=" . $book["idBook"] . "\"><img src=\"../Img/books/book" . $book["idBook"] . ".jpg\" alt=\"image01\"></a>";
                                     echo "<p>" . $book["title"] . "</p>";
                                 echo "</div>";
                             }
                         } 
-                    // Afficher la catégorie uniquement si elle a des livres
-                    // if ($hasBooksInCategory) {
-                     //echo "<h4>" . $categorie["label"] . "</h4>";
-                    //}
 
                     echo "</div>";
                 }    
