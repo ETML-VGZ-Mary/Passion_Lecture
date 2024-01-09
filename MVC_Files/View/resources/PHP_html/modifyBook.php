@@ -2,14 +2,14 @@
     include("../../../Model/ModelBook.php");
     include("../../../Model/ModelAuthor.php");
 
-    $idBook = $_POST["idBook"];
+    $idBook = $_GET["idBook"];
 
     $db3 = new ModelBook();
     $oneBook = $db3->getOneBook($idBook); // id entrée en "dure"
     $cat = $cat->getOneCat($oneBook["idCategory"]);
 
     $db4 = new ModelAuthor();
-    $auteur = $auteur->getOneAuthor($oneBook["idBook"]);
+    $auteur = $auteur->getOneAuthor($idBook);
 ?>
 
 <!DOCTYPE html>
