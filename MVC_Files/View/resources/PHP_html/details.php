@@ -11,12 +11,12 @@ include("../../../Model/ModelBook.php");
 include("../../../Model/ModelAuthor.php");
 
 $db3 = new ModelBook();
-$oneBook = $db3->getOneBook($oneBook["id"]); // id entrée en "dure"
+$oneBook = $db3->getOneBook($_GET["idBook"]); // id entrée en "dure"
 
-$cat = $cat->getOneCat($book["idCategory"]);
-$auteur = $auteur->getOneAuthor($book["idBook"]);
+$cat = $cat->getOneCat($book["label"]);
+$auteur = $auteur->getOneAuthor($_GET["idBook"]);
 
-
+session_start();
 
 ?>
 
@@ -46,8 +46,12 @@ $auteur = $auteur->getOneAuthor($book["idBook"]);
                 <?php
                     echo"<h2>" . $oneBook["title"] . "</h2>";
                 ?>
-                <a href="addBook.php"><img class="icon" src="../Img/icons/modify.png" alt="modify"></a>
+                <form action="modifyBook.php" method="post">
+                <a><img class="icon" src="../Img/icons/modify.png" alt="modify" value="<?=$oneBook["idBook"]?>"></a>
+                </form>
+            
                 <a href="#"><img class="icon" src="../Img/icons/delete.png" alt="delete"></a>
+                
             </div>
             <div class="book-details">
                 <h2><?=$cat?> - Nombres de pages: <?=$oneBook["nbPage"]?></h2>

@@ -32,6 +32,8 @@ Class ModelBook extends ModelMain{
 
     }
 
+    
+
     /**
      * Méthode pour récupérer la liste de tous les auteurs de la DB
      */
@@ -110,6 +112,25 @@ Class ModelBook extends ModelMain{
 
         // TODO: retour l'enseignant
         return $oneBook[0];
+    }
+
+    public function getOneCat($id){
+        // Récupère les données sur la table livre avec une requête sql
+        // en utilisant son ID
+        $query = "SELECT * FROM t_book WHERE idCategory = :id LEFT JOIN t_category ON t_book.idCategory = t_category.label"; 
+        $binds = [
+            ['id', $id, PDO::PARAM_INT]
+        ];
+
+        //appeler la méthode pour executer la requête
+        $req = $this->queryPrepareExecute($query,$binds);
+
+        //Retourne dans un tableau associatif à une seule 
+        //entrée les données d'un livre
+        $oneCat =$this->formatData($req);
+        
+        //Retourne la première (et unique) entrée du tableau
+        return $oneCat[0];
     }
 
 
