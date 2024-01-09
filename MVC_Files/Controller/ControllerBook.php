@@ -93,21 +93,6 @@ Class ControllerBook {
         $modelBook->updateBook($modelBook);
     }
 
-    public function oneBook($id){
-        $modelBook = new ModelBook();
-        $modelBook->getOneBook($id);
-    }
-
-    public function oneAuthor($id){
-        $modelBook = new ModelAuthor();
-        $modelBook->getOneAuthor($id);
-    }
-
-    public function oneCat($id){
-        $modelBook = new ModelBook();
-        $modelBook->getOneCat($id);
-    }
-
 }
 
 
