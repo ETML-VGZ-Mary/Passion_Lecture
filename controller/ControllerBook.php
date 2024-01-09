@@ -10,7 +10,9 @@
 
 // include modelBook
 //include ('../Model/ModelBook.php');
-//include_once ('model/ModelBook.php');
+//include_once ("./Controller.php");
+include_once 'model/CustomerRepository.php';
+//include_once 'model/ModelBook.php';
 
 
 class ControllerBook extends Controller {
@@ -25,7 +27,7 @@ class ControllerBook extends Controller {
         $action = $_GET['action'] . "Action";
 
         //$datas = $_POST;
-        $this->checkBook($_POST);
+        //$this->checkBook($_POST);
 
         // Appelle une méthode dans cette classe (ici, ce sera le nom + action (ex: listAction, detailAction, ...))
         return call_user_func(array($this, $action));
@@ -38,6 +40,10 @@ class ControllerBook extends Controller {
      * @return string
      */
     private function addBookAction() {
+
+        if(!isset($_GET["searchQuery"])){
+            $_GET["searchQuery"] = "test";
+        }
 
         $view = file_get_contents('view/page/addBook.php');
  
@@ -121,16 +127,11 @@ class ControllerBook extends Controller {
             foreach($errors as $error) {
                 echo $error . "<br>";
             }
-            //header('location:./addBook.php');
-            //exit();
         }else{
             // On ajoute à la db
-            $modelBook = new ModelBook();
-            $modelBook->addBook($datas);
+            $oneBook = new ModelBook();
+            //$modelBook->addBook($datas);
 
-            // redirection sur la page d'ajout
-            //header('location:index.php?controller=page&action=addBook');
-            //exit();
         }
 
     }

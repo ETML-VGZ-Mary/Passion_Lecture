@@ -33,12 +33,16 @@
                 echo "</div>";
                 }else{
                 /*utilisateur non-connecté : USERNAME + PASSWORD + LOGOUT*/
-                echo "<label for=\"user\"></label>";
-                echo "<input type=\"text\" name=\"user\" id=\"userLogin\" placeholder=\"Pseudo\">";
-                echo "<label for=\"password\"></label>";
-                echo "<input type=\"password\" name=\"password\" id=\"passwordLogin\" placeholder=\"Mot de passe\">";
-                echo "<div class=\"connexionButtons\">";
+                echo "<div class=\"\">";
+                    echo "<label for=\"user\"></label>";
+                    echo "<input type=\"text\" name=\"user\" id=\"userLogin\" placeholder=\"Pseudo\">";
+                    echo "<label for=\"password\"></label>";
+                    echo "<input type=\"password\" name=\"password\" id=\"passwordLogin\" placeholder=\"Mot de passe\">";
+                    
                     echo "<button type=\"submit\" class=\"bg-gray-300 hover:bg-gray-400 h-10 w-16\">Login</button>";
+                    
+                echo "</div>";
+                echo "<div class=\"\">";
                     echo "<a href=\"index.php?controller=page&action=newAccount\" class=\"link\">S'inscrire</a>";
                 echo "</div>";
             }

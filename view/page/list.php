@@ -9,10 +9,16 @@
 <?php
 
 include("../Passion_Lecture/model/ModelBook.php");
+include("../Passion_Lecture/model/ModelSearch.php");
+$modelSearch = new ModelSearch();
 
 $db2 = new ModelBook();
 $books = $db2->getAllBooks();
 $categories = $db2->getAllCategories();
+
+if(!isset($_GET["searchQuery"])){
+    $_GET["searchQuery"] = "null";
+}
 ?>
 
 <div class="container">
@@ -20,9 +26,35 @@ $categories = $db2->getAllCategories();
 
     <!--barre de recherche-->
     <div class="research-bar">
-        <input type="text" placeholder="Recherche...">
-        <button class="bg-gray-300 hover:bg-gray-400" type="submit"><img src="resources/image/icons/research.png" alt="research-icon"></button>
+        <?="<form action=\"index.php?controller=page&action=listBook&searchQuery=" . $_GET["searchQuery"] . "\" method=\"post\">"?>
+            <input type="search" name="searchQuery" placeholder="Rechercher un livre">
+            <input type="submit" value="Valider">
+        </form>
     </div>
+    <?php 
+        if(isset($_GET["searchQuery"]) && !empty($_GET["searchQuery"]))
+        {
+            $query = $_GET["searchQuery"];
+            $results = $modelSearch-> searchBook($query);
+
+            echo"<h2>Résultats de votre recherche :</h2>";
+                if(!empty($results)){
+                foreach($results as $book)
+                {   
+                        echo "<div class=\"box-book\">";
+                            echo "<a href=\"details.php?idBook=" . $book["idBook"] . "\"><img src=\"../Img/books/book" . $book["idBook"] . ".jpg\" alt=\"image01\"></a>";
+                            echo "<p>" . $book["title"] . "</p>";
+                        echo "</div>";
+                    }
+                }
+                else 
+                {
+                    echo "<p>Aucun résultat trouvé.</p>";
+                }
+        }
+    ?>
+
+
     
     <form action="#" method="post">
         <?php

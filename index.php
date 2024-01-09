@@ -43,7 +43,7 @@ class MainController {
         switch($controller){
             case 'validation':
                 //$link = new ControllerBook();
-                $link = new CustomerController();
+                $link = new ControllerBook();
                 break;
             case 'page':
                 $link = new ControllerDisplayPage();

@@ -8,6 +8,8 @@
 
 // Session Start
 session_start();
+//include_once 'model/CustomerRepository.php';
+//include_once 'model/ModelBook.php';
 
 class ControllerDisplayPage extends Controller {
 
@@ -46,7 +48,7 @@ class ControllerDisplayPage extends Controller {
      * @return string
      */
     private function listBookAction() {
-
+        
         $view = file_get_contents('view/page/list.php');
  
         ob_start();
@@ -62,6 +64,34 @@ class ControllerDisplayPage extends Controller {
      * @return string
      */
     private function addBookAction() {
+
+        if(!isset($_POST["title"])){
+            $_POST["title"] = "";
+        }
+        if(!isset($_POST["nameAuthor"])){
+            $_POST["nameAuthor"] = "";
+        }
+        if(!isset($_POST["firstNameAuthor"])){
+            $_POST["firstNameAuthor"] = "";
+        }
+        if(!isset($_POST["category"])){
+            $_POST["category"] = "";
+        }
+        if(!isset($_POST["nbPage"])){
+            $_POST["nbPage"] = "";
+        }
+        if(!isset($_POST["editor"])){
+            $_POST["editor"] = "";
+        }
+        if(!isset($_POST["yearEdit"])){
+            $_POST["yearEdit"] = "";
+        }
+        if(!isset($_POST["bookExtract"])){
+            $_POST["bookExtract"] = "";
+        }
+        if(!isset($_POST["resume"])){
+            $_POST["resume"] = "";
+        }
 
         $view = file_get_contents('view/page/addBook.php');
  

@@ -1,17 +1,8 @@
 <?php
 include_once("ModelMain.php");
 
-Class ModelBook extends ModelMain{
+class ModelBook extends ModelMain{
    
-
-    /**
-     * Fonction pour se connecter via PDO et utiliser la variable de classe $connector
-     * Utilise un trycatch pour renvoyer une erreur dans la variable $e
-     */
-    public function __construct(){
-        parent::__construct();
-    }
-
 
     /**
      * Méthode qui récupère la liste de toutes les catégories de la BD

@@ -20,15 +20,15 @@ $categories = $dbBook->getAllCategories();
                 
         <div class="form-data">
             <label class="accountMetaData" for="title" >Titre :</label>
-            <input type="text" name="title" id="title" value="">
+            <input type="text" name="title" id="title" value="<?=$_POST["title"]?>">
         </div>
         <div class="form-data">
             <label class="accountMetaData" for="nameAuthor" >Nom auteur :</label>
-            <input type="text" name="nameAuthor" id="nameAuthor" value="">
+            <input type="text" name="nameAuthor" id="nameAuthor" value="<?=$_POST["nameAuthor"]?>">
         </div>
         <div class="form-data">
             <label class="accountMetaData" for="firstNameAuthor"> Prénom auteur :</label>
-            <input type="text" name="firstNameAuthor" id="firstNameAuthor" value="">
+            <input type="text" name="firstNameAuthor" id="firstNameAuthor" value="<?=$_POST["firstNameAuthor"]?>">
         </div>
             
         
@@ -38,23 +38,29 @@ $categories = $dbBook->getAllCategories();
                 <option value="" hidden></option>
                 <?php
                     foreach($categories as $category){
-                        echo "<option value=\"" . $category["label"] . "\"> ". $category["label"] . "</option>";
+                        
+                        if ($category["label"] == $_POST["category"]){
+                            echo "<option value=\"" . $category["label"] . "\" selected> ". $category["label"] . "</option>";
+                        }else{
+                            echo "<option value=\"" . $category["label"] . "\"> ". $category["label"] . "</option>";
+                        }
+                        
                     }
                 ?>
             </select>
         </div>
         <div class="form-data">
             <label class="accountMetaData" for="nbPage">Nombres de pages :</label> 
-            <input type="number" name="nbPage" id="nbPage" min ="1">
+            <input type="number" name="nbPage" id="nbPage" min ="1" value="<?=$_POST["nbPage"]?>">
         </div>
         
         <div class="form-data">
             <label class="accountMetaData" for="editor">Editeur :</label>
-            <input type="text" name="editor" id="editor" value="">
+            <input type="text" name="editor" id="editor" value="<?=$_POST["editor"]?>">
         </div>
         <div class="form-data">
             <label class="accountMetaData" for="yearEdit">Année d'édition :</label>
-            <input type="text" name="yearEdit" id="yearEdit" value="">
+            <input type="text" name="yearEdit" id="yearEdit" value="<?=$_POST["yearEdit"]?>">
         </div>
         <div class="form-data">
             <label class="accountMetaData" for="pictureCover">Couverture :</label>
@@ -62,11 +68,11 @@ $categories = $dbBook->getAllCategories();
         </div>
         <div class="form-data">
             <label class="accountMetaData" for="bookExtract">Extrait du livre :</label>
-            <input type="text" name="bookExtract" id="bookExtract" placeholder="Lien URL vers un extrait" value="">
+            <input type="text" name="bookExtract" id="bookExtract" placeholder="Lien URL vers un extrait" value="<?=$_POST["bookExtract"]?>">
         </div>
         <div class="form-data">
             <label class="accountMetaData" for="resume">Résumé :</label>
-            <textarea name="resume" id="resume" cols="30" rows="10"></textarea>
+            <textarea name="resume" id="resume" cols="30" rows="10"><?=$_POST["resume"]?></textarea>
         </div>
         <div class="form-data">
             <label class="accountMetaData" for="btnSubmit"></label>

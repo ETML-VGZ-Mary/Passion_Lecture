@@ -2,7 +2,7 @@
     ETML
     Auteur        :	Déglise Camille - Vougaz Maryline - Wu Guo Yu
     Date          :	28.11.2023
-    Description   :	Accueil du site "Passion Lecture" 
+    Description   :	page de détails d'un livre
 -->
 
 <?php
