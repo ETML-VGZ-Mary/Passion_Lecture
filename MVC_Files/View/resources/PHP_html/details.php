@@ -82,16 +82,18 @@ $db4 = new ModelAuthor();
             echo "<img class=\"book-image\" src=\"../Img/books/book" . $oneBook["idBook"] . ".jpg\" alt=\"img book " . $oneBook["idBook"] ."\">";
         ?>
 
-        
+        <form action="dispatch.php?controler=grade&action=addGrade" method="post" enctype="multipart/form-data">
         <div class="rating gap-1">
             <label>Note : </label>
-
+            
             <?php
             for($i=0 ; $i < 5; $i++){
                 echo "<input type=\"radio\" name=\"rating-3\" value=\" . $i . \" class=\"mask mask-heart bg-red-500\" />";
             }
             ?>
         </div>
+        <input type="submit" value = "Valider ma note">
+        </form>
 
     </div>
 </div>

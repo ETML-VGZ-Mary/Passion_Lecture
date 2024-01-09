@@ -22,9 +22,7 @@ Class ModelSearch extends ModelMain{
         //Requête préparée pour éviter injections SQL
         $searchQuery = "SELECT * from t_book 
                     WHERE  title LIKE '%$query%'";
-       // echo "<pre>";
-        //var_dump($searchQuery);
-        //echo "</pre>";
+       
         //$binds = [
             //[
                 //':searchQuery', $searchQuery, PDO::PARAM_STR
@@ -36,9 +34,6 @@ Class ModelSearch extends ModelMain{
         $req = $this->querySimpleExecute($searchQuery);
         // Retourner les résultats sous forme de tableau associatif
         $books =  $this->formatData($req);
-        //echo "<pre>";
-        //var_dump($books);
-        //echo "</pre>";
         return $books;
         
      }
