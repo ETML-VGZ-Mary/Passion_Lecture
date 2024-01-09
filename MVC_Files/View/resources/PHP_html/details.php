@@ -18,7 +18,7 @@ $cat = $cat->getOneCat($book["idCategory"]);
 //$auteur = $auteur->getOneAuthor($book["idBook"]);
 */
 $db3 = new ModelBook();
-$oneBook = $db3->getOneBookGW($_GET["idBook"]); // id entrée en "dure"
+$oneBook = $db3->getOneBookGW($_GET["idBook"]); // 
 /*
 $db4 = new ModelAuthor();
 //$cat = $cat->getOneCat($book["idCategory"]);
@@ -57,8 +57,8 @@ $db4 = new ModelAuthor();
             <?php
                 echo"<h2>" . $oneBook["title"] . "</h2>";
             ?>
-            <a href="#"><img class="icon" src="resources/image/icons/modify.png" alt="modify"></a>
-            <a href="#"><img class="icon" src="resources/image/icons/delete.png" alt="delete"></a>
+            <a href="#"><img class="icon" src="../Img/icons/modify.png" alt="modify"></a>
+            <a href="#"><img class="icon" src="../Img/icons/delete.png" alt="delete"></a>
         </div>
         <div class="book-details">
             <h2><?=$oneBook["idCategory"]?> - Nombres de pages: <?=$oneBook["nbPage"]?></h2>
@@ -69,7 +69,7 @@ $db4 = new ModelAuthor();
             <h2> <?=$oneBook["yearEdit"]?></h2>
         </div>
         <div class="book-resume">
-            <h2>Résumé</h2>
+            <h2>Résumé : </h2>
             <p class="resume">
                 <?=$oneBook["resume"]?>
             </p>
@@ -79,7 +79,7 @@ $db4 = new ModelAuthor();
     <div class="page-part2">
         
         <?php
-            echo "<img class=\"book-image\" src=\"resources/image/books/book" . $oneBook["idBook"] . ".jpg\" alt=\"img book " . $oneBook["idBook"] ."\">";
+            echo "<img class=\"book-image\" src=\"../Img/books/book" . $oneBook["idBook"] . ".jpg\" alt=\"img book " . $oneBook["idBook"] ."\">";
         ?>
 
         

@@ -85,6 +85,10 @@ Class ModelAuthor extends ModelMain {
 
      }
 
+     //Nouvelle méthode pour getNameAuthor($nom, $prenom)
+     //{
+        //select * t author like nom et prénom
+     //}
      
     
 

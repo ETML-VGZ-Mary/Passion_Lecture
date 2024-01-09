@@ -6,7 +6,7 @@
 
 Class ControllerBook {
 
-    private function checkBook($datas)
+    public function addBook($datas)
     {
         $errors = array();
 
@@ -77,9 +77,18 @@ Class ControllerBook {
             //header('location:./addBook.php');
             //exit();
         }else{
+
+            //ajouter l'auteur
+            //getNameAuthor pour voir si nom existe 
+            //si oui récupérer son id
+            //si non, utiliser addAuthor puis récupérer id
+
             // On ajoute à la db
             $modelBook = new ModelBook();
             $modelBook->addBook($datas);
+
+            //ajouter l'enregistrement dans la table t_write
+            //model t_write avec méthode pour insérer l'id de l'auteur + id du livre 
 
             // redirection sur la page d'ajout
             header('location:./addBook.php');
@@ -87,12 +96,7 @@ Class ControllerBook {
         }
 
     }
-    public function addBook($datas) {
-        $this->checkBook($datas);
-        
-        // Appel ModelBook pour INSERT
-        
-        }
+    
 
     
 }
