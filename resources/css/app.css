@@ -187,7 +187,14 @@ header a, footer a{
 }
 
 /*page liste--------------------------------------------*/
-
+.reseach-result{
+    padding: 10px;
+    background-color: rgb(177, 255, 255);
+}
+#btnValidationResearch{
+    display: inline;
+    padding: 6px;
+}
 .book-name{
     display: flex;
     align-items: center;
@@ -233,7 +240,9 @@ h4{
 .page-part2{
     margin-left: 50px;
 }
-
+.icon{
+    margin: 10px;
+}
 /*page ajout livre*/
 .form-data{
     display: flex;

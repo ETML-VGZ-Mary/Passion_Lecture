@@ -16,9 +16,7 @@ $db2 = new ModelBook();
 $books = $db2->getAllBooks();
 $categories = $db2->getAllCategories();
 
-if(!isset($_GET["searchQuery"])){
-    $_GET["searchQuery"] = "null";
-}
+
 ?>
 
 <div class="container">
@@ -26,23 +24,27 @@ if(!isset($_GET["searchQuery"])){
 
     <!--barre de recherche-->
     <div class="research-bar">
-        <?="<form action=\"index.php?controller=page&action=listBook&searchQuery=" . $_GET["searchQuery"] . "\" method=\"post\">"?>
+        <form action="#" method="post" id="researchBar">
             <input type="search" name="searchQuery" placeholder="Rechercher un livre">
-            <input type="submit" value="Valider">
+            <!--<input type="submit" value="Valider">-->
+            <button class="bg-gray-300 hover:bg-gray-400 h-9 w-250" type="submit" name="btnSubmit" id="btnValidationResearch"><img src="resources/image/icons/research.png" alt="research-icon"></button>
         </form>
     </div>
     <?php 
-        if(isset($_GET["searchQuery"]) && !empty($_GET["searchQuery"]))
+        if(isset($_POST["searchQuery"]) && !empty($_POST["searchQuery"]))
         {
-            $query = $_GET["searchQuery"];
+            $query = $_POST["searchQuery"];
             $results = $modelSearch-> searchBook($query);
 
-            echo"<h2>Résultats de votre recherche :</h2>";
-                if(!empty($results)){
+            
+            echo"<h2>Résultats de votre recherche \"" . $_POST["searchQuery"] . "\" :</h2>";
+            if(!empty($results)){
+            
+            echo"<div class=\"reseach-result\">";
                 foreach($results as $book)
                 {   
                         echo "<div class=\"box-book\">";
-                            echo "<a href=\"details.php?idBook=" . $book["idBook"] . "\"><img src=\"../Img/books/book" . $book["idBook"] . ".jpg\" alt=\"image01\"></a>";
+                            echo "<a href=\"details.php?idBook=" . $book["idBook"] . "\"><img src=\"resources/image/books/book" . $book["idBook"] . ".jpg\" alt=\"image01\"></a>";
                             echo "<p>" . $book["title"] . "</p>";
                         echo "</div>";
                     }
@@ -51,6 +53,7 @@ if(!isset($_GET["searchQuery"])){
                 {
                     echo "<p>Aucun résultat trouvé.</p>";
                 }
+            echo"</div>";
         }
     ?>
 

@@ -19,7 +19,7 @@ $oneBook = $db3->getOneBookGW($_GET["idBook"]);
     <div class="page-part1">
         <div class="book-name">
             <?php
-                echo"<h2>" . $oneBook["title"] . "</h2>";
+                echo"<h1>" . $oneBook["title"] . "</h1>";
             ?>
             <a href="#"><img class="icon" src="resources/image/icons/modify.png" alt="modify"></a>
             <a href="#"><img class="icon" src="resources/image/icons/delete.png" alt="delete"></a>
