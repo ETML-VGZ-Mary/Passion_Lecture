@@ -45,7 +45,7 @@ Class ModelAuthor extends ModelMain {
     public function getOneAuthor($id){
         // Récupère les données sur la table auteur avec une requête sql
         // en utilisant son ID
-        $query = "SELECT * FROM t_author WHERE idAuthor= :id"; 
+        $query = "SELECT * FROM t_write LEFT JOIN t_book ON t_write.idBook = t_book.idBook WHERE idBook = $id"; 
         $binds = [
             ['id', $id, PDO::PARAM_INT]
         ];

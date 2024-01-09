@@ -10,11 +10,13 @@
 include("../../../Model/ModelBook.php");
 include("../../../Model/ModelAuthor.php");
 
-$db3 = new ModelBook();
-$oneBook = $db3->getOneBook($_GET["idBook"]); // id entrée en "dure"
+$idBook = $_POST["idBook"];
 
-$cat = $cat->getOneCat($book["label"]);
-$auteur = $auteur->getOneAuthor($_GET["idBook"]);
+$db3 = new ModelBook();
+$oneBook = $db3->getOneBook($idBook); // id entrée en "dure"
+
+$cat = $cat->getOneCat($idBook);
+$auteur = $auteur->getOneAuthor($idBook);
 
 session_start();
 

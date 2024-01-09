@@ -43,6 +43,7 @@
     protected function querySimpleExecute($query){
 
         // permet de préparer et d’exécuter une requête de type simple (sans where)
+        var_dump($query);
         $req = $this->connector->query($query);
         return $req;
     }
@@ -54,8 +55,8 @@
         
         // TODO: permet de préparer, de binder et d’exécuter une requête (select avec where ou insert, update et delete)
         /**
-         * A COMPLETER PLUS TARD 
-         */
+         * A COMPLETER PLUS TARD */
+         
         $req = $this->connector->prepare($query);
         foreach($binds as $bind) {
             $req -> bindValue($bind[0], $bind[1], PDO::PARAM_STR);

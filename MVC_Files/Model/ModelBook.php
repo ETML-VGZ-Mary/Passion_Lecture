@@ -80,20 +80,17 @@ Class ModelBook extends ModelMain{
     public function getOneBook($id){
         // Récupère les données sur la table livre avec une requête sql
         // en utilisant son ID
-        $query = "SELECT * FROM t_book WHERE idbook = :id LEFT JOIN t_author ON t_book.authorfirstName = t_author.firstName AND t_book.authorlastName = t_author.lastName"; 
-        $binds = [
-            ['id', $id, PDO::PARAM_INT]
-        ];
+        $query = "SELECT * FROM t_book WHERE idBook = $id"; 
 
-        //appeler la méthode pour executer la requête
-        $req = $this->queryPrepareExecute($query,$binds);
+        // TODO: appeler la méthode pour executer la requête
+        $req = $this->querySimpleExecute($query);
+        // utilisation de [queryPrepareExecute($query, $binds)] ?
 
-        //Retourne dans un tableau associatif à une seule 
-        //entrée les données d'un livre
-        $book =$this->formatData($req);
-        
-        //Retourne la première (et unique) entrée du tableau
-        return $book[0];
+        // TODO: appeler la méthode pour avoir le résultat sous forme de tableau
+        $oneBook = $this->formatData($req);
+
+        // TODO: retour l'enseignant
+        return $oneBook[0];
     }
 
     /*
@@ -117,17 +114,16 @@ Class ModelBook extends ModelMain{
     public function getOneCat($id){
         // Récupère les données sur la table livre avec une requête sql
         // en utilisant son ID
-        $query = "SELECT * FROM t_book WHERE idCategory = :id LEFT JOIN t_category ON t_book.idCategory = t_category.label"; 
-        $binds = [
-            ['id', $id, PDO::PARAM_INT]
-        ];
+        $query = "SELECT * FROM t_book LEFT JOIN t_category ON t_book.idCategory = t_category.label t_book WHERE idCategory = $id "; 
+        
 
-        //appeler la méthode pour executer la requête
-        $req = $this->queryPrepareExecute($query,$binds);
+        // TODO: appeler la méthode pour executer la requête
+        $req = $this->querySimpleExecute($query);
+        // utilisation de [queryPrepareExecute($query, $binds)] ?
 
-        //Retourne dans un tableau associatif à une seule 
-        //entrée les données d'un livre
-        $oneCat =$this->formatData($req);
+        // TODO: appeler la méthode pour avoir le résultat sous forme de tableau
+        $oneCat = $this->formatData($req);
+
         
         //Retourne la première (et unique) entrée du tableau
         return $oneCat[0];
@@ -157,10 +153,10 @@ Class ModelBook extends ModelMain{
         //:xxx == étiquette 
         $query = "INSERT INTO t_book(title, nbPage , editor, 
         yearEdit, pictureCover, bookExtract, `resume` fkCategory, fkAuthor)
-        VALUES(:title, :nbPage$, :editor, :yearEdit, :pictureCover, :bookExtract, :`resume` :category, :author)";
+        VALUES($title, $nbPage, $editor, $yearEdit, $pictureCover, $bookExtract, $resume, $fkCategory, $fkAuthor)";
 
         //Liasion des variables avec le marqueur 
-        $binds = [
+        /*$binds = [
             ['title', $title, PDO::PARAM_STR],
             ['nbPage', $nbPage::PARpageTR],
             ['editor', $editor, PDO::PARAM_STR],
@@ -171,8 +167,9 @@ Class ModelBook extends ModelMain{
             ['category', $fkCategory, PDO::PARAM_INT],
             ['author', $fkAuthor, PDO::PARAM_INT]
         ];
-        $this->queryPrepareExecute($query, $binds);
-
+        $this->queryPrepareExecute($query, $binds);*/
+        // TODO: appeler la méthode pour executer la requête
+        $this->querySimpleExecute($query);
     }
 
 
@@ -188,7 +185,7 @@ Class ModelBook extends ModelMain{
     {
          //Ajout des données de $_POST ($data) dans de nouvelles variables
         //pour des questions de lisibilité. 
-        $title = $data["title"];
+        /*$title = $data["title"];
         $nbPage = $data["page"];
         $editor = $data["editor"];
         $yearEdit = $data["yearEdit"];
@@ -196,7 +193,7 @@ Class ModelBook extends ModelMain{
         $bookExtract = $data["bookExtract"];
         $resume = $data["resume"];
         $fkAuthor = $data["author"];
-        $fkCategory = $data["category"];
+        $fkCategory = $data["category"];*/
 
          //Requête sur la db pour modifier les nouvelles données avec prepare
         //:xxx == étiquette 
@@ -212,22 +209,13 @@ Class ModelBook extends ModelMain{
                       fkCategory = :fkCategory
                   WHERE idBook = ". $data['idBook'] . ";";
         
-        //Liasion des variables avec le marqueur 
-        $binds = [
-            ['title', $title, PDO::PARAM_STR],
-            ['nbPage', $nbPage::PARpageTR],
-            ['editor', $editor, PDO::PARAM_STR],
-            ['yearEdit', $yearEdit, PDO::PARAM_INT],
-            ['pictureCover', $pictureCover, PDO::PARAM_STR],
-            ['bookExtract', $bookExtract, PDO::PARAM_STR],
-            ['resume', $resume, PDO::PARAM_STR],
-            ['author', $fkAuthor, PDO::PARAM_INT],
-            ['category', $fkCategory, PDO::PARAM_INT]
-        ];
-        $this->queryPrepareExecute($query, $binds);
+
+        // TODO: appeler la méthode pour executer la requête
+        $req = $this->querySimpleExecute($query);
+        // utilisation de [queryPrepareExecute($query, $binds)] ?
+
+        
     }
-
-
 
     /**
      * Fonction pour supprimer dans la base de donnée un livre 
