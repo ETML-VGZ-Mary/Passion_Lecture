@@ -114,59 +114,49 @@ class ModelBook extends ModelMain{
         //Ajout des données de $_POST ($data) dans de nouvelles variables
         //pour des questions de lisibilité. 
         $title = $data["title"];
-        /*
         $nbPage = $data["nbPage"];
         $editor = $data["editor"];
         $yearEdit = $data["yearEdit"];
-        $pictureCover = $data["pictureCover"];
         $bookExtract = $data["bookExtract"];
         $resume = $data["resume"];
-        $fkAuthor = $data["namAuthor"];
         $fkCategory = $data["category"];
+        $idUser = $_SESSION["account"]["idUser"];
+        
+        /*
+        $pictureCover = $data["pictureCover"];
+        $fkAuthor = $data["namAuthor"];
         */
+
         /*
         //Requête sur la db pour insérer les nouvelles données avec prepare
         //:xxx == étiquette 
-        $query = "INSERT INTO t_book(title, nbPage, editor, 
-        yearEdit, bookExtract, resume, fkCategory)
-        VALUES(:title, :nbPge, :editor, :yearEdit, :bookExtract, :resume, :category)";
-
-        //Liasion des variables avec le marqueur 
-        $binds = [
-            ['title', $title, PDO::PARAM_STR],
-            ['nbPage', $nbPage, PDO::PARAM_INT],
-            ['editor', $editor, PDO::PARAM_STR],
-            ['yearEdit', $yearEdit, PDO::PARAM_INT],
-            //['pictureCover', $pictureCover, PDO::PARAM_STR],
-            ['bookExtract', $bookExtract, PDO::PARAM_STR],
-            ['resume', $resume, PDO::PARAM_STR],
-            ['category', $fkCategory, PDO::PARAM_INT],
-            //['author', $fkAuthor, PDO::PARAM_INT]
-        ];
         */
 
-        $query = "INSERT INTO t_book(title)
-        VALUES(:title)";
+        $query = "INSERT INTO t_book(title, nbPage , editor, yearEdit, bookExtract, resume, fkCategory, idUser)
+        VALUES(:title, :nbPage, :editor, :yearEdit, :bookExtract, :resume, :category, idUser)";
+        
+        
+        /*
+        $query = "INSERT INTO t_book(title, nbPage , editor, 
+        yearEdit, pictureCover, bookExtract, `resume` fkCategory, fkAuthor)
+        VALUES(:title, :nbPage$, :editor, :yearEdit, :pictureCover, :bookExtract, :`resume` :category, :author)";
+        */
 
         //Liasion des variables avec le marqueur 
         $binds = [
             ['title', $title, PDO::PARAM_STR],
-            /*
             ['nbPage', $nbPage, PDO::PARAM_INT],
             ['editor', $editor, PDO::PARAM_STR],
             ['yearEdit', $yearEdit, PDO::PARAM_INT],
-            ['pictureCover', $pictureCover, PDO::PARAM_STR],
             ['bookExtract', $bookExtract, PDO::PARAM_STR],
             ['resume', $resume, PDO::PARAM_STR],
             ['category', $fkCategory, PDO::PARAM_INT],
+            ['idUser', $idUser, PDO::PARAM_STR],
+            /*
+            ['pictureCover', $pictureCover, PDO::PARAM_STR],
             ['author', $fkAuthor, PDO::PARAM_INT]
             */
         ];
-
-
-        echo "<pre>";
-        var_dump($binds);
-        echo "</pre>";
 
         $this->queryPrepareExecute($query, $binds);
 
@@ -242,29 +232,22 @@ class ModelBook extends ModelMain{
 
 
     /*
-     * Fonction qui retourne la liste des 5 derniers livres ajoutés
+     * Fonction qui retourne la liste des N derniers livres ajoutés
      */
     public function getNLastBooks($nbLastBooks){
-        // TODO: avoir la requête sql pour N derniers livres
+        // avoir la requête sql pour N derniers livres
         $query = "SELECT * FROM t_book ORDER BY idBook DESC LIMIT $nbLastBooks";
 
-        // TODO: appeler la méthode pour executer la requête
+        // appelle la méthode pour executer la requête
         $req = $this->querySimpleExecute($query);
-        // utilisation de [queryPrepareExecute($query, $binds)] ?
 
-        // TODO: appeler la méthode pour avoir le résultat sous forme de tableau
+        // appelle la méthode pour avoir le résultat sous forme de tableau
         $lastBooks = $this->formatData($req);
 
-        // TODO: retour l'enseignant
+        //retourne les N derniers livres
         return $lastBooks;
     }
 
-    /*
-     * Fonction qui retourne la liste des 5 derniers livres ajoutés
-     */
-    public function functionTest(){
-       echo "HELLLLLO GOTHAM!";
-    }
      
 
 

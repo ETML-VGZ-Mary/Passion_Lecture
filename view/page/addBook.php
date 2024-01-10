@@ -32,9 +32,9 @@
                     foreach($categories as $category){
                         
                         if ($category["label"] == $_POST["category"]){
-                            echo "<option value=\"" . $category["label"] . "\" selected> ". $category["label"] . "</option>";
+                            echo "<option value=\"" . $category["idCategory"] . "\" selected> ". $category["label"] . "</option>";
                         }else{
-                            echo "<option value=\"" . $category["label"] . "\"> ". $category["label"] . "</option>";
+                            echo "<option value=\"" . $category["idCategory"] . "\"> ". $category["label"] . "</option>";
                         }
                         
                     }
