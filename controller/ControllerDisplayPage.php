@@ -107,6 +107,22 @@ class ControllerDisplayPage extends Controller {
      *
      * @return string
      */
+    private function modifyBookAction() {
+
+        $view = file_get_contents('view/page/modifyBook.php');
+ 
+        ob_start();
+        eval('?>' . $view);
+        $content = ob_get_clean();
+
+        return $content;
+    }
+
+    /**
+     * Affiche le contenu de la page Informations de compte
+     *
+     * @return string
+     */
     private function accountAction() {
 
         $view = file_get_contents('view/page/account.php');

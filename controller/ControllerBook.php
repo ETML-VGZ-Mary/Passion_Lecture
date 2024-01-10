@@ -12,7 +12,7 @@
 //include ('../Model/ModelBook.php');
 //include_once ("./Controller.php");
 include_once 'model/CustomerRepository.php';
-//include_once 'model/ModelBook.php';
+include_once 'model/ModelBook.php';
 
 
 class ControllerBook extends Controller {
@@ -27,7 +27,7 @@ class ControllerBook extends Controller {
         $action = $_GET['action'] . "Action";
 
         //$datas = $_POST;
-        //$this->checkBook($_POST);
+        $this->checkBook($_POST);
 
         // Appelle une méthode dans cette classe (ici, ce sera le nom + action (ex: listAction, detailAction, ...))
         return call_user_func(array($this, $action));
@@ -130,7 +130,7 @@ class ControllerBook extends Controller {
         }else{
             // On ajoute à la db
             $oneBook = new ModelBook();
-            //$modelBook->addBook($datas);
+            $oneBook->addBook($datas);
 
         }
 

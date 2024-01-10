@@ -20,9 +20,12 @@ $oneBook = $db3->getOneBookGW($_GET["idBook"]);
         <div class="book-name">
             <?php
                 echo"<h1>" . $oneBook["title"] . "</h1>";
+
+                if($_SESSION["isConnected"]){
+                    echo "<a href=\"index.php?controller=page&action=modifyBook&idBook=" . $oneBook["idBook"] . "\"><img class=\"icon\" src=\"resources/image/icons/modify.png\" alt=\"modify\"></a>";
+                    echo "<a href=\"#\"><img class=\"icon\" src=\"resources/image/icons/delete.png\" alt=\"delete\"></a>";
+                }
             ?>
-            <a href="#"><img class="icon" src="resources/image/icons/modify.png" alt="modify"></a>
-            <a href="#"><img class="icon" src="resources/image/icons/delete.png" alt="delete"></a>
         </div>
         <div class="book-details">
             <h2><?=$oneBook["idCategory"]?> - Nombres de pages: <?=$oneBook["nbPage"]?></h2>

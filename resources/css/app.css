@@ -199,7 +199,9 @@ header a, footer a{
     display: flex;
     align-items: center;
 }
-
+.book-name h1{
+    margin-bottom: 0;
+}
 h4{
     color: rgb(0, 48, 73);
 }
@@ -241,7 +243,8 @@ h4{
     margin-left: 50px;
 }
 .icon{
-    margin: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 /*page ajout livre*/
 .form-data{
