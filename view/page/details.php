@@ -7,11 +7,11 @@
 
 <?php
 // connexion à la BD
+/*
 include("model/ModelBook.php");
 include("model/ModelAuthor.php");
-
 $db3 = new ModelBook();
-$oneBook = $db3->getOneBookGW($_GET["idBook"]);
+$oneBook = $db3->getOneBookGW($_GET["idBook"]);*/
 
 ?>
 

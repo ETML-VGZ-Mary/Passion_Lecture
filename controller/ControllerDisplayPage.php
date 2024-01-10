@@ -9,6 +9,8 @@
 // Session Start
 //session_start();
 include_once 'model/ModelBook.php';
+include("model/ModelAuthor.php");
+include("model/ModelSearch.php");
 
 class ControllerDisplayPage extends Controller {
 
@@ -33,6 +35,9 @@ class ControllerDisplayPage extends Controller {
      */
     private function homeAction() {
 
+        $dbBook = new ModelBook();
+        $fiveLastBooks = $dbBook->getNLastBooks(5);
+
         $view = file_get_contents('view/page/home.php');
  
         ob_start();
@@ -48,6 +53,11 @@ class ControllerDisplayPage extends Controller {
      */
     private function listBookAction() {
         
+        $modelSearch = new ModelSearch();
+        $db2 = new ModelBook();
+        $books = $db2->getAllBooks();
+        $categories = $db2->getAllCategories();
+
         $view = file_get_contents('view/page/list.php');
  
         ob_start();
@@ -63,6 +73,9 @@ class ControllerDisplayPage extends Controller {
      * @return string
      */
     private function addBookAction() {
+
+        $dbBook = new ModelBook();
+        $categories = $dbBook->getAllCategories();
 
         if(!isset($_POST["title"])){
             $_POST["title"] = "";
@@ -139,6 +152,9 @@ class ControllerDisplayPage extends Controller {
      * @return string
      */
     private function detailsAction() {
+
+        $db3 = new ModelBook();
+        $oneBook = $db3->getOneBookGW($_GET["idBook"]);
 
         $view = file_get_contents('view/page/details.php');
  

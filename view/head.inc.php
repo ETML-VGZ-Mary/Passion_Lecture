@@ -5,13 +5,6 @@
     Description   : Head commun à toutes les pages web. Instancie les généralités (titre, lien CSS, ...)
 -->
 
-<?php
-
-// détruit la session en cours
-//session_destroy();
-//session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,14 +15,9 @@
 
     <!-- Custom CSS -->
     <link href="../resources/css/app.css" rel="stylesheet">
-
-    <!-- Bootstrap CSS 
-    <link href="../resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
     
     <!-- Tailwind CSS -->
     <link href="../resources/tailwind/css/tailwind.css" rel="stylesheet"> 
-
-    
 
 </head>
 

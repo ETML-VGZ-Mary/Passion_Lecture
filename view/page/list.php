@@ -9,12 +9,12 @@
 <?php
 
 //include("../Passion_Lecture/model/ModelBook.php");
+/*
 include("../Passion_Lecture/model/ModelSearch.php");
 $modelSearch = new ModelSearch();
-
 $db2 = new ModelBook();
 $books = $db2->getAllBooks();
-$categories = $db2->getAllCategories();
+$categories = $db2->getAllCategories();*/
 
 
 ?>

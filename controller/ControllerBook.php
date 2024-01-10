@@ -133,10 +133,8 @@ class ControllerBook extends Controller {
         }else{
             // On ajoute à la db
             $oneBook = new ModelBook();
-            $oneBook->functionTest();
-            //$oneBook = new ModelMain();
-            //$oneBook = new ModelSearch();
-            //$oneBook->addBook($datas);
+            //$oneBook->functionTest();
+            $oneBook->addBook($datas);
 
         }
 

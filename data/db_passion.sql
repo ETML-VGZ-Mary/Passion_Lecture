@@ -11,41 +11,41 @@ USE db_passion;
 
 CREATE TABLE t_user(
    idUser INT AUTO_INCREMENT,
-   login VARCHAR(100) NOT NULL,
-   firstName VARCHAR(100) NOT NULL,
-   lastName VARCHAR(100) NOT NULL,
-   mailAddress VARCHAR(320) NOT NULL,
+   login VARCHAR(100),
+   firstName VARCHAR(100),
+   lastName VARCHAR(100),
+   mailAddress VARCHAR(320),
    birthDate DATE,
-   passWord VARCHAR(200) NOT NULL,
-   isAdmin BOOLEAN NOT NULL,
-   dateInscription DATETIME NOT NULL,
+   passWord VARCHAR(200),
+   isAdmin BOOLEAN,
+   dateInscription DATETIME,
    PRIMARY KEY(idUser)
 );
 
 CREATE TABLE t_category(
    idCategory INT AUTO_INCREMENT,
-   label VARCHAR(50) NOT NULL,
+   label VARCHAR(50),
    PRIMARY KEY(idCategory)
 );
 
 CREATE TABLE t_author(
    idAuthor INT AUTO_INCREMENT,
-   firstName VARCHAR(150) NOT NULL,
-   lastName VARCHAR(150) NOT NULL,
+   firstName VARCHAR(150),
+   lastName VARCHAR(150),
    PRIMARY KEY(idAuthor)
 );
 
 CREATE TABLE t_book(
    idBook INT AUTO_INCREMENT,
-   title VARCHAR(250) NOT NULL,
-   nbPage INT NOT NULL,
-   bookExtract VARCHAR(2083) NOT NULL,
-   resume TEXT NOT NULL,
-   editor VARCHAR(200) NOT NULL,
-   yearEdit INT NOT NULL,
-   pictureCover VARCHAR(260) NOT NULL,
-   idCategory INT NOT NULL,
-   idUser INT NOT NULL,
+   title VARCHAR(250),
+   nbPage INT,
+   bookExtract VARCHAR(2083),
+   resume TEXT,
+   editor VARCHAR(200),
+   yearEdit INT,
+   pictureCover VARCHAR(260),
+   idCategory INT,
+   idUser INT,
    PRIMARY KEY(idBook),
    FOREIGN KEY(idCategory) REFERENCES t_category(idCategory),
    FOREIGN KEY(idUser) REFERENCES t_user(idUser)
@@ -54,7 +54,7 @@ CREATE TABLE t_book(
 CREATE TABLE t_grade(
    idUser INT,
    idBook INT,
-   evaluation TINYINT NOT NULL,
+   evaluation TINYINT,
    PRIMARY KEY(idUser, idBook),
    FOREIGN KEY(idUser) REFERENCES t_user(idUser),
    FOREIGN KEY(idBook) REFERENCES t_book(idBook)

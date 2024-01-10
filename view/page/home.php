@@ -9,8 +9,8 @@
 // connexion à la BD
 //include("../Passion_Lecture/model/ModelBook.php");
 
-$dbBook = new ModelBook();
-$fiveLastBooks = $dbBook->getNLastBooks(5);
+//$dbBook = new ModelBook();
+//$fiveLastBooks = $dbBook->getNLastBooks(5);
 
 //$controller = new ControllerBook();
 //$fiveLastBooks = $dbBook->getNLastBooks(5);

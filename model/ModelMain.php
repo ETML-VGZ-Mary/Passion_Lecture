@@ -20,13 +20,13 @@
         try
         {
             // depuis Docker
-            //$this->connector = new PDO('mysql:host=localhost:6033;dbname=db_passion;charset=utf8' , 'root', 'root');
+            $this->connector = new PDO('mysql:host=localhost:6033;dbname=db_passion;charset=utf8' , 'root', 'root');
             
             // depuis UWAMP
             //$this->connector = new PDO('mysql:host=localhost:3306;dbname=db_passion;charset=utf8' , 'root', 'root');
         
             // depuis UWAMP (version Sébeillon)
-            $this->connector = new PDO('mysql:host=localhost;dbname=db_passion;charset=utf8' , 'root', 'root');
+            //$this->connector = new PDO('mysql:host=localhost;dbname=db_passion;charset=utf8' , 'root', 'root');
         
 
         }
@@ -58,7 +58,7 @@
          */
         $req = $this->connector->prepare($query);
         foreach($binds as $bind) {
-            $req -> bindValue($bind[0], $bind[1], PDO::PARAM_STR);
+            $req -> bindValue($bind[0], $bind[1], $bind[2]);
         }
         $req -> execute();
         return $req;

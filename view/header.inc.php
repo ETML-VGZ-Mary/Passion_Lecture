@@ -17,7 +17,7 @@
 
             if (isset($_SESSION['isConnected']) && $_SESSION['isConnected']){
                 /*utilisateur connecté : affiche son nom + LOGOUT*/
-                echo "<a href=\"../PHP_html/account.php\">";
+                echo "<a href=\"index.php?controller=page&action=account\">";
                 echo "<div class=\"link\">";
                     if($_SESSION['typeUser'] == "user"){
                         echo "<img src=\"../resources/image/icons/accountUser.png\" alt=\"account-icon\">";
@@ -54,8 +54,15 @@
         <div class="nav-links">
             <a href="index.php?controller=page&action=home">Accueil</a>
             <a href="index.php?controller=page&action=listBook">Bibliothèque</a>
-            <a href="index.php?controller=page&action=addBook">Ajout</a>
-            <a href="index.php?controller=page&action=account">Compte</a>
+            
+
+            <?php
+            if(isset($_SESSION['isConnected']) && $_SESSION['isConnected']){
+                echo "<a href=\"index.php?controller=page&action=addBook\">Ajout</a>";
+                echo "<a href=\"index.php?controller=page&action=account\">Compte</a>";
+            }
+            ?>
+            
         </div>
     </nav>
 </header>
