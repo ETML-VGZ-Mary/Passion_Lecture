@@ -13,11 +13,13 @@
 //include("../../../Model/ModelAuthor.php");
 //$db = new ModelAuthor();
 //$authors = $db->getAllAuthors();
+session_start();
 
 include("../../../Model/ModelBook.php");
 $db2 = new ModelBook();
 $books = $db2->getAllBooks();
 $categories = $db2->getAllCategories();
+
 ?>
 
 <!DOCTYPE html>

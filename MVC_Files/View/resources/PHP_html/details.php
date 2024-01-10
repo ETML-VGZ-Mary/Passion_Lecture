@@ -6,19 +6,18 @@
 -->
 
 <?php
+session_start();
 // connexion à la BD
 include("../../../Model/ModelBook.php");
 include("../../../Model/ModelAuthor.php");
 
-$idBook = $_GET["idBook"];
+$idBook = $_SESSION["idBook"];
 
 $db3 = new ModelBook();
 $oneBook = $db3->getOneBook($idBook); // id entrée en "dure"
 
 $cat = $cat->getOneCat($oneBook["idCategory"]);
 $auteur = $auteur->getOneAuthor($idBook);
-
-session_start();
 
 ?>
 
@@ -52,7 +51,7 @@ session_start();
                 <a><img class="icon" src="../Img/icons/modify.png" alt="modify" value="<?=$oneBook["idBook"]?>"></a>
                 </form>
             
-                <a href="#"><img class="icon" src="../Img/icons/delete.png" alt="delete"></a>
+                <a href="#"<?$this->deleteBook($idBook)?>><img class="icon" src="../Img/icons/delete.png" alt="delete"></a>
                 
             </div>
             <div class="book-details">

@@ -80,7 +80,7 @@ Class ModelBook extends ModelMain{
     public function getOneBook($id){
         // Récupère les données sur la table livre avec une requête sql
         // en utilisant son ID
-        $query = "SELECT * FROM t_book WHERE idBook = $id"; 
+        $query = "SELECT * FROM t_book WHERE idBook = $id;";
 
         // TODO: appeler la méthode pour executer la requête
         $req = $this->querySimpleExecute($query);
@@ -114,7 +114,7 @@ Class ModelBook extends ModelMain{
     public function getOneCat($id){
         // Récupère les données sur la table livre avec une requête sql
         // en utilisant son ID
-        $query = "SELECT * FROM t_book LEFT JOIN t_category ON t_book.idCategory = t_category.label t_book WHERE idCategory = $id "; 
+        $query = "SELECT * FROM t_book LEFT JOIN t_category ON t_book.idCategory = t_category.label t_book WHERE idCategory =$id;"; 
         
 
         // TODO: appeler la méthode pour executer la requête
@@ -211,7 +211,7 @@ Class ModelBook extends ModelMain{
         
 
         // TODO: appeler la méthode pour executer la requête
-        $req = $this->querySimpleExecute($query);
+        /*$req =*/ $this->querySimpleExecute($query);
         // utilisation de [queryPrepareExecute($query, $binds)] ?
 
         

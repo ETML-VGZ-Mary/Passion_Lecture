@@ -2,7 +2,7 @@
     include("../../../Model/ModelBook.php");
     include("../../../Model/ModelAuthor.php");
 
-    $idBook = $_GET["idBook"];
+    $idBook = $_SESSION["idBook"];
 
     $db3 = new ModelBook();
     $oneBook = $db3->getOneBook($idBook); // id entrée en "dure"
