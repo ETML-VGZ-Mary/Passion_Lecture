@@ -21,7 +21,7 @@ $oneBook = $db3->getOneBookGW($_GET["idBook"]);
             <?php
                 echo"<h1>" . $oneBook["title"] . "</h1>";
 
-                if($_SESSION["isConnected"]){
+                if(isset($_SESSION["isConnected"]) && $_SESSION["isConnected"]){
                     echo "<a href=\"index.php?controller=page&action=modifyBook&idBook=" . $oneBook["idBook"] . "\"><img class=\"icon\" src=\"resources/image/icons/modify.png\" alt=\"modify\"></a>";
                     echo "<a href=\"#\"><img class=\"icon\" src=\"resources/image/icons/delete.png\" alt=\"delete\"></a>";
                 }

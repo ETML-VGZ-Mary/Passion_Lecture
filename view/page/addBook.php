@@ -2,16 +2,8 @@
     ETML
     Auteur        :	Déglise Camille - Vougaz Maryline - Wu Guo Yu
     Date          :	28.11.2023
-    Description   :	Accueil du site "Passion Lecture" 
+    Description   :	Page d'ajout d'un livre
 -->
-
-<?php
-// Modeles
-include("model/ModelBook.php");
-include("model/ModelAuthor.php");
-$dbBook = new ModelBook();
-$categories = $dbBook->getAllCategories();
-?>
 
 <div class="container">
     <h1 class="">Ajouter un livre</h1>

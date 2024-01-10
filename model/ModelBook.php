@@ -1,5 +1,5 @@
 <?php
-include_once("ModelMain.php");
+ include_once("ModelMain.php");
 
 class ModelBook extends ModelMain{
    
@@ -230,6 +230,13 @@ class ModelBook extends ModelMain{
 
         // TODO: retour l'enseignant
         return $lastBooks;
+    }
+
+    /*
+     * Fonction qui retourne la liste des 5 derniers livres ajoutés
+     */
+    public function functionTest(){
+       echo "HELLLLLO GOTHAM!";
     }
      
 

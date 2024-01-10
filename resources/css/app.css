@@ -189,7 +189,8 @@ header a, footer a{
 /*page liste--------------------------------------------*/
 .reseach-result{
     padding: 10px;
-    background-color: rgb(177, 255, 255);
+    background-color: rgb(102, 155, 188);
+    display: flex;
 }
 #btnValidationResearch{
     display: inline;

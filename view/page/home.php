@@ -7,7 +7,7 @@
 
 <?php
 // connexion à la BD
-include("../Passion_Lecture/model/ModelBook.php");
+//include("../Passion_Lecture/model/ModelBook.php");
 
 $dbBook = new ModelBook();
 $fiveLastBooks = $dbBook->getNLastBooks(5);

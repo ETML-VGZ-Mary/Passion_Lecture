@@ -9,10 +9,9 @@
 
 
 // include modelBook
-//include ('../Model/ModelBook.php');
-//include_once ("./Controller.php");
-include_once 'model/CustomerRepository.php';
+//include_once 'model/ModelMain.php';
 include_once 'model/ModelBook.php';
+//include_once 'model/ModelAuthor.php';
 
 
 class ControllerBook extends Controller {
@@ -44,6 +43,10 @@ class ControllerBook extends Controller {
         if(!isset($_GET["searchQuery"])){
             $_GET["searchQuery"] = "test";
         }
+
+        // Instancie le modèle et va chercher les informations
+        $dbBook = new ModelBook();
+        $categories = $dbBook->getAllCategories();
 
         $view = file_get_contents('view/page/addBook.php');
  
@@ -130,7 +133,10 @@ class ControllerBook extends Controller {
         }else{
             // On ajoute à la db
             $oneBook = new ModelBook();
-            $oneBook->addBook($datas);
+            $oneBook->functionTest();
+            //$oneBook = new ModelMain();
+            //$oneBook = new ModelSearch();
+            //$oneBook->addBook($datas);
 
         }
 

@@ -2,16 +2,16 @@
     ETML
     Auteur        :	Déglise Camille - Vougaz Maryline - Wu Guo Yu
     Date          :	28.11.2023
-    Description   :	Accueil du site "Passion Lecture" 
+    Description   :	Pafge de modification du compte utilisateur
 -->
 
 <?php
 // connexion à la BD
-include("../../../Model/ModelBook.php");
-include("../../../Model/ModelAuthor.php");
+//include("../../../Model/ModelBook.php");
+//include("../../../Model/ModelAuthor.php");
 
-$db3 = new ModelBook();
-$oneBook = $db3->getOneBookGW(2); // id entrée en "dure"
+//$db3 = new ModelBook();
+//$oneBook = $db3->getOneBookGW(2); // id entrée en "dure"
 ?>
 
 <!DOCTYPE html>

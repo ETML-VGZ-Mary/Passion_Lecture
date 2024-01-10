@@ -8,7 +8,7 @@
 
 <?php
 
-include("../Passion_Lecture/model/ModelBook.php");
+//include("../Passion_Lecture/model/ModelBook.php");
 include("../Passion_Lecture/model/ModelSearch.php");
 $modelSearch = new ModelSearch();
 
@@ -37,7 +37,7 @@ $categories = $db2->getAllCategories();
             $results = $modelSearch-> searchBook($query);
 
             
-            echo"<h2>Résultats de votre recherche \"" . $_POST["searchQuery"] . "\" :</h2>";
+            echo"<h2>Résultats de votre recherche pour \"" . $_POST["searchQuery"] . "\" :</h2>";
             if(!empty($results)){
             
             echo"<div class=\"reseach-result\">";

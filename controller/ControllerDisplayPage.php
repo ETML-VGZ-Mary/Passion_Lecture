@@ -7,9 +7,8 @@
  */
 
 // Session Start
-session_start();
-//include_once 'model/CustomerRepository.php';
-//include_once 'model/ModelBook.php';
+//session_start();
+include_once 'model/ModelBook.php';
 
 class ControllerDisplayPage extends Controller {
 

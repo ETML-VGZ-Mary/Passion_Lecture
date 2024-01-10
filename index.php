@@ -11,7 +11,12 @@
 include_once "controller/Controller.php";
 include_once "controller/ControllerDisplayPage.php";
 include_once "controller/ControllerBook.php";
-include_once "controller/controllerTest.php";
+//include_once "controller/ControllerAccount.php";
+//include_once "controller/ControllerConnexion.php";
+//include_once "controller/ControllerLogin.php";
+
+// Session Start
+session_start();
 
 
 class MainController {
@@ -42,7 +47,6 @@ class MainController {
 
         switch($controller){
             case 'validation':
-                //$link = new ControllerBook();
                 $link = new ControllerBook();
                 break;
             case 'page':
